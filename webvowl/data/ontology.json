@@ -1,0 +1,3464 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/2022/BMO" ],
+    "title" : {
+      "undefined" : "Bridge Maintenance Ontology (BMO)"
+    },
+    "iri" : "https://w3id.org/2022/BMO",
+    "version" : "v1.0.0",
+    "comments" : {
+      "undefined" : "The application domain of the BMO is the bridge maintenance field. The BMO is designed to improve the management of maintenance knowledge of bridge lifecycle, and to provide more valuable information for bridge engineers to make holistic decisions."
+    },
+    "other" : {
+      "Author" : [ {
+        "identifier" : "Author",
+        "language" : "undefined",
+        "value" : "yali Jiang",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "v1.0.0",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "Bridge Maintenance Ontology (BMO)",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "47",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "50",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "57",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "62",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "67",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "70",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "28",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "71",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "79",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "80",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "87",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "92",
+    "type" : "owl:Class"
+  }, {
+    "id" : "93",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "99",
+    "type" : "owl:Class"
+  }, {
+    "id" : "110",
+    "type" : "owl:Class"
+  }, {
+    "id" : "114",
+    "type" : "owl:Class"
+  }, {
+    "id" : "89",
+    "type" : "owl:Class"
+  }, {
+    "id" : "100",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "118",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "101",
+    "type" : "owl:Class"
+  }, {
+    "id" : "139",
+    "type" : "owl:Class"
+  }, {
+    "id" : "150",
+    "type" : "owl:Class"
+  }, {
+    "id" : "98",
+    "type" : "owl:Class"
+  }, {
+    "id" : "185",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "82",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "84",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "191",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "211",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "73",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "214",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "205",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "49",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "210",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "213",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "130",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "156",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "218",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "219",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "61",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "170",
+    "type" : "owl:Class"
+  }, {
+    "id" : "64",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "134",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "123",
+    "type" : "owl:Class"
+  }, {
+    "id" : "207",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "152",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "136",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "226",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "119",
+    "type" : "owl:Class"
+  }, {
+    "id" : "227",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "88",
+    "type" : "owl:Class"
+  }, {
+    "id" : "78",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "189",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "132",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "233",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "103",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "154",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "167",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "128",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "125",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "69",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "66",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "162",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "238",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "239",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "59",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "160",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "86",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "158",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "8",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "193",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "187",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "237",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "121",
+    "type" : "owl:Class"
+  }, {
+    "id" : "52",
+    "type" : "owl:Class"
+  }, {
+    "id" : "222",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "107",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "230",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "217",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "257",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "241",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "256",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "260",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "113",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "116",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "142",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "249",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "90",
+    "type" : "owl:Class"
+  }, {
+    "id" : "97",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "95",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "266",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "271",
+    "type" : "rdfs:Datatype"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "0",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Foundation",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Foundation"
+    },
+    "id" : "26",
+    "superClasses" : [ "27" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#BearingCapacity",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BearingCapacity"
+    },
+    "subClasses" : [ "2", "5" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "47",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "50",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "51",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "53",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "56",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "57",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "62",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "67",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "70",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "28",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#ServiceabilityLimitStates",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceabilityLimitStates"
+    },
+    "id" : "2",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "71",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "76",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "44",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "79",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "80",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Hazard",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Hazard"
+    },
+    "subClasses" : [ "10", "13" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#MaterialCondition",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaterialCondition"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/2022/BMO#C50",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "C50"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#C60",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "C60"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#C30",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "C30"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#13-BoxGirder",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "13-BoxGirder"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#C40",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "C40"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#14-BoxGirder",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "14-BoxGirder"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#15-BoxGirder",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "15-BoxGirder"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#C55",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "C55"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#13-1-UpperTower",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "13-1-UpperTower"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#14-1-UpperTower",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "14-1-UpperTower"
+      }
+    } ],
+    "subClasses" : [ "15" ],
+    "id" : "16"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Tower",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Tower"
+    },
+    "id" : "87",
+    "superClasses" : [ "27" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#BridgeMember",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BridgeMember"
+    },
+    "subClasses" : [ "18", "21", "88", "89" ],
+    "id" : "19"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Bearing",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Bearing"
+    },
+    "id" : "92",
+    "superClasses" : [ "27" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Concrete",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concrete"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/2022/BMO#C50",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "C50"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#C60",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "C60"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#C30",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "C30"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#C40",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "C40"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#C45",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "C45"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#C55",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "C55"
+      }
+    } ],
+    "id" : "93",
+    "superClasses" : [ "24" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#BridgeComponent",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BridgeComponent"
+    },
+    "subClasses" : [ "92", "26", "98", "87", "99", "100", "101" ],
+    "id" : "27"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Pier",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Pier"
+    },
+    "id" : "99",
+    "superClasses" : [ "27" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#MaintenanceMeasure",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaintenanceMeasure"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/2022/BMO#NormalMaintenance",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "NormalMaintenance"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#MadInprovement",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "MadInprovement"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#PressureInfusion",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "PressureInfusion"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#SurfaceClosure",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "SurfaceClosure"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#HeavyMaintenance",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "HeavyMaintenance"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#RoutineMaintenance",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "RoutineMaintenance"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#IntermediateMaintenance",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "IntermediateMaintenance"
+      }
+    } ],
+    "id" : "110",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Superstructure",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Superstructure"
+    },
+    "id" : "114",
+    "superClasses" : [ "90" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Cloumn",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Cloumn"
+    },
+    "id" : "89",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Abutment",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Abutment"
+    },
+    "id" : "100",
+    "superClasses" : [ "27" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#MaintenanceSolution",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaintenanceSolution"
+    },
+    "subClasses" : [ "119", "110" ],
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#StrengtheningWithBondedSteelPlate",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StrengtheningWithBondedSteelPlate"
+    },
+    "id" : "118",
+    "superClasses" : [ "119" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#UltimateLimitStates",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "UltimateLimitStates"
+    },
+    "id" : "5",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Break",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Break"
+    },
+    "id" : "13",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Support",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Support"
+    },
+    "id" : "101",
+    "superClasses" : [ "27" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Steel",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Steel"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/2022/BMO#Q420",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "Q420"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#HRB400",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "HRB400"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#Q355",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "Q355"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#HRB500",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "HRB500"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#HRB335",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "HRB335"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#Q390",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "Q390"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#Q235",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "Q235"
+      }
+    } ],
+    "id" : "139",
+    "superClasses" : [ "24" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#VisualCondition",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "VisualCondition"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/2022/BMO#ChangshanBridge",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "comment" : {
+        "undefined" : "This bridge is a cable-stayed bridge with 540m (140m+260m+140m) long located in Dalian, Liaoning Province. Its main beam is connected with the pier and tower in the form of consolidation."
+      },
+      "labels" : {
+        "IRI-based" : "ChangshanBridge"
+      }
+    } ],
+    "id" : "150"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Pavement",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Pavement"
+    },
+    "id" : "98",
+    "superClasses" : [ "27" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "185",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "82",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "84",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "191",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "211",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "55",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "73",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "214",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "205",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "46",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "49",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "210",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "213",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#UpperTower",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "UpperTower"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/2022/BMO#13-1-UpperTower",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "13-1-UpperTower"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#14-1-UpperTower",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "14-1-UpperTower"
+      }
+    } ],
+    "id" : "18",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#SurfaceStructure",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SurfaceStructure"
+    },
+    "id" : "130",
+    "superClasses" : [ "90" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#MaterialType",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaterialType"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/2022/BMO#CrackSealGlue",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "CrackSealGlue"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#EpoxyResin",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "EpoxyResin"
+      }
+    } ],
+    "subClasses" : [ "139", "93" ],
+    "id" : "24"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "156",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Bridge",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Bridge"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/2022/BMO#ChangshanBridge",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "comment" : {
+        "undefined" : "This bridge is a cable-stayed bridge with 540m (140m+260m+140m) long located in Dalian, Liaoning Province. Its main beam is connected with the pier and tower in the form of consolidation."
+      },
+      "labels" : {
+        "IRI-based" : "ChangshanBridge"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#NeathSwingBridge",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "NeathSwingBridge"
+      }
+    } ],
+    "id" : "23"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "218",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "219",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "61",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#PotentialReason",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PotentialReason"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/2022/BMO#Construction",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "Construction"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#Design",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "Design"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#Load",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "Load"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#Temperature",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "Temperature"
+      }
+    } ],
+    "id" : "170"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "64",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "134",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Substructure",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Substructure"
+    },
+    "id" : "123",
+    "superClasses" : [ "90" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "207",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "152",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "136",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "226",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#StrengtheningMeasure",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StrengtheningMeasure"
+    },
+    "subClasses" : [ "142", "118", "121" ],
+    "id" : "119",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "227",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#BoxGirder",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BoxGirder"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/2022/BMO#13-BoxGirder",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "13-BoxGirder"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#14-BoxGirder",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "14-BoxGirder"
+      }
+    }, {
+      "iri" : "https://w3id.org/2022/BMO#15-BoxGirder",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "15-BoxGirder"
+      }
+    } ],
+    "id" : "88",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "78",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "189",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "132",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "233",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "103",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "154",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "167",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "128",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "125",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "69",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "66",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "162",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "238",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#ConcreteStrength",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConcreteStrength"
+    },
+    "id" : "15",
+    "superClasses" : [ "16" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "239",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "59",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "160",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "86",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "158",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "8",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "75",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "193",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "187",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "237",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Crack",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Crack"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/2022/BMO#Crack1",
+      "baseIri" : "https://w3id.org/2022/BMO",
+      "labels" : {
+        "IRI-based" : "Crack1"
+      }
+    } ],
+    "id" : "10",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#StrengtheningWithFRP",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StrengtheningWithFRP"
+    },
+    "id" : "121",
+    "superClasses" : [ "119" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Organization",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Organization"
+    },
+    "id" : "52"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "222",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "107",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "230",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "217",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "257",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "241",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "256",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "260",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "113",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "116",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#StrengtheningWithExternalPrestressing",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StrengtheningWithExternalPrestressing"
+    },
+    "id" : "142",
+    "superClasses" : [ "119" ]
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Footing",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Footing"
+    },
+    "id" : "21",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "249",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#BridgeStructure",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BridgeStructure"
+    },
+    "subClasses" : [ "123", "114", "130" ],
+    "id" : "90"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "97",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "95",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "266",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "271",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  } ],
+  "property" : [ {
+    "id" : "1",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "4",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "6",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "12",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "14",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "43",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "45",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "48",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "54",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "58",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "60",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "63",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "65",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "68",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "72",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "74",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "77",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "42",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "81",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "83",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "85",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "37",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "94",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "96",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "102",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "104",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "105",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "106",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "108",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "109",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "36",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "111",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "112",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "115",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "117",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "120",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "122",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "124",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "126",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "127",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "129",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "131",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "133",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "135",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "137",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "138",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "140",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "141",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "143",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "144",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "145",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "146",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "147",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "148",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "149",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "151",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "153",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "155",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "157",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "159",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "161",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "38",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "163",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "164",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "165",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "166",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "168",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "169",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "171",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "172",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "173",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "174",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "175",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "176",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "177",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "178",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "179",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "180",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "181",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "182",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "183",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "184",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "186",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "188",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "190",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "192",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "194",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "195",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "196",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "197",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "198",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "199",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "200",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "201",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "39",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "202",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "41",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "203",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "204",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "206",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "208",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "209",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "212",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "215",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "216",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "220",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "221",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "223",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "224",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "225",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "228",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "229",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "231",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "232",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "234",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "235",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "236",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "240",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "242",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "243",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "33",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "244",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "245",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "246",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "247",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "248",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "250",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "251",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "252",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "253",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "254",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "40",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "255",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "258",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "259",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "261",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "262",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "263",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "264",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "265",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "267",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "268",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "269",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "270",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "272",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "3",
+    "domain" : "2",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "1"
+  }, {
+    "range" : "3",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "4"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#r0",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "r0"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "6"
+  }, {
+    "range" : "11",
+    "domain" : "10",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "9"
+  }, {
+    "range" : "11",
+    "domain" : "13",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "12"
+  }, {
+    "range" : "16",
+    "domain" : "15",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "14"
+  }, {
+    "range" : "19",
+    "domain" : "18",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "17"
+  }, {
+    "range" : "19",
+    "domain" : "21",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "20"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasMaterialType",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "hasMaterialType"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "23",
+    "attributes" : [ "object" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "topObjectProperty"
+    },
+    "domain" : "28",
+    "subproperty" : [ "29", "30", "31", "32", "33", "22", "34", "35", "36", "37", "38", "39", "40", "41", "42" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "25"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#totalLength",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "44",
+    "label" : {
+      "IRI-based" : "totalLength"
+    },
+    "domain" : "23",
+    "attributes" : [ "datatype" ],
+    "id" : "43"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#F-sd2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "46",
+    "label" : {
+      "IRI-based" : "F-sd2"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "45"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#F-sd1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "49",
+    "label" : {
+      "IRI-based" : "F-sd1"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "48"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#manage",
+    "inverse" : "36",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "manage"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "52",
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Fsd2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "55",
+    "label" : {
+      "IRI-based" : "Fsd2"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "54"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#R1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "59",
+    "label" : {
+      "IRI-based" : "R1"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "58"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#As2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "61",
+    "label" : {
+      "IRI-based" : "As2"
+    },
+    "domain" : "7",
+    "attributes" : [ "datatype" ],
+    "id" : "60"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#As1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "64",
+    "label" : {
+      "IRI-based" : "As1"
+    },
+    "domain" : "7",
+    "attributes" : [ "datatype" ],
+    "id" : "63"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#R2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "66",
+    "label" : {
+      "IRI-based" : "R2"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "65"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#R3",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "69",
+    "label" : {
+      "IRI-based" : "R3"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "68"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Fsd1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "73",
+    "label" : {
+      "IRI-based" : "Fsd1"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "72"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#needStrengthening",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "75",
+    "label" : {
+      "IRI-based" : "needStrengthening"
+    },
+    "domain" : "7",
+    "attributes" : [ "datatype" ],
+    "id" : "74"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#a-s",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "78",
+    "label" : {
+      "IRI-based" : "a-s"
+    },
+    "domain" : "7",
+    "attributes" : [ "datatype" ],
+    "id" : "77"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasMaintenanceSolution",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "hasMaintenanceSolution"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "23",
+    "attributes" : [ "object" ],
+    "id" : "42"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Md",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "82",
+    "label" : {
+      "IRI-based" : "Md"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "for Strengthening"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "81"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Kbt",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "84",
+    "label" : {
+      "IRI-based" : "Kbt"
+    },
+    "domain" : "16",
+    "comment" : {
+      "undefined" : "materialCondition"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "83"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#name",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "86",
+    "label" : {
+      "IRI-based" : "name"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "85"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasStructure",
+    "inverse" : "32",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "90",
+    "label" : {
+      "IRI-based" : "hasStructure"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "23",
+    "attributes" : [ "object" ],
+    "id" : "34"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#needMaterial",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "needMaterial"
+    },
+    "domain" : "23",
+    "attributes" : [ "object" ],
+    "id" : "91"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasCapacity",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "hasCapacity"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "23",
+    "attributes" : [ "object" ],
+    "id" : "37"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#f-sd1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "95",
+    "label" : {
+      "IRI-based" : "f-sd1"
+    },
+    "domain" : "28",
+    "comment" : {
+      "undefined" : "Section Properties"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "94"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#f-sd2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "97",
+    "label" : {
+      "IRI-based" : "f-sd2"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "96"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Sj",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "103",
+    "label" : {
+      "IRI-based" : "Sj"
+    },
+    "domain" : "16",
+    "comment" : {
+      "undefined" : "materialCondition"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "102"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#x",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "51",
+    "label" : {
+      "IRI-based" : "x"
+    },
+    "domain" : "7",
+    "attributes" : [ "datatype" ],
+    "id" : "104"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#z",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "56",
+    "label" : {
+      "IRI-based" : "z"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "105"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#h",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "107",
+    "label" : {
+      "IRI-based" : "h"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "Section Properties"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "106"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#w2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "79",
+    "label" : {
+      "IRI-based" : "w2"
+    },
+    "domain" : "23",
+    "attributes" : [ "datatype" ],
+    "id" : "108"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#w3",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "80",
+    "label" : {
+      "IRI-based" : "w3"
+    },
+    "domain" : "23",
+    "attributes" : [ "datatype" ],
+    "id" : "109"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#managedBy",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "52",
+    "label" : {
+      "IRI-based" : "managedBy"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "23",
+    "attributes" : [ "object" ],
+    "id" : "36"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#w1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "76",
+    "label" : {
+      "IRI-based" : "w1"
+    },
+    "domain" : "23",
+    "attributes" : [ "datatype" ],
+    "id" : "111"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#fsd2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "113",
+    "label" : {
+      "IRI-based" : "fsd2"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "112"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#fsd1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "116",
+    "label" : {
+      "IRI-based" : "fsd1"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "115"
+  }, {
+    "range" : "119",
+    "domain" : "118",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "117"
+  }, {
+    "range" : "119",
+    "domain" : "121",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "120"
+  }, {
+    "range" : "90",
+    "domain" : "123",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "122"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#S1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "125",
+    "label" : {
+      "IRI-based" : "S1"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "124"
+  }, {
+    "range" : "90",
+    "domain" : "114",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "126"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#S2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "128",
+    "label" : {
+      "IRI-based" : "S2"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "127"
+  }, {
+    "range" : "90",
+    "domain" : "130",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "129"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#S3",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "132",
+    "label" : {
+      "IRI-based" : "S3"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "131"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#as1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "134",
+    "label" : {
+      "IRI-based" : "as1"
+    },
+    "domain" : "7",
+    "attributes" : [ "datatype" ],
+    "id" : "133"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#as2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "136",
+    "label" : {
+      "IRI-based" : "as2"
+    },
+    "domain" : "7",
+    "attributes" : [ "datatype" ],
+    "id" : "135"
+  }, {
+    "range" : "7",
+    "domain" : "110",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "137"
+  }, {
+    "range" : "24",
+    "domain" : "139",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "138"
+  }, {
+    "range" : "24",
+    "domain" : "93",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "140"
+  }, {
+    "range" : "119",
+    "domain" : "142",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "141"
+  }, {
+    "range" : "27",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "143"
+  }, {
+    "range" : "27",
+    "domain" : "98",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "144"
+  }, {
+    "range" : "27",
+    "domain" : "87",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "145"
+  }, {
+    "range" : "27",
+    "domain" : "99",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "146"
+  }, {
+    "range" : "27",
+    "domain" : "100",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "147"
+  }, {
+    "range" : "27",
+    "domain" : "101",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "148"
+  }, {
+    "range" : "7",
+    "domain" : "119",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "149"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasVisualCondition",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "150",
+    "label" : {
+      "IRI-based" : "hasVisualCondition"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "23",
+    "attributes" : [ "object" ],
+    "id" : "31"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#b",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "152",
+    "label" : {
+      "IRI-based" : "b"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "Section Properties"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "151"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#S",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "154",
+    "label" : {
+      "IRI-based" : "S"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "153"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#BDCI",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "156",
+    "label" : {
+      "IRI-based" : "BDCI"
+    },
+    "domain" : "150",
+    "comment" : {
+      "undefined" : "for Visual Condition"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "155"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#meetRequirements",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "158",
+    "label" : {
+      "IRI-based" : "meetRequirements"
+    },
+    "domain" : "7",
+    "attributes" : [ "datatype" ],
+    "id" : "157"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#R",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "160",
+    "label" : {
+      "IRI-based" : "R"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "159"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Rd",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "162",
+    "label" : {
+      "IRI-based" : "Rd"
+    },
+    "domain" : "16",
+    "comment" : {
+      "undefined" : "materialCondition"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "161"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasMaterialCondition",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "hasMaterialCondition"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "23",
+    "attributes" : [ "object" ],
+    "id" : "38"
+  }, {
+    "range" : "19",
+    "domain" : "88",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "163"
+  }, {
+    "range" : "19",
+    "domain" : "89",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "164"
+  }, {
+    "range" : "27",
+    "domain" : "92",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "165"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Rit",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "167",
+    "label" : {
+      "IRI-based" : "Rit"
+    },
+    "domain" : "16",
+    "comment" : {
+      "undefined" : "materialCondition"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "166"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasMember",
+    "inverse" : "30",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "hasMember"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "99",
+    "attributes" : [ "someValues", "object" ],
+    "id" : "168"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasPotentialReason",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "170",
+    "label" : {
+      "IRI-based" : "hasPotentialReason"
+    },
+    "domain" : "11",
+    "attributes" : [ "object" ],
+    "id" : "169"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#z1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "62",
+    "label" : {
+      "IRI-based" : "z1"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "171"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#z2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "67",
+    "label" : {
+      "IRI-based" : "z2"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "172"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#isComponentOf",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "90",
+    "label" : {
+      "IRI-based" : "isComponentOf"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "27",
+    "attributes" : [ "object" ],
+    "id" : "35"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#z3",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "70",
+    "label" : {
+      "IRI-based" : "z3"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "173"
+  }, {
+    "range" : "139",
+    "domain" : "93",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "174"
+  }, {
+    "range" : "10",
+    "domain" : "13",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "175"
+  }, {
+    "range" : "21",
+    "domain" : "89",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "176"
+  }, {
+    "range" : "18",
+    "domain" : "88",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "177"
+  }, {
+    "range" : "18",
+    "domain" : "21",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "178"
+  }, {
+    "range" : "18",
+    "domain" : "89",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "179"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasMember",
+    "inverse" : "30",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "88",
+    "label" : {
+      "IRI-based" : "hasMember"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "92",
+    "attributes" : [ "someValues", "object" ],
+    "id" : "180"
+  }, {
+    "range" : "87",
+    "domain" : "101",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "181"
+  }, {
+    "range" : "21",
+    "domain" : "88",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "182"
+  }, {
+    "range" : "89",
+    "domain" : "88",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "183"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#ID",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "185",
+    "label" : {
+      "IRI-based" : "ID"
+    },
+    "domain" : "23",
+    "attributes" : [ "datatype" ],
+    "id" : "184"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#isStructureOf",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "isStructureOf"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "90",
+    "attributes" : [ "object" ],
+    "id" : "32"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#maxWidth",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "187",
+    "label" : {
+      "IRI-based" : "maxWidth"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "186"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#SBCI",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "189",
+    "label" : {
+      "IRI-based" : "SBCI"
+    },
+    "domain" : "150",
+    "comment" : {
+      "undefined" : "for Visual Condition"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "188"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Fobj",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "191",
+    "label" : {
+      "IRI-based" : "Fobj"
+    },
+    "domain" : "23",
+    "attributes" : [ "datatype" ],
+    "id" : "190"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#maxDepth",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "193",
+    "label" : {
+      "IRI-based" : "maxDepth"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype" ],
+    "id" : "192"
+  }, {
+    "range" : "101",
+    "domain" : "99",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "194"
+  }, {
+    "range" : "87",
+    "domain" : "98",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "195"
+  }, {
+    "range" : "87",
+    "domain" : "99",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "196"
+  }, {
+    "range" : "87",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "197"
+  }, {
+    "range" : "101",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "198"
+  }, {
+    "range" : "101",
+    "domain" : "98",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "199"
+  }, {
+    "range" : "99",
+    "domain" : "98",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "200"
+  }, {
+    "range" : "87",
+    "domain" : "92",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "201"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasMember",
+    "inverse" : "30",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "19",
+    "label" : {
+      "IRI-based" : "hasMember"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "27",
+    "attributes" : [ "object" ],
+    "id" : "39"
+  }, {
+    "range" : "99",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "202"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#build",
+    "inverse" : "40",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "build"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "52",
+    "attributes" : [ "object" ],
+    "id" : "41"
+  }, {
+    "range" : "98",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "203"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Ec",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "205",
+    "label" : {
+      "IRI-based" : "Ec"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "materialProperties"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "204"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#adress",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "207",
+    "label" : {
+      "IRI-based" : "adress"
+    },
+    "domain" : "52",
+    "attributes" : [ "datatype" ],
+    "id" : "206"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#x1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "53",
+    "label" : {
+      "IRI-based" : "x1"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "for Strengthening"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "208"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Dr",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "210",
+    "label" : {
+      "IRI-based" : "Dr"
+    },
+    "domain" : "150",
+    "comment" : {
+      "undefined" : "for Visual Condition"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "209"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Dj",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "213",
+    "label" : {
+      "IRI-based" : "Dj"
+    },
+    "domain" : "150",
+    "comment" : {
+      "undefined" : "for Visual Condition"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "212"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Es",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "214",
+    "label" : {
+      "IRI-based" : "Es"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "materialProperties"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "215"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hsp",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "217",
+    "label" : {
+      "IRI-based" : "hsp"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "for Strengthening"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "216"
+  }, {
+    "range" : "114",
+    "domain" : "123",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "220"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#h0",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "222",
+    "label" : {
+      "IRI-based" : "h0"
+    },
+    "domain" : "7",
+    "attributes" : [ "datatype" ],
+    "id" : "221"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasMember",
+    "inverse" : "30",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "89",
+    "label" : {
+      "IRI-based" : "hasMember"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "99",
+    "attributes" : [ "someValues", "object" ],
+    "id" : "223"
+  }, {
+    "range" : "130",
+    "domain" : "114",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "224"
+  }, {
+    "range" : "130",
+    "domain" : "123",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "225"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#R3-3",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "71",
+    "label" : {
+      "IRI-based" : "R3-3"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "228"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#level",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "230",
+    "label" : {
+      "IRI-based" : "level"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype" ],
+    "id" : "229"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#R3-1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "47",
+    "label" : {
+      "IRI-based" : "R3-1"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "231"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#R3-2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "50",
+    "label" : {
+      "IRI-based" : "R3-2"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "232"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#SPCI",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "SPCI"
+    },
+    "domain" : "28",
+    "comment" : {
+      "undefined" : "for Visual Condition"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "234"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#z-3",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "57",
+    "label" : {
+      "IRI-based" : "z-3"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "for Strengthening"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "235"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#maxSpanLength",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "237",
+    "label" : {
+      "IRI-based" : "maxSpanLength"
+    },
+    "domain" : "23",
+    "attributes" : [ "datatype" ],
+    "id" : "236"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#fsk",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "241",
+    "label" : {
+      "IRI-based" : "fsk"
+    },
+    "domain" : "24",
+    "attributes" : [ "datatype" ],
+    "id" : "240"
+  }, {
+    "range" : "98",
+    "domain" : "100",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "242"
+  }, {
+    "range" : "99",
+    "domain" : "100",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "243"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasComponent",
+    "inverse" : "35",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasComponent"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "90",
+    "attributes" : [ "object" ],
+    "id" : "33"
+  }, {
+    "range" : "101",
+    "domain" : "100",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "244"
+  }, {
+    "range" : "87",
+    "domain" : "100",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "245"
+  }, {
+    "range" : "26",
+    "domain" : "92",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "246"
+  }, {
+    "range" : "98",
+    "domain" : "92",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "247"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#fsd",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "249",
+    "label" : {
+      "IRI-based" : "fsd"
+    },
+    "domain" : "23",
+    "comment" : {
+      "undefined" : "materialProperties"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "248"
+  }, {
+    "range" : "99",
+    "domain" : "92",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "250"
+  }, {
+    "range" : "101",
+    "domain" : "92",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "251"
+  }, {
+    "range" : "92",
+    "domain" : "100",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "252"
+  }, {
+    "range" : "26",
+    "domain" : "100",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "253"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Fcd",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "211",
+    "label" : {
+      "IRI-based" : "Fcd"
+    },
+    "domain" : "28",
+    "attributes" : [ "datatype" ],
+    "id" : "254"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#buildBy",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "52",
+    "label" : {
+      "IRI-based" : "buildBy"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "23",
+    "attributes" : [ "object" ],
+    "id" : "40"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#ftk",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "256",
+    "label" : {
+      "IRI-based" : "ftk"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "materialProperties"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "255"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#isMemberOf",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "isMemberOf"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "19",
+    "attributes" : [ "object" ],
+    "id" : "30"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Md2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "238",
+    "label" : {
+      "IRI-based" : "Md2"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "for Strengthening"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "258"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#a-s1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "227",
+    "label" : {
+      "IRI-based" : "a-s1"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "Section Properties"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "259"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#ftd",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "260",
+    "label" : {
+      "IRI-based" : "ftd"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "materialProperties"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "261"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#a-s2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "226",
+    "label" : {
+      "IRI-based" : "a-s2"
+    },
+    "domain" : "7",
+    "attributes" : [ "datatype" ],
+    "id" : "262"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Md1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "239",
+    "label" : {
+      "IRI-based" : "Md1"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "for Strengthening"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "263"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#A-s1",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "219",
+    "label" : {
+      "IRI-based" : "A-s1"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "Section Properties"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "264"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#fck",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "266",
+    "label" : {
+      "IRI-based" : "fck"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "materialProperties"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "265"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#Zj",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "233",
+    "label" : {
+      "IRI-based" : "Zj"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "For Bearing Capacity"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "267"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#hasHazard",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "hasHazard"
+    },
+    "domain" : "23",
+    "attributes" : [ "object" ],
+    "id" : "268"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#fsp",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "257",
+    "label" : {
+      "IRI-based" : "fsp"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "for Strengthening"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "269"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#fcd",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "271",
+    "label" : {
+      "IRI-based" : "fcd"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "materialProperties"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "270"
+  }, {
+    "iri" : "https://w3id.org/2022/BMO#A-s2",
+    "baseIri" : "https://w3id.org/2022/BMO",
+    "range" : "218",
+    "label" : {
+      "IRI-based" : "A-s2"
+    },
+    "domain" : "7",
+    "attributes" : [ "datatype" ],
+    "id" : "272"
+  } ]
+}

@@ -1,0 +1,1573 @@
+@prefix : <https://w3id.org/2022/BMO#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/2022/BMO#> .
+
+<https://w3id.org/2022/BMO> rdf:type owl:Ontology ;
+                             owl:versionIRI <https://w3id.org/2022/BMO/1.0.0> ;
+                             rdfs:comment "The application domain of the BMO is the bridge maintenance field. The BMO is designed to improve the management of maintenance knowledge of bridge lifecycle, and to provide more valuable information for bridge engineers to make holistic decisions." ;
+                             owl:title "Bridge Maintenance Ontology (BMO)" ;
+                             owl:versionInfo "v1.0.0" ;
+                             :Author "yali Jiang" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#author
+owl:author rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#title
+owl:title rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/2022/BMO#Author
+:Author rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/2022/BMO#build
+:build rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       owl:inverseOf :buildBy ;
+       rdfs:domain :Organization ;
+       rdfs:range :Bridge .
+
+
+###  https://w3id.org/2022/BMO#buildBy
+:buildBy rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Bridge ;
+         rdfs:range :Organization .
+
+
+###  https://w3id.org/2022/BMO#hasCapacity
+:hasCapacity rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Bridge ;
+             rdfs:range :BearingCapacity .
+
+
+###  https://w3id.org/2022/BMO#hasComponent
+:hasComponent rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :isComponentOf ;
+              rdfs:domain :BridgeStructure ;
+              rdfs:range :BridgeComponent .
+
+
+###  https://w3id.org/2022/BMO#hasHazard
+:hasHazard rdf:type owl:ObjectProperty ;
+           rdfs:domain :Bridge ;
+           rdfs:range :Hazard .
+
+
+###  https://w3id.org/2022/BMO#hasMaintenanceSolution
+:hasMaintenanceSolution rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdfs:domain :Bridge ;
+                        rdfs:range :MaintenanceSolution .
+
+
+###  https://w3id.org/2022/BMO#hasMaterialCondition
+:hasMaterialCondition rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain :Bridge ;
+                      rdfs:range :MaterialCondition .
+
+
+###  https://w3id.org/2022/BMO#hasMaterialType
+:hasMaterialType rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :Bridge ;
+                 rdfs:range :MaterialType .
+
+
+###  https://w3id.org/2022/BMO#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :isMemberOf ;
+           rdfs:domain :BridgeComponent ;
+           rdfs:range :BridgeMember .
+
+
+###  https://w3id.org/2022/BMO#hasPotentialReason
+:hasPotentialReason rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Hazard ;
+                    rdfs:range :PotentialReason .
+
+
+###  https://w3id.org/2022/BMO#hasStructure
+:hasStructure rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :isStructureOf ;
+              rdfs:domain :Bridge ;
+              rdfs:range :BridgeStructure .
+
+
+###  https://w3id.org/2022/BMO#hasVisualCondition
+:hasVisualCondition rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain :Bridge ;
+                    rdfs:range :VisualCondition .
+
+
+###  https://w3id.org/2022/BMO#isComponentOf
+:isComponentOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :BridgeComponent ;
+               rdfs:range :BridgeStructure .
+
+
+###  https://w3id.org/2022/BMO#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :BridgeMember ;
+            rdfs:range :BridgeComponent .
+
+
+###  https://w3id.org/2022/BMO#isStructureOf
+:isStructureOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :BridgeStructure ;
+               rdfs:range :Bridge .
+
+
+###  https://w3id.org/2022/BMO#manage
+:manage rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        owl:inverseOf :managedBy ;
+        rdfs:domain :Organization ;
+        rdfs:range :Bridge .
+
+
+###  https://w3id.org/2022/BMO#managedBy
+:managedBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :Bridge ;
+           rdfs:range :Organization .
+
+
+###  https://w3id.org/2022/BMO#needMaterial
+:needMaterial rdf:type owl:ObjectProperty ;
+              rdfs:domain :Bridge ;
+              rdfs:range :MaterialType .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/2022/BMO#A-s1
+:A-s1 rdf:type owl:DatatypeProperty ;
+      rdfs:domain :MaintenanceSolution ;
+      rdfs:range xsd:float ;
+      rdfs:comment "Section Properties" .
+
+
+###  https://w3id.org/2022/BMO#A-s2
+:A-s2 rdf:type owl:DatatypeProperty ;
+      rdfs:domain :MaintenanceSolution ;
+      rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#As1
+:As1 rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaintenanceSolution ;
+     rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#As2
+:As2 rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaintenanceSolution ;
+     rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#BDCI
+:BDCI rdf:type owl:DatatypeProperty ;
+      rdfs:domain :VisualCondition ;
+      rdfs:range xsd:float ;
+      rdfs:comment "for Visual Condition" .
+
+
+###  https://w3id.org/2022/BMO#Dj
+:Dj rdf:type owl:DatatypeProperty ;
+    rdfs:domain :VisualCondition ;
+    rdfs:range xsd:int ;
+    rdfs:comment "for Visual Condition" .
+
+
+###  https://w3id.org/2022/BMO#Dr
+:Dr rdf:type owl:DatatypeProperty ;
+    rdfs:domain :VisualCondition ;
+    rdfs:range xsd:float ;
+    rdfs:comment "for Visual Condition" .
+
+
+###  https://w3id.org/2022/BMO#Ec
+:Ec rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MaterialType ;
+    rdfs:range xsd:float ;
+    rdfs:comment "materialProperties" .
+
+
+###  https://w3id.org/2022/BMO#Es
+:Es rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MaterialType ;
+    rdfs:range xsd:float ;
+    rdfs:comment "materialProperties" .
+
+
+###  https://w3id.org/2022/BMO#F-sd1
+:F-sd1 rdf:type owl:DatatypeProperty ;
+       rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#F-sd2
+:F-sd2 rdf:type owl:DatatypeProperty ;
+       rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#Fcd
+:Fcd rdf:type owl:DatatypeProperty ;
+     rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#Fobj
+:Fobj rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Bridge ;
+      rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#Fsd1
+:Fsd1 rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#Fsd2
+:Fsd2 rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#ID
+:ID rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Bridge ;
+    rdfs:range xsd:string .
+
+
+###  https://w3id.org/2022/BMO#Kbt
+:Kbt rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaterialCondition ;
+     rdfs:range xsd:float ;
+     rdfs:comment "materialCondition" .
+
+
+###  https://w3id.org/2022/BMO#Md
+:Md rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MaintenanceSolution ;
+    rdfs:range xsd:float ;
+    rdfs:comment "for Strengthening" .
+
+
+###  https://w3id.org/2022/BMO#Md1
+:Md1 rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaintenanceSolution ;
+     rdfs:range xsd:float ;
+     rdfs:comment "for Strengthening" .
+
+
+###  https://w3id.org/2022/BMO#Md2
+:Md2 rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaintenanceSolution ;
+     rdfs:range xsd:float ;
+     rdfs:comment "for Strengthening" .
+
+
+###  https://w3id.org/2022/BMO#R
+:R rdf:type owl:DatatypeProperty ;
+   rdfs:domain :MaintenanceSolution ;
+   rdfs:range xsd:float ;
+   rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#R1
+:R1 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MaintenanceSolution ;
+    rdfs:range xsd:float ;
+    rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#R2
+:R2 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MaintenanceSolution ;
+    rdfs:range xsd:float ;
+    rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#R3
+:R3 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MaintenanceSolution ;
+    rdfs:range xsd:float ;
+    rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#R3-1
+:R3-1 rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/2022/BMO#R3-2
+:R3-2 rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/2022/BMO#R3-3
+:R3-3 rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/2022/BMO#Rd
+:Rd rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MaterialCondition ;
+    rdfs:range xsd:float ;
+    rdfs:comment "materialCondition" .
+
+
+###  https://w3id.org/2022/BMO#Rit
+:Rit rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaterialCondition ;
+     rdfs:range xsd:float ;
+     rdfs:comment "materialCondition" .
+
+
+###  https://w3id.org/2022/BMO#S
+:S rdf:type owl:DatatypeProperty ;
+   rdfs:domain :BearingCapacity ;
+   rdfs:range xsd:float ;
+   rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#S1
+:S1 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :BearingCapacity ;
+    rdfs:range xsd:float ;
+    rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#S2
+:S2 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :BearingCapacity ;
+    rdfs:range xsd:float ;
+    rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#S3
+:S3 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :BearingCapacity ;
+    rdfs:range xsd:float ;
+    rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#SBCI
+:SBCI rdf:type owl:DatatypeProperty ;
+      rdfs:domain :VisualCondition ;
+      rdfs:range xsd:float ;
+      rdfs:comment "for Visual Condition" .
+
+
+###  https://w3id.org/2022/BMO#SPCI
+:SPCI rdf:type owl:DatatypeProperty ;
+      rdfs:comment "for Visual Condition" .
+
+
+###  https://w3id.org/2022/BMO#Sj
+:Sj rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MaterialCondition ;
+    rdfs:range xsd:int ;
+    rdfs:comment "materialCondition" .
+
+
+###  https://w3id.org/2022/BMO#Zj
+:Zj rdf:type owl:DatatypeProperty ;
+    rdfs:domain :BearingCapacity ;
+    rdfs:range xsd:int ;
+    rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#a-s
+:a-s rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaintenanceSolution ;
+     rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#a-s1
+:a-s1 rdf:type owl:DatatypeProperty ;
+      rdfs:domain :MaintenanceSolution ;
+      rdfs:range xsd:float ;
+      rdfs:comment "Section Properties" .
+
+
+###  https://w3id.org/2022/BMO#a-s2
+:a-s2 rdf:type owl:DatatypeProperty ;
+      rdfs:domain :MaintenanceSolution ;
+      rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#adress
+:adress rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Organization ;
+        rdfs:range xsd:string .
+
+
+###  https://w3id.org/2022/BMO#as1
+:as1 rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaintenanceSolution ;
+     rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#as2
+:as2 rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaintenanceSolution ;
+     rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#b
+:b rdf:type owl:DatatypeProperty ;
+   rdfs:domain :MaintenanceSolution ;
+   rdfs:range xsd:float ;
+   rdfs:comment "Section Properties" .
+
+
+###  https://w3id.org/2022/BMO#f-sd1
+:f-sd1 rdf:type owl:DatatypeProperty ;
+       rdfs:range xsd:float ;
+       rdfs:comment "Section Properties" .
+
+
+###  https://w3id.org/2022/BMO#f-sd2
+:f-sd2 rdf:type owl:DatatypeProperty ;
+       rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#fcd
+:fcd rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaterialType ;
+     rdfs:range xsd:float ;
+     rdfs:comment "materialProperties" .
+
+
+###  https://w3id.org/2022/BMO#fck
+:fck rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaterialType ;
+     rdfs:range xsd:float ;
+     rdfs:comment "materialProperties" .
+
+
+###  https://w3id.org/2022/BMO#fsd
+:fsd rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Bridge ;
+     rdfs:range xsd:float ;
+     rdfs:comment "materialProperties" .
+
+
+###  https://w3id.org/2022/BMO#fsd1
+:fsd1 rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#fsd2
+:fsd2 rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#fsk
+:fsk rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaterialType ;
+     rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#fsp
+:fsp rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaintenanceSolution ;
+     rdfs:range xsd:float ;
+     rdfs:comment "for Strengthening" .
+
+
+###  https://w3id.org/2022/BMO#ftd
+:ftd rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaterialType ;
+     rdfs:range xsd:float ;
+     rdfs:comment "materialProperties" .
+
+
+###  https://w3id.org/2022/BMO#ftk
+:ftk rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaterialType ;
+     rdfs:range xsd:float ;
+     rdfs:comment "materialProperties" .
+
+
+###  https://w3id.org/2022/BMO#h
+:h rdf:type owl:DatatypeProperty ;
+   rdfs:domain :MaintenanceSolution ;
+   rdfs:range xsd:float ;
+   rdfs:comment "Section Properties" .
+
+
+###  https://w3id.org/2022/BMO#h0
+:h0 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MaintenanceSolution ;
+    rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#hsp
+:hsp rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaintenanceSolution ;
+     rdfs:range xsd:float ;
+     rdfs:comment "for Strengthening" .
+
+
+###  https://w3id.org/2022/BMO#level
+:level rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Hazard ;
+       rdfs:range xsd:int .
+
+
+###  https://w3id.org/2022/BMO#maxDepth
+:maxDepth rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Hazard ;
+          rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#maxSpanLength
+:maxSpanLength rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Bridge ;
+               rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#maxWidth
+:maxWidth rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#meetRequirements
+:meetRequirements rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :MaintenanceSolution ;
+                  rdfs:range xsd:boolean .
+
+
+###  https://w3id.org/2022/BMO#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+
+###  https://w3id.org/2022/BMO#needStrengthening
+:needStrengthening rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :MaintenanceSolution ;
+                   rdfs:range xsd:boolean .
+
+
+###  https://w3id.org/2022/BMO#r0
+:r0 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MaintenanceSolution ;
+    rdfs:range xsd:float ;
+    rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#totalLength
+:totalLength rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Bridge ;
+             rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#w1
+:w1 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Bridge ;
+    rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#w2
+:w2 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Bridge ;
+    rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#w3
+:w3 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Bridge ;
+    rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#x
+:x rdf:type owl:DatatypeProperty ;
+   rdfs:domain :MaintenanceSolution ;
+   rdfs:range xsd:float .
+
+
+###  https://w3id.org/2022/BMO#x1
+:x1 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MaintenanceSolution ;
+    rdfs:range xsd:float ;
+    rdfs:comment "for Strengthening" .
+
+
+###  https://w3id.org/2022/BMO#z
+:z rdf:type owl:DatatypeProperty ;
+   rdfs:domain :BearingCapacity ;
+   rdfs:range xsd:float ;
+   rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#z-3
+:z-3 rdf:type owl:DatatypeProperty ;
+     rdfs:domain :MaintenanceSolution ;
+     rdfs:range xsd:float ;
+     rdfs:comment "for Strengthening" .
+
+
+###  https://w3id.org/2022/BMO#z1
+:z1 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :BearingCapacity ;
+    rdfs:range xsd:float ;
+    rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#z2
+:z2 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :BearingCapacity ;
+    rdfs:range xsd:float ;
+    rdfs:comment "For Bearing Capacity" .
+
+
+###  https://w3id.org/2022/BMO#z3
+:z3 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :BearingCapacity ;
+    rdfs:range xsd:float ;
+    rdfs:comment "For Bearing Capacity" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/2022/BMO#Abutment
+:Abutment rdf:type owl:Class ;
+          rdfs:subClassOf :BridgeComponent .
+
+
+###  https://w3id.org/2022/BMO#Bearing
+:Bearing rdf:type owl:Class ;
+         rdfs:subClassOf :BridgeComponent ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasMember ;
+                           owl:someValuesFrom :BoxGirder
+                         ] .
+
+
+###  https://w3id.org/2022/BMO#BearingCapacity
+:BearingCapacity rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://w3id.org/2022/BMO#BoxGirder
+:BoxGirder rdf:type owl:Class ;
+           rdfs:subClassOf :BridgeMember .
+
+
+###  https://w3id.org/2022/BMO#Break
+:Break rdf:type owl:Class ;
+       rdfs:subClassOf :Hazard ;
+       owl:disjointWith :Crack .
+
+
+###  https://w3id.org/2022/BMO#Bridge
+:Bridge rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  https://w3id.org/2022/BMO#BridgeComponent
+:BridgeComponent rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://w3id.org/2022/BMO#BridgeMember
+:BridgeMember rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing .
+
+
+###  https://w3id.org/2022/BMO#BridgeStructure
+:BridgeStructure rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://w3id.org/2022/BMO#Cloumn
+:Cloumn rdf:type owl:Class ;
+        rdfs:subClassOf :BridgeMember .
+
+
+###  https://w3id.org/2022/BMO#Concrete
+:Concrete rdf:type owl:Class ;
+          rdfs:subClassOf :MaterialType ;
+          owl:disjointWith :Steel .
+
+
+###  https://w3id.org/2022/BMO#ConcreteStrength
+:ConcreteStrength rdf:type owl:Class ;
+                  rdfs:subClassOf :MaterialCondition .
+
+
+###  https://w3id.org/2022/BMO#Crack
+:Crack rdf:type owl:Class ;
+       rdfs:subClassOf :Hazard .
+
+
+###  https://w3id.org/2022/BMO#Footing
+:Footing rdf:type owl:Class ;
+         rdfs:subClassOf :BridgeMember .
+
+
+###  https://w3id.org/2022/BMO#Foundation
+:Foundation rdf:type owl:Class ;
+            rdfs:subClassOf :BridgeComponent .
+
+
+###  https://w3id.org/2022/BMO#Hazard
+:Hazard rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  https://w3id.org/2022/BMO#MaintenanceMeasure
+:MaintenanceMeasure rdf:type owl:Class ;
+                    rdfs:subClassOf :MaintenanceSolution .
+
+
+###  https://w3id.org/2022/BMO#MaintenanceSolution
+:MaintenanceSolution rdf:type owl:Class ;
+                     rdfs:subClassOf owl:Thing .
+
+
+###  https://w3id.org/2022/BMO#MaterialCondition
+:MaterialCondition rdf:type owl:Class ;
+                   rdfs:subClassOf owl:Thing .
+
+
+###  https://w3id.org/2022/BMO#MaterialType
+:MaterialType rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing .
+
+
+###  https://w3id.org/2022/BMO#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing .
+
+
+###  https://w3id.org/2022/BMO#Pavement
+:Pavement rdf:type owl:Class ;
+          rdfs:subClassOf :BridgeComponent .
+
+
+###  https://w3id.org/2022/BMO#Pier
+:Pier rdf:type owl:Class ;
+      rdfs:subClassOf :BridgeComponent ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasMember ;
+                        owl:someValuesFrom :Cloumn
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasMember ;
+                        owl:someValuesFrom :Footing
+                      ] .
+
+
+###  https://w3id.org/2022/BMO#PotentialReason
+:PotentialReason rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://w3id.org/2022/BMO#ServiceabilityLimitStates
+:ServiceabilityLimitStates rdf:type owl:Class ;
+                           rdfs:subClassOf :BearingCapacity .
+
+
+###  https://w3id.org/2022/BMO#Steel
+:Steel rdf:type owl:Class ;
+       rdfs:subClassOf :MaterialType .
+
+
+###  https://w3id.org/2022/BMO#StrengtheningMeasure
+:StrengtheningMeasure rdf:type owl:Class ;
+                      rdfs:subClassOf :MaintenanceSolution .
+
+
+###  https://w3id.org/2022/BMO#StrengtheningWithBondedSteelPlate
+:StrengtheningWithBondedSteelPlate rdf:type owl:Class ;
+                                   rdfs:subClassOf :StrengtheningMeasure .
+
+
+###  https://w3id.org/2022/BMO#StrengtheningWithExternalPrestressing
+:StrengtheningWithExternalPrestressing rdf:type owl:Class ;
+                                       rdfs:subClassOf :StrengtheningMeasure .
+
+
+###  https://w3id.org/2022/BMO#StrengtheningWithFRP
+:StrengtheningWithFRP rdf:type owl:Class ;
+                      rdfs:subClassOf :StrengtheningMeasure .
+
+
+###  https://w3id.org/2022/BMO#Substructure
+:Substructure rdf:type owl:Class ;
+              rdfs:subClassOf :BridgeStructure .
+
+
+###  https://w3id.org/2022/BMO#Superstructure
+:Superstructure rdf:type owl:Class ;
+                rdfs:subClassOf :BridgeStructure .
+
+
+###  https://w3id.org/2022/BMO#Support
+:Support rdf:type owl:Class ;
+         rdfs:subClassOf :BridgeComponent .
+
+
+###  https://w3id.org/2022/BMO#SurfaceStructure
+:SurfaceStructure rdf:type owl:Class ;
+                  rdfs:subClassOf :BridgeStructure .
+
+
+###  https://w3id.org/2022/BMO#Tower
+:Tower rdf:type owl:Class ;
+       rdfs:subClassOf :BridgeComponent .
+
+
+###  https://w3id.org/2022/BMO#UltimateLimitStates
+:UltimateLimitStates rdf:type owl:Class ;
+                     rdfs:subClassOf :BearingCapacity .
+
+
+###  https://w3id.org/2022/BMO#UpperTower
+:UpperTower rdf:type owl:Class ;
+            rdfs:subClassOf :BridgeMember .
+
+
+###  https://w3id.org/2022/BMO#VisualCondition
+:VisualCondition rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/2022/BMO#C30
+:C30 rdf:type owl:NamedIndividual ,
+              :Concrete ,
+              :MaterialCondition ;
+     :Ec "3.0E7"^^xsd:float ;
+     :Rd "30000.0"^^xsd:float ;
+     :fcd "13800.0"^^xsd:float ;
+     :fck "20100.0"^^xsd:float ;
+     :ftd "1390.0"^^xsd:float ;
+     :ftk "2010.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#C40
+:C40 rdf:type owl:NamedIndividual ,
+              :Concrete ,
+              :MaterialCondition ;
+     :Ec "3.25E7"^^xsd:float ;
+     :Rd "40000.0"^^xsd:float ;
+     :fcd "18400.0"^^xsd:float ;
+     :fck "26800.0"^^xsd:float ;
+     :ftd "1650.0"^^xsd:float ;
+     :ftk "2400.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#C45
+:C45 rdf:type owl:NamedIndividual ,
+              :Concrete ;
+     :Ec "3.35E7"^^xsd:float ;
+     :fcd "20500.0"^^xsd:float ;
+     :fck "29600.0"^^xsd:float ;
+     :ftd "1740.0"^^xsd:float ;
+     :ftk "2510.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#C50
+:C50 rdf:type owl:NamedIndividual ,
+              :Concrete ,
+              :MaterialCondition ;
+     :Ec "3.45E7"^^xsd:float ;
+     :Rd "50000.0"^^xsd:float ;
+     :fcd "22400.0"^^xsd:float ;
+     :fck "32400.0"^^xsd:float ;
+     :ftd "1830.0"^^xsd:float ;
+     :ftk "2650.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#C55
+:C55 rdf:type owl:NamedIndividual ,
+              :Concrete ,
+              :MaterialCondition ;
+     :Ec "3.55E7"^^xsd:float ;
+     :Rd "55000.0"^^xsd:float ;
+     :fcd "24400.0"^^xsd:float ;
+     :fck "35500.0"^^xsd:float ;
+     :ftd "1890.0"^^xsd:float ;
+     :ftk "2740.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#C60
+:C60 rdf:type owl:NamedIndividual ,
+              :Concrete ,
+              :MaterialCondition ;
+     :Ec "3.6E7"^^xsd:float ;
+     :Rd "60000.0"^^xsd:float ;
+     :fcd "26500.0"^^xsd:float ;
+     :fck "38500.0"^^xsd:float ;
+     :ftd "1960.0"^^xsd:float ;
+     :ftk "2850.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#ChangshanBridge
+:ChangshanBridge rdf:type owl:NamedIndividual ,
+                          :Bridge ,
+                          :VisualCondition ;
+                 :BDCI "83.52"^^xsd:float ;
+                 :SBCI "100.0"^^xsd:float ;
+                 :SPCI "86.59"^^xsd:float ;
+                 rdfs:comment "This bridge is a cable-stayed bridge with 540m (140m+260m+140m) long located in Dalian, Liaoning Province. Its main beam is connected with the pier and tower in the form of consolidation." .
+
+
+###  https://w3id.org/2022/BMO#Construction
+:Construction rdf:type owl:NamedIndividual ,
+                       :PotentialReason .
+
+
+###  https://w3id.org/2022/BMO#Crack1
+:Crack1 rdf:type owl:NamedIndividual ,
+                 :Crack ;
+        :maxWidth "3.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#CrackSealGlue
+:CrackSealGlue rdf:type owl:NamedIndividual ,
+                        :MaterialType .
+
+
+###  https://w3id.org/2022/BMO#Design
+:Design rdf:type owl:NamedIndividual ,
+                 :PotentialReason .
+
+
+###  https://w3id.org/2022/BMO#EpoxyResin
+:EpoxyResin rdf:type owl:NamedIndividual ,
+                     :MaterialType .
+
+
+###  https://w3id.org/2022/BMO#HRB335
+:HRB335 rdf:type owl:NamedIndividual ,
+                 :Steel ;
+        :Es "2.0E8"^^xsd:float ;
+        :fsd "280000.0"^^xsd:float ;
+        :fsk "335000.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#HRB400
+:HRB400 rdf:type owl:NamedIndividual ,
+                 :Steel ;
+        :Es "2.0E8"^^xsd:float ;
+        :fsd "330000.0"^^xsd:float ;
+        :fsk "400000.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#HRB500
+:HRB500 rdf:type owl:NamedIndividual ,
+                 :Steel ;
+        :Es "2.0E8"^^xsd:float ;
+        :fsd "415000.0"^^xsd:float ;
+        :fsk "500000.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#HeavyMaintenance
+:HeavyMaintenance rdf:type owl:NamedIndividual ,
+                           :MaintenanceMeasure .
+
+
+###  https://w3id.org/2022/BMO#IntermediateMaintenance
+:IntermediateMaintenance rdf:type owl:NamedIndividual ,
+                                  :MaintenanceMeasure .
+
+
+###  https://w3id.org/2022/BMO#Load
+:Load rdf:type owl:NamedIndividual ,
+               :PotentialReason .
+
+
+###  https://w3id.org/2022/BMO#MadInprovement
+:MadInprovement rdf:type owl:NamedIndividual ,
+                         :MaintenanceMeasure .
+
+
+###  https://w3id.org/2022/BMO#NeathSwingBridge
+:NeathSwingBridge rdf:type owl:NamedIndividual ,
+                           :Bridge ;
+                  :hasHazard :Crack1 .
+
+
+###  https://w3id.org/2022/BMO#NormalMaintenance
+:NormalMaintenance rdf:type owl:NamedIndividual ,
+                            :MaintenanceMeasure .
+
+
+###  https://w3id.org/2022/BMO#PressureInfusion
+:PressureInfusion rdf:type owl:NamedIndividual ,
+                           :MaintenanceMeasure .
+
+
+###  https://w3id.org/2022/BMO#Q235
+:Q235 rdf:type owl:NamedIndividual ,
+               :Steel ;
+      :Es "2.06E8"^^xsd:float ;
+      :fcd "195000.0"^^xsd:float ;
+      :fsd "195000.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#Q355
+:Q355 rdf:type owl:NamedIndividual ,
+               :Steel ;
+      :Es "2.06E8"^^xsd:float ;
+      :fcd "295000.0"^^xsd:float ;
+      :fsd "295000.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#Q390
+:Q390 rdf:type owl:NamedIndividual ,
+               :Steel ;
+      :Es "2.06E8"^^xsd:float ;
+      :fcd "325000.0"^^xsd:float ;
+      :fsd "325000.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#Q420
+:Q420 rdf:type owl:NamedIndividual ,
+               :Steel ;
+      :Es "2.06E8"^^xsd:float ;
+      :fcd "350000.0"^^xsd:float ;
+      :fsd "350000.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#RoutineMaintenance
+:RoutineMaintenance rdf:type owl:NamedIndividual ,
+                             :MaintenanceMeasure .
+
+
+###  https://w3id.org/2022/BMO#SurfaceClosure
+:SurfaceClosure rdf:type owl:NamedIndividual ,
+                         :MaintenanceMeasure .
+
+
+###  https://w3id.org/2022/BMO#Temperature
+:Temperature rdf:type owl:NamedIndividual ,
+                      :PotentialReason .
+
+
+###  https://w3id.org/2022/BMO#13-BoxGirder
+<https://w3id.org/2022/BMO#13-BoxGirder> rdf:type owl:NamedIndividual ,
+                                                  :BoxGirder ,
+                                                  :MaterialCondition ;
+                                         :hasMaterialType :C55 ;
+                                         :Rit "59700.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#13-1-UpperTower
+<https://w3id.org/2022/BMO#13-1-UpperTower> rdf:type owl:NamedIndividual ,
+                                                     :MaterialCondition ,
+                                                     :UpperTower ;
+                                            :hasMaterialType :C50 ;
+                                            :Rit "39500.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#14-BoxGirder
+<https://w3id.org/2022/BMO#14-BoxGirder> rdf:type owl:NamedIndividual ,
+                                                  :BoxGirder ,
+                                                  :MaterialCondition ;
+                                         :hasMaterialType :C55 ;
+                                         :Rit "57600.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#14-1-UpperTower
+<https://w3id.org/2022/BMO#14-1-UpperTower> rdf:type owl:NamedIndividual ,
+                                                     :MaterialCondition ,
+                                                     :UpperTower ;
+                                            :hasMaterialType :C50 ;
+                                            :Rit "53100.0"^^xsd:float .
+
+
+###  https://w3id.org/2022/BMO#15-BoxGirder
+<https://w3id.org/2022/BMO#15-BoxGirder> rdf:type owl:NamedIndividual ,
+                                                  :BoxGirder ,
+                                                  :MaterialCondition ;
+                                         :hasMaterialType :C55 ;
+                                         :Rit "59700.0"^^xsd:float .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Abutment
+                :Bearing
+                :Foundation
+                :Pavement
+                :Pier
+                :Support
+                :Tower
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BoxGirder
+                :Cloumn
+                :Footing
+                :UpperTower
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Substructure
+                :Superstructure
+                :SurfaceStructure
+              )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:B rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:C rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:y rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:n rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S4" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Crack ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :maxWidth ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :y ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 10 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :level ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> 4
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S3" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Crack ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                  <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                               rdf:first :y ;
+                                                                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                                                                          rdf:first 10 ;
+                                                                                                                          rdf:rest rdf:nil
+                                                                                                                        ]
+                                                                                                             ]
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :maxWidth ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first :y ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 3 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :level ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> 3
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "related to bridge" ;
+   rdfs:label "S8" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Bridge ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :B
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasHazard ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :B ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :C
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :Crack ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :C
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasMaintenanceSolution ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> :needMaterial ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> :n
+                                                                                                 ] ;
+                                                                                       rdf:rest rdf:nil
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasMaintenanceSolution ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :B ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :needMaterial ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :B ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :n
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Potential Reason" ;
+   rdfs:label "S5" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Crack ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :level ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :y ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 1 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasPotentialReason ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :Temperature
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasPotentialReason ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :Load
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasPotentialReason ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :Design
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasPotentialReason ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :Construction
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S7" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Crack ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :maxWidth ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :y ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 0.15 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasMaintenanceSolution ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :PressureInfusion
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :needMaterial ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :EpoxyResin
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Solution" ;
+   rdfs:label "S6" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Crack ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :maxWidth ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :y ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 0.15 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first :y ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 0 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasMaintenanceSolution ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :SurfaceClosure
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :needMaterial ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :CrackSealGlue
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S2" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Crack ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :maxWidth ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :y ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 0 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first :y ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 3 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :level ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> 2
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "crack level" ;
+   rdfs:label "S1" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Crack ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :maxWidth ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :y ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 0 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :level ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :C ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> 1
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
