@@ -1,11 +1,8 @@
 # Bridge Maintenance Ontology (BMO)
 
-Ontology  
-
-*redirects to   https://github.com/JYL61/BMO/blob/main/index-en.html
+The application domain of the BMO is the bridge maintenance field. The BMO is designed to improve the management of maintenance knowledge of bridge lifecycle, and to provide more valuable information for bridge engineers to make holistic decisions.
 
 
+## Important hint
 
-Contacts
-
-*yali Jiang <Jiangy61@cardiff.ac.uk>, @JYL61 
+The ontology is published here: https://jyl61.github.io/BMO/ . You can visually understand the srr ontology.
