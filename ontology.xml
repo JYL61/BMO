@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://w3id.org/2022/BMO#"
-     xml:base="https://w3id.org/2022/BMO"
-     xmlns:BMO="https://w3id.org/2022/BMO#"
+<rdf:RDF xmlns="https://w3id.org/BMO#"
+     xml:base="https://w3id.org/BMO"
+     xmlns:BMO="https://w3id.org/BMO#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -10,8 +10,8 @@
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
-    <owl:Ontology rdf:about="https://w3id.org/2022/BMO">
-        <owl:versionIRI rdf:resource="https://w3id.org/2022/BMO/1.0.0"/>
+    <owl:Ontology rdf:about="https://w3id.org/BMO">
+        <owl:versionIRI rdf:resource="https://w3id.org/BMO/1.0.0"/>
         <rdfs:comment>The application domain of the BMO is the bridge maintenance field. The BMO is designed to improve the management of maintenance knowledge of bridge lifecycle, and to provide more valuable information for bridge engineers to make holistic decisions.</rdfs:comment>
         <owl:title>Bridge Maintenance Ontology (BMO)</owl:title>
         <owl:versionInfo>v1.0.0</owl:versionInfo>
@@ -53,10 +53,10 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#Author -->
+    <!-- https://w3id.org/BMO#Author -->
 
 
-    <owl:AnnotationProperty rdf:about="https://w3id.org/2022/BMO#Author"/>
+    <owl:AnnotationProperty rdf:about="https://w3id.org/BMO#Author"/>
     
 
 
@@ -72,202 +72,232 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#build -->
+    <!-- https://w3id.org/BMO#build -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#build">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#build">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/2022/BMO#buildBy"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Organization"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/BMO#buildBy"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Organization"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#Bridge"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#buildBy -->
+    <!-- https://w3id.org/BMO#buildBy -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#buildBy">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#buildBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#Organization"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#Organization"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#hasCapacity -->
+    <!-- https://w3id.org/BMO#hasCapacity -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#hasCapacity">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasCapacity">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#BearingCapacity"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#BearingCapacity"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#hasComponent -->
+    <!-- https://w3id.org/BMO#hasComponent -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#hasComponent">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasComponent">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/2022/BMO#isComponentOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BridgeStructure"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#BridgeComponent"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/BMO#isComponentOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BridgeStructure"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#hasHazard -->
+    <!-- https://w3id.org/BMO#hasHazard -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#hasHazard">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#Hazard"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasHazard">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#Hazard"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#hasMaintenanceSolution -->
+    <!-- https://w3id.org/BMO#hasMaintenanceSolution -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#hasMaintenanceSolution">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasMaintenanceSolution">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#hasMaterialCondition -->
+    <!-- https://w3id.org/BMO#hasMaterialCondition -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#hasMaterialCondition">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasMaterialCondition">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#hasMaterialType -->
+    <!-- https://w3id.org/BMO#hasMaterialType -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#hasMaterialType">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasMaterialType">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#Material"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#hasMember -->
+    <!-- https://w3id.org/BMO#hasMember -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#hasMember">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasMember">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/2022/BMO#isMemberOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BridgeComponent"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#BridgeMember"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/BMO#isMemberOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#BridgeMember"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#hasPotentialReason -->
+    <!-- https://w3id.org/BMO#hasPotentialReason -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#hasPotentialReason">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Hazard"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#PotentialReason"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasPotentialReason">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Hazard"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#PotentialReason"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#hasStructure -->
+    <!-- https://w3id.org/BMO#hasStructure -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#hasStructure">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasStructure">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/2022/BMO#isStructureOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#BridgeStructure"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/BMO#isStructureOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#BridgeStructure"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#hasVisualCondition -->
+    <!-- https://w3id.org/BMO#hasTerms -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#hasVisualCondition">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasTerms">
+        <owl:inverseOf rdf:resource="https://w3id.org/BMO#termsIn"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#hasVisualCondition -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasVisualCondition">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#VisualCondition"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#VisualCondition"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#isComponentOf -->
+    <!-- https://w3id.org/BMO#isComponentOf -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#isComponentOf">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#isComponentOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BridgeComponent"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#BridgeStructure"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#BridgeStructure"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#isMemberOf -->
+    <!-- https://w3id.org/BMO#isMemberOf -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#isMemberOf">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#isMemberOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BridgeMember"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#BridgeComponent"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BridgeMember"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#isStructureOf -->
+    <!-- https://w3id.org/BMO#isStructureOf -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#isStructureOf">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#isStructureOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BridgeStructure"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BridgeStructure"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#Bridge"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#manage -->
+    <!-- https://w3id.org/BMO#manage -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#manage">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#manage">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/2022/BMO#managedBy"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Organization"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/BMO#managedBy"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Organization"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#Bridge"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#managedBy -->
+    <!-- https://w3id.org/BMO#managedBy -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#managedBy">
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#managedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#Organization"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#Organization"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#needMaterial -->
+    <!-- https://w3id.org/BMO#needMaterial -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/2022/BMO#needMaterial">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-        <rdfs:range rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#needMaterial">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#supplyMaterials -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#supplyMaterials">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaterialSupplier"/>
+        <rdfs:range rdf:resource="https://w3id.org/BMO#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#termsIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#termsIn">
+        <rdfs:range rdf:resource="https://w3id.org/BMO#Standard"/>
     </owl:ObjectProperty>
     
 
@@ -284,790 +314,800 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#A-s1 -->
+    <!-- https://w3id.org/BMO#A-s1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#A-s1">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#A-s1">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>Section Properties</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#A-s2 -->
+    <!-- https://w3id.org/BMO#A-s2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#A-s2">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#A-s2">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#As1 -->
+    <!-- https://w3id.org/BMO#As1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#As1">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#As1">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#As2 -->
+    <!-- https://w3id.org/BMO#As2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#As2">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#As2">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#BDCI -->
+    <!-- https://w3id.org/BMO#BDCI -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#BDCI">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#VisualCondition"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#BDCI">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#VisualCondition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>for Visual Condition</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Dj -->
+    <!-- https://w3id.org/BMO#Dj -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Dj">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#VisualCondition"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Dj">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#VisualCondition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:comment>for Visual Condition</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Dr -->
+    <!-- https://w3id.org/BMO#Dr -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Dr">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#VisualCondition"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Dr">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#VisualCondition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>for Visual Condition</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Ec -->
+    <!-- https://w3id.org/BMO#Ec -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Ec">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Ec">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>materialProperties</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Es -->
+    <!-- https://w3id.org/BMO#Es -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Es">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Es">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>materialProperties</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#F-sd1 -->
+    <!-- https://w3id.org/BMO#F-sd1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#F-sd1">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#F-sd1">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#F-sd2 -->
+    <!-- https://w3id.org/BMO#F-sd2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#F-sd2">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#F-sd2">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Fcd -->
+    <!-- https://w3id.org/BMO#Fcd -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Fcd">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Fcd">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Fobj -->
+    <!-- https://w3id.org/BMO#Fobj -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Fobj">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Fobj">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Fsd1 -->
+    <!-- https://w3id.org/BMO#Fsd1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Fsd1">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Fsd1">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Fsd2 -->
+    <!-- https://w3id.org/BMO#Fsd2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Fsd2">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Fsd2">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#ID -->
+    <!-- https://w3id.org/BMO#ID -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#ID">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#ID">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Kbt -->
+    <!-- https://w3id.org/BMO#Kbt -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Kbt">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Kbt">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>materialCondition</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Md -->
+    <!-- https://w3id.org/BMO#Md -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Md">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Md">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>for Strengthening</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Md1 -->
+    <!-- https://w3id.org/BMO#Md1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Md1">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Md1">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>for Strengthening</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Md2 -->
+    <!-- https://w3id.org/BMO#Md2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Md2">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Md2">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>for Strengthening</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#R -->
+    <!-- https://w3id.org/BMO#R -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#R">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#R">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#R1 -->
+    <!-- https://w3id.org/BMO#R1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#R1">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#R1">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#R2 -->
+    <!-- https://w3id.org/BMO#R2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#R2">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#R2">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#R3 -->
+    <!-- https://w3id.org/BMO#R3 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#R3">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#R3">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#R3-1 -->
+    <!-- https://w3id.org/BMO#R3-1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#R3-1"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#R3-1"/>
     
 
 
-    <!-- https://w3id.org/2022/BMO#R3-2 -->
+    <!-- https://w3id.org/BMO#R3-2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#R3-2"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#R3-2"/>
     
 
 
-    <!-- https://w3id.org/2022/BMO#R3-3 -->
+    <!-- https://w3id.org/BMO#R3-3 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#R3-3"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#R3-3"/>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Rd -->
+    <!-- https://w3id.org/BMO#Rd -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Rd">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Rd">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>materialCondition</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Rit -->
+    <!-- https://w3id.org/BMO#Rit -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Rit">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Rit">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>materialCondition</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#S -->
+    <!-- https://w3id.org/BMO#S -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#S">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BearingCapacity"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#S">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BearingCapacity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#S1 -->
+    <!-- https://w3id.org/BMO#S1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#S1">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BearingCapacity"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#S1">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BearingCapacity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#S2 -->
+    <!-- https://w3id.org/BMO#S2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#S2">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BearingCapacity"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#S2">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BearingCapacity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#S3 -->
+    <!-- https://w3id.org/BMO#S3 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#S3">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BearingCapacity"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#S3">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BearingCapacity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#SBCI -->
+    <!-- https://w3id.org/BMO#SBCI -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#SBCI">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#VisualCondition"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#SBCI">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#VisualCondition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>for Visual Condition</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#SPCI -->
+    <!-- https://w3id.org/BMO#SPCI -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#SPCI">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#SPCI">
         <rdfs:comment>for Visual Condition</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Sj -->
+    <!-- https://w3id.org/BMO#Sj -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Sj">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Sj">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:comment>materialCondition</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Zj -->
+    <!-- https://w3id.org/BMO#Zj -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#Zj">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BearingCapacity"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Zj">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BearingCapacity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#a-s -->
+    <!-- https://w3id.org/BMO#a-s -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#a-s">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#a-s">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#a-s1 -->
+    <!-- https://w3id.org/BMO#a-s1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#a-s1">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#a-s1">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>Section Properties</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#a-s2 -->
+    <!-- https://w3id.org/BMO#a-s2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#a-s2">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#a-s2">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#adress -->
+    <!-- https://w3id.org/BMO#address -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#adress">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Organization"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#address">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Organization"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#as1 -->
+    <!-- https://w3id.org/BMO#as1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#as1">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#as1">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#as2 -->
+    <!-- https://w3id.org/BMO#as2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#as2">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#as2">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#b -->
+    <!-- https://w3id.org/BMO#b -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#b">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment>Section Properties</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#f-sd1 -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#f-sd1">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#b">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>Section Properties</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#f-sd2 -->
+    <!-- https://w3id.org/BMO#f-sd1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#f-sd2">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#f-sd1">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Section Properties</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#f-sd2 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#f-sd2">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#fcd -->
+    <!-- https://w3id.org/BMO#fcd -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#fcd">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment>materialProperties</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#fck -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#fck">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment>materialProperties</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#fsd -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#fsd">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#fcd">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>materialProperties</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#fsd1 -->
+    <!-- https://w3id.org/BMO#fck -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#fsd1">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#fck">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>materialProperties</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#fsd -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#fsd">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>materialProperties</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#fsd1 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#fsd1">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#fsd2 -->
+    <!-- https://w3id.org/BMO#fsd2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#fsd2">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#fsd2">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#fsk -->
+    <!-- https://w3id.org/BMO#fsk -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#fsk">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#fsk">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#fsp -->
+    <!-- https://w3id.org/BMO#fsp -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#fsp">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#fsp">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>for Strengthening</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#ftd -->
+    <!-- https://w3id.org/BMO#ftd -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#ftd">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#ftd">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>materialProperties</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#ftk -->
+    <!-- https://w3id.org/BMO#ftk -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#ftk">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#ftk">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>materialProperties</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#h -->
+    <!-- https://w3id.org/BMO#h -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#h">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#h">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>Section Properties</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#h0 -->
+    <!-- https://w3id.org/BMO#h0 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#h0">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#h0">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#hsp -->
+    <!-- https://w3id.org/BMO#hsp -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#hsp">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#hsp">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>for Strengthening</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#level -->
+    <!-- https://w3id.org/BMO#level -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#level">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Hazard"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#level">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Hazard"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#maxDepth -->
+    <!-- https://w3id.org/BMO#maxDepth -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#maxDepth">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Hazard"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#maxDepth">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Hazard"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#maxSpanLength -->
+    <!-- https://w3id.org/BMO#maxSpanLength -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#maxSpanLength">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#maxSpanLength">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#maxWidth -->
+    <!-- https://w3id.org/BMO#maxWidth -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#maxWidth">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#maxWidth">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#meetRequirements -->
+    <!-- https://w3id.org/BMO#meetRequirements -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#meetRequirements">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#meetRequirements">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#name -->
+    <!-- https://w3id.org/BMO#name -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#name">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#name">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#needStrengthening -->
+    <!-- https://w3id.org/BMO#needStrengthening -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#needStrengthening">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#needStrengthening">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#r0 -->
+    <!-- https://w3id.org/BMO#price -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#r0">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#price">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#r0 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#r0">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#totalLength -->
+    <!-- https://w3id.org/BMO#totalLength -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#totalLength">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#totalLength">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#w1 -->
+    <!-- https://w3id.org/BMO#w1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#w1">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#w1">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#w2 -->
+    <!-- https://w3id.org/BMO#w2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#w2">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#w2">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#w3 -->
+    <!-- https://w3id.org/BMO#w3 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#w3">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#w3">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#x -->
+    <!-- https://w3id.org/BMO#x -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#x">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#x">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#x1 -->
+    <!-- https://w3id.org/BMO#x1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#x1">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#x1">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>for Strengthening</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#z -->
+    <!-- https://w3id.org/BMO#z -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#z">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BearingCapacity"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#z">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BearingCapacity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#z-3 -->
+    <!-- https://w3id.org/BMO#z-3 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#z-3">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#z-3">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>for Strengthening</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#z1 -->
+    <!-- https://w3id.org/BMO#z1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#z1">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BearingCapacity"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#z1">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BearingCapacity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#z2 -->
+    <!-- https://w3id.org/BMO#z2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#z2">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BearingCapacity"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#z2">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BearingCapacity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/2022/BMO#z3 -->
+    <!-- https://w3id.org/BMO#z3 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/2022/BMO#z3">
-        <rdfs:domain rdf:resource="https://w3id.org/2022/BMO#BearingCapacity"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#z3">
+        <rdfs:domain rdf:resource="https://w3id.org/BMO#BearingCapacity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>For Bearing Capacity</rdfs:comment>
     </owl:DatatypeProperty>
@@ -1086,364 +1126,835 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#Abutment -->
+    <!-- https://w3id.org/BMO#Abutment -->
 
 
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Abutment">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeComponent"/>
+    <owl:Class rdf:about="https://w3id.org/BMO#Abutment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Bearing -->
+    <!-- https://w3id.org/BMO#Bearing -->
 
 
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Bearing">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeComponent"/>
+    <owl:Class rdf:about="https://w3id.org/BMO#Bearing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/2022/BMO#hasMember"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/2022/BMO#BoxGirder"/>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMember"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#BoxGirder"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/2022/BMO#BearingCapacity -->
+    <!-- https://w3id.org/BMO#BearingCapacity -->
 
 
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#BearingCapacity">
+    <owl:Class rdf:about="https://w3id.org/BMO#BearingCapacity">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#BoxGirder -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#BoxGirder">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeMember"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Break -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Break">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#Hazard"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/2022/BMO#Crack"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Bridge -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Bridge">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#BridgeComponent -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#BridgeComponent">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#BridgeMember -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#BridgeMember">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#BridgeStructure -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#BridgeStructure">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Cloumn -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Cloumn">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeMember"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Concrete -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Concrete">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/2022/BMO#Steel"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#ConcreteStrength -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#ConcreteStrength">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Crack -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Crack">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#Hazard"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Footing -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Footing">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeMember"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Foundation -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Foundation">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeComponent"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Hazard -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Hazard">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#MaintenanceMeasure -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#MaintenanceMeasure">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#MaintenanceSolution -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#MaintenanceSolution">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#MaterialCondition -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#MaterialCondition">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#MaterialType -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#MaterialType">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Organization -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Organization">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Pavement -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Pavement">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeComponent"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Pier -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Pier">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeComponent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/2022/BMO#hasMember"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/2022/BMO#Cloumn"/>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5120-2021"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/2022/BMO#hasMember"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/2022/BMO#Footing"/>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TJ21-2011"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/2022/BMO#PotentialReason -->
+    <!-- https://w3id.org/BMO#BoxGirder -->
 
 
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#PotentialReason">
+    <owl:Class rdf:about="https://w3id.org/BMO#BoxGirder">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeMember"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Break -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Break">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Hazard"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/BMO#Crack"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Bridge -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Bridge">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#CJJ99-2017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#CJJT239-2016"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#GB1589-2016"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JIGB01-2014"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG3362-2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5120-2021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5142-2019"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTGD60-2015"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/T2231-01-2020"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TH21-2011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TJ21-2011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TJ22-2008"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TJ23-2008"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTGF80/1-2017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#[2007]No.336"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#[2013]No.321"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#[2018]No.33"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#BridgeComponent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#BridgeComponent">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5120-2021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TH21-2011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#BridgeMember -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#BridgeMember">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5120-2021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TH21-2011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#BridgeStructure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#BridgeStructure">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5120-2021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TH21-2011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#CJJ99-2017 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#CJJ99-2017">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#CJJT239-2016 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#CJJT239-2016">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Cloumn -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Cloumn">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeMember"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Concrete -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Concrete">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Material"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/BMO#Steel"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#ConcreteStrength -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#ConcreteStrength">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Crack -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Crack">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Hazard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Footing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Footing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeMember"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Foundation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Foundation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#GB1589-2016 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#GB1589-2016">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Hazard -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Hazard">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5120-2021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TH21-2011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#JIGB01-2014 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#JIGB01-2014">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#JTG3362-2018 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#JTG3362-2018">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#JTG5120-2021 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#JTG5120-2021">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#JTG5142-2019 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#JTG5142-2019">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#JTGD60-2015 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#JTGD60-2015">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#MaintenanceMeasure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#MaintenanceMeasure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#MaintenanceSolution -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#MaintenanceSolution">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#CJJ99-2017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5120-2021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5142-2019"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TH21-2011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Material -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Material">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#CJJ99-2017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#CJJT239-2016"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#GB1589-2016"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JIGB01-2014"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG3362-2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5120-2021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5142-2019"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTGD60-2015"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/T2231-01-2020"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TJ23-2008"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTGF80/1-2017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#[2007]No.336"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#[2013]No.321"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#MaterialCondition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#MaterialCondition">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5120-2021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#MaterialSupplier -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#MaterialSupplier">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/2022/BMO#ServiceabilityLimitStates -->
+    <!-- https://w3id.org/BMO#Organization -->
 
 
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#ServiceabilityLimitStates">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BearingCapacity"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Steel -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Steel">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#StrengtheningMeasure -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#StrengtheningMeasure">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#MaintenanceSolution"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#StrengtheningWithBondedSteelPlate -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#StrengtheningWithBondedSteelPlate">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#StrengtheningMeasure"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#StrengtheningWithExternalPrestressing -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#StrengtheningWithExternalPrestressing">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#StrengtheningMeasure"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#StrengtheningWithFRP -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#StrengtheningWithFRP">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#StrengtheningMeasure"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Substructure -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Substructure">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeStructure"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Superstructure -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Superstructure">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeStructure"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Support -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Support">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeComponent"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#SurfaceStructure -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#SurfaceStructure">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeStructure"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#Tower -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#Tower">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeComponent"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#UltimateLimitStates -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#UltimateLimitStates">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BearingCapacity"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#UpperTower -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#UpperTower">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/2022/BMO#BridgeMember"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/2022/BMO#VisualCondition -->
-
-
-    <owl:Class rdf:about="https://w3id.org/2022/BMO#VisualCondition">
+    <owl:Class rdf:about="https://w3id.org/BMO#Organization">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5120-2021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TH21-2011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Pavement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Pavement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Pier -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Pier">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMember"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#Cloumn"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMember"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#Footing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#PotentialReason -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#PotentialReason">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG5120-2021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TH21-2011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#ServiceabilityLimitStates -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#ServiceabilityLimitStates">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BearingCapacity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Standard -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Standard">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Steel -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Steel">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#StrengtheningMeasure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#StrengtheningMeasure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaintenanceSolution"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#StrengtheningWithBondedSteelPlate -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#StrengtheningWithBondedSteelPlate">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#StrengtheningMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#StrengtheningWithExternalPrestressing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#StrengtheningWithExternalPrestressing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#StrengtheningMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#StrengtheningWithFRP -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#StrengtheningWithFRP">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#StrengtheningMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Substructure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Substructure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Superstructure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Superstructure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Support -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Support">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#SurfaceStructure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#SurfaceStructure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Tower -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Tower">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#UltimateLimitStates -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#UltimateLimitStates">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BearingCapacity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#UpperTower -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#UpperTower">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeMember"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#VisualCondition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#VisualCondition">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#JTG/TH21-2011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#JTG/T2231-01-2020 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#JTG/T2231-01-2020">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#JTG/TH21-2011 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#JTG/TH21-2011">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#JTG/TJ21-2011 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#JTG/TJ21-2011">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#JTG/TJ22-2008 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#JTG/TJ22-2008">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#JTG/TJ23-2008 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#JTG/TJ23-2008">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#JTGF80/1-2017 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#JTGF80/1-2017">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#[2007]No.336 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#[2007]No.336">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#[2013]No.321 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#[2013]No.321">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#[2018]No.33 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#[2018]No.33">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
     </owl:Class>
     
 
@@ -1460,12 +1971,12 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#C30 -->
+    <!-- https://w3id.org/BMO#C30 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#C30">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Concrete"/>
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#C30">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Concrete"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <Ec rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0E7</Ec>
         <Rd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">30000.0</Rd>
         <fcd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">13800.0</fcd>
@@ -1476,12 +1987,12 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#C40 -->
+    <!-- https://w3id.org/BMO#C40 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#C40">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Concrete"/>
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#C40">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Concrete"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <Ec rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.25E7</Ec>
         <Rd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">40000.0</Rd>
         <fcd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">18400.0</fcd>
@@ -1492,11 +2003,11 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#C45 -->
+    <!-- https://w3id.org/BMO#C45 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#C45">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Concrete"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#C45">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Concrete"/>
         <Ec rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.35E7</Ec>
         <fcd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20500.0</fcd>
         <fck rdf:datatype="http://www.w3.org/2001/XMLSchema#float">29600.0</fck>
@@ -1506,12 +2017,12 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#C50 -->
+    <!-- https://w3id.org/BMO#C50 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#C50">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Concrete"/>
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#C50">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Concrete"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <Ec rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.45E7</Ec>
         <Rd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50000.0</Rd>
         <fcd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">22400.0</fcd>
@@ -1522,12 +2033,12 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#C55 -->
+    <!-- https://w3id.org/BMO#C55 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#C55">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Concrete"/>
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#C55">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Concrete"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <Ec rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.55E7</Ec>
         <Rd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">55000.0</Rd>
         <fcd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">24400.0</fcd>
@@ -1538,12 +2049,12 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#C60 -->
+    <!-- https://w3id.org/BMO#C60 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#C60">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Concrete"/>
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#C60">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Concrete"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <Ec rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.6E7</Ec>
         <Rd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60000.0</Rd>
         <fcd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">26500.0</fcd>
@@ -1554,12 +2065,12 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#ChangshanBridge -->
+    <!-- https://w3id.org/BMO#ChangshanBridge -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#ChangshanBridge">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#VisualCondition"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#ChangshanBridge">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#VisualCondition"/>
         <BDCI rdf:datatype="http://www.w3.org/2001/XMLSchema#float">83.52</BDCI>
         <SBCI rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</SBCI>
         <SPCI rdf:datatype="http://www.w3.org/2001/XMLSchema#float">86.59</SPCI>
@@ -1568,57 +2079,57 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#Construction -->
+    <!-- https://w3id.org/BMO#Construction -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#Construction">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#PotentialReason"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Construction">
+        <rdf:type rdf:resource="https://w3id.org/BMO#PotentialReason"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Crack1 -->
+    <!-- https://w3id.org/BMO#Crack1 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#Crack1">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Crack"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Crack1">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Crack"/>
         <maxWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0</maxWidth>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#CrackSealGlue -->
+    <!-- https://w3id.org/BMO#CrackSealGlue -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#CrackSealGlue">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#CrackSealGlue">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Material"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Design -->
+    <!-- https://w3id.org/BMO#Design -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#Design">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#PotentialReason"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Design">
+        <rdf:type rdf:resource="https://w3id.org/BMO#PotentialReason"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#EpoxyResin -->
+    <!-- https://w3id.org/BMO#EpoxyResin -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#EpoxyResin">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaterialType"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#EpoxyResin">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Material"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#HRB335 -->
+    <!-- https://w3id.org/BMO#HRB335 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#HRB335">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Steel"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#HRB335">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Steel"/>
         <Es rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0E8</Es>
         <fsd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">280000.0</fsd>
         <fsk rdf:datatype="http://www.w3.org/2001/XMLSchema#float">335000.0</fsk>
@@ -1626,11 +2137,11 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#HRB400 -->
+    <!-- https://w3id.org/BMO#HRB400 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#HRB400">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Steel"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#HRB400">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Steel"/>
         <Es rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0E8</Es>
         <fsd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">330000.0</fsd>
         <fsk rdf:datatype="http://www.w3.org/2001/XMLSchema#float">400000.0</fsk>
@@ -1638,11 +2149,11 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#HRB500 -->
+    <!-- https://w3id.org/BMO#HRB500 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#HRB500">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Steel"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#HRB500">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Steel"/>
         <Es rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0E8</Es>
         <fsd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">415000.0</fsd>
         <fsk rdf:datatype="http://www.w3.org/2001/XMLSchema#float">500000.0</fsk>
@@ -1650,75 +2161,79 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#HeavyMaintenance -->
+    <!-- https://w3id.org/BMO#HeavyMaintenance -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#HeavyMaintenance">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaintenanceMeasure"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#HeavyMaintenance">
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaintenanceMeasure"/>
+        <rdfs:comment>Measures, such as strengthening, replacement or adjustment of internal forces, need to be taken to make the bridge fit for use.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#IntermediateMaintenance -->
+    <!-- https://w3id.org/BMO#IntermediateMaintenance -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#IntermediateMaintenance">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaintenanceMeasure"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#IntermediateMaintenance">
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaintenanceMeasure"/>
+        <rdfs:comment>Functional, structural repair or replacement measures need to be taken to restore the bridge.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Load -->
+    <!-- https://w3id.org/BMO#Load -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#Load">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#PotentialReason"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Load">
+        <rdf:type rdf:resource="https://w3id.org/BMO#PotentialReason"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#MadInprovement -->
+    <!-- https://w3id.org/BMO#MadInprovement -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#MadInprovement">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaintenanceMeasure"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#MadInprovement">
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaintenanceMeasure"/>
+        <rdfs:comment>Reconstruction measures need to be taken to improve bridge technical standards, load levels, traffic capacity, disaster resistance, etc.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#NeathSwingBridge -->
+    <!-- https://w3id.org/BMO#NeathSwingBridge -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#NeathSwingBridge">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-        <hasHazard rdf:resource="https://w3id.org/2022/BMO#Crack1"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#NeathSwingBridge">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <hasHazard rdf:resource="https://w3id.org/BMO#Crack1"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#NormalMaintenance -->
+    <!-- https://w3id.org/BMO#NormalMaintenance -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#NormalMaintenance">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaintenanceMeasure"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#NormalMaintenance">
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaintenanceMeasure"/>
+        <rdfs:comment>Measures need to be taken to repair slight damages.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#PressureInfusion -->
+    <!-- https://w3id.org/BMO#PressureInfusion -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#PressureInfusion">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaintenanceMeasure"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#PressureInfusion">
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaintenanceMeasure"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Q235 -->
+    <!-- https://w3id.org/BMO#Q235 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#Q235">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Steel"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Q235">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Steel"/>
         <Es rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.06E8</Es>
         <fcd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">195000.0</fcd>
         <fsd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">195000.0</fsd>
@@ -1726,11 +2241,11 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#Q355 -->
+    <!-- https://w3id.org/BMO#Q355 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#Q355">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Steel"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Q355">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Steel"/>
         <Es rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.06E8</Es>
         <fcd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">295000.0</fcd>
         <fsd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">295000.0</fsd>
@@ -1738,11 +2253,11 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#Q390 -->
+    <!-- https://w3id.org/BMO#Q390 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#Q390">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Steel"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Q390">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Steel"/>
         <Es rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.06E8</Es>
         <fcd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">325000.0</fcd>
         <fsd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">325000.0</fsd>
@@ -1750,11 +2265,11 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#Q420 -->
+    <!-- https://w3id.org/BMO#Q420 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#Q420">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#Steel"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Q420">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Steel"/>
         <Es rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.06E8</Es>
         <fcd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">350000.0</fcd>
         <fsd rdf:datatype="http://www.w3.org/2001/XMLSchema#float">350000.0</fsd>
@@ -1762,88 +2277,89 @@
     
 
 
-    <!-- https://w3id.org/2022/BMO#RoutineMaintenance -->
+    <!-- https://w3id.org/BMO#RoutineMaintenance -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#RoutineMaintenance">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaintenanceMeasure"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#RoutineMaintenance">
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaintenanceMeasure"/>
+        <rdfs:comment>Protective measures need to be taken to delay the degradation of structural performance and prolong the service life of the bridge.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#SurfaceClosure -->
+    <!-- https://w3id.org/BMO#SurfaceClosure -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#SurfaceClosure">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaintenanceMeasure"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#SurfaceClosure">
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaintenanceMeasure"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#Temperature -->
+    <!-- https://w3id.org/BMO#Temperature -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#Temperature">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#PotentialReason"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Temperature">
+        <rdf:type rdf:resource="https://w3id.org/BMO#PotentialReason"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#13-BoxGirder -->
+    <!-- https://w3id.org/BMO#13-BoxGirder -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#13-BoxGirder">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#BoxGirder"/>
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
-        <hasMaterialType rdf:resource="https://w3id.org/2022/BMO#C55"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#13-BoxGirder">
+        <rdf:type rdf:resource="https://w3id.org/BMO#BoxGirder"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
+        <hasMaterialType rdf:resource="https://w3id.org/BMO#C55"/>
         <Rit rdf:datatype="http://www.w3.org/2001/XMLSchema#float">59700.0</Rit>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#13-1-UpperTower -->
+    <!-- https://w3id.org/BMO#13-1-UpperTower -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#13-1-UpperTower">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#UpperTower"/>
-        <hasMaterialType rdf:resource="https://w3id.org/2022/BMO#C50"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#13-1-UpperTower">
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#UpperTower"/>
+        <hasMaterialType rdf:resource="https://w3id.org/BMO#C50"/>
         <Rit rdf:datatype="http://www.w3.org/2001/XMLSchema#float">39500.0</Rit>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#14-BoxGirder -->
+    <!-- https://w3id.org/BMO#14-BoxGirder -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#14-BoxGirder">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#BoxGirder"/>
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
-        <hasMaterialType rdf:resource="https://w3id.org/2022/BMO#C55"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#14-BoxGirder">
+        <rdf:type rdf:resource="https://w3id.org/BMO#BoxGirder"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
+        <hasMaterialType rdf:resource="https://w3id.org/BMO#C55"/>
         <Rit rdf:datatype="http://www.w3.org/2001/XMLSchema#float">57600.0</Rit>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#14-1-UpperTower -->
+    <!-- https://w3id.org/BMO#14-1-UpperTower -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#14-1-UpperTower">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#UpperTower"/>
-        <hasMaterialType rdf:resource="https://w3id.org/2022/BMO#C50"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#14-1-UpperTower">
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#UpperTower"/>
+        <hasMaterialType rdf:resource="https://w3id.org/BMO#C50"/>
         <Rit rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53100.0</Rit>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/2022/BMO#15-BoxGirder -->
+    <!-- https://w3id.org/BMO#15-BoxGirder -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/2022/BMO#15-BoxGirder">
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#BoxGirder"/>
-        <rdf:type rdf:resource="https://w3id.org/2022/BMO#MaterialCondition"/>
-        <hasMaterialType rdf:resource="https://w3id.org/2022/BMO#C55"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#15-BoxGirder">
+        <rdf:type rdf:resource="https://w3id.org/BMO#BoxGirder"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
+        <hasMaterialType rdf:resource="https://w3id.org/BMO#C55"/>
         <Rit rdf:datatype="http://www.w3.org/2001/XMLSchema#float">59700.0</Rit>
     </owl:NamedIndividual>
     
@@ -1861,30 +2377,52 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#Abutment"/>
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#Bearing"/>
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#Foundation"/>
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#Pavement"/>
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#Pier"/>
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#Support"/>
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#Tower"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#Abutment"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#Bearing"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#Foundation"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#Pavement"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#Pier"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#Support"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#Tower"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#BoxGirder"/>
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#Cloumn"/>
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#Footing"/>
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#UpperTower"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#BoxGirder"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#Cloumn"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#Footing"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#UpperTower"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#Substructure"/>
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#Superstructure"/>
-            <rdf:Description rdf:about="https://w3id.org/2022/BMO#SurfaceStructure"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#CJJ99-2017"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#CJJT239-2016"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#GB1589-2016"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#JIGB01-2014"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#JTG3362-2018"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#JTG5120-2021"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#JTG5142-2019"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#JTGD60-2015"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#JTG/T2231-01-2020"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#JTG/TH21-2011"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#JTG/TJ21-2011"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#JTG/TJ22-2008"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#JTG/TJ23-2008"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#JTGF80/1-2017"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#[2007]No.336"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#[2013]No.321"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#[2018]No.33"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/BMO#Substructure"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#Superstructure"/>
+            <rdf:Description rdf:about="https://w3id.org/BMO#SurfaceStructure"/>
         </owl:members>
     </rdf:Description>
     
@@ -1899,10 +2437,10 @@
      -->
 
 
-    <rdf:Description rdf:about="https://w3id.org/2022/BMO#B">
+    <rdf:Description rdf:about="https://w3id.org/2022/BMO#C">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/2022/BMO#C">
+    <rdf:Description rdf:about="https://w3id.org/2022/BMO#B">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/2022/BMO#y">
@@ -1914,244 +2452,16 @@
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment></rdfs:comment>
-        <rdfs:label>S4</rdfs:label>
+        <rdfs:label>S7</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://w3id.org/2022/BMO#Crack"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#maxWidth"/>
-                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
-                                        <swrl:arguments>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first rdf:resource="https://w3id.org/2022/BMO#y"/>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</rdf:first>
-                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </swrl:arguments>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#level"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#maxWidth"/>
                         <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</swrl:argument2>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment></rdfs:comment>
-        <rdfs:label>S3</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://w3id.org/2022/BMO#Crack"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
-                                <swrl:arguments>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first rdf:resource="https://w3id.org/2022/BMO#y"/>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</rdf:first>
-                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </swrl:arguments>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#maxWidth"/>
-                                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
-                                                <swrl:arguments>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                        <rdf:first rdf:resource="https://w3id.org/2022/BMO#y"/>
-                                                        <rdf:rest>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
-                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                            </rdf:Description>
-                                                        </rdf:rest>
-                                                    </rdf:Description>
-                                                </swrl:arguments>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#level"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</swrl:argument2>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment>related to bridge</rdfs:comment>
-        <rdfs:label>S8</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://w3id.org/2022/BMO#Bridge"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#B"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#hasHazard"/>
-                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#B"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="https://w3id.org/2022/BMO#Crack"/>
-                                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#hasMaintenanceSolution"/>
-                                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#needMaterial"/>
-                                                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#n"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#hasMaintenanceSolution"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#B"/>
                         <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
                     </rdf:Description>
                 </rdf:first>
@@ -2160,151 +2470,9 @@
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#needMaterial"/>
-                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#B"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#n"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment>Potential Reason</rdfs:comment>
-        <rdfs:label>S5</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://w3id.org/2022/BMO#Crack"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#level"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/BMO#Crack"/>
                                 <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
-                                        <swrl:arguments>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first rdf:resource="https://w3id.org/2022/BMO#y"/>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
-                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </swrl:arguments>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#hasPotentialReason"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#Temperature"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#hasPotentialReason"/>
-                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#Load"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#hasPotentialReason"/>
-                                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#Design"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#hasPotentialReason"/>
-                                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#Construction"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment></rdfs:comment>
-        <rdfs:label>S7</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://w3id.org/2022/BMO#Crack"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#maxWidth"/>
-                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -2342,9 +2510,9 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#hasMaintenanceSolution"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#hasMaintenanceSolution"/>
                         <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#PressureInfusion"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/BMO#PressureInfusion"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -2353,9 +2521,9 @@
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#needMaterial"/>
+                                <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#needMaterial"/>
                                 <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#EpoxyResin"/>
+                                <swrl:argument2 rdf:resource="https://w3id.org/BMO#EpoxyResin"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -2374,9 +2542,10 @@
                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                 <rdf:first>
                     <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://w3id.org/2022/BMO#Crack"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#maxWidth"/>
                         <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -2384,10 +2553,9 @@
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#maxWidth"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/BMO#Crack"/>
                                 <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -2396,7 +2564,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
                                         <swrl:arguments>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -2404,7 +2572,7 @@
                                                 <rdf:rest>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.15</rdf:first>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
                                                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                                     </rdf:Description>
                                                 </rdf:rest>
@@ -2418,7 +2586,7 @@
                                         <rdf:first>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
                                                 <swrl:arguments>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -2426,7 +2594,7 @@
                                                         <rdf:rest>
                                                             <rdf:Description>
                                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.15</rdf:first>
                                                                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                                             </rdf:Description>
                                                         </rdf:rest>
@@ -2449,9 +2617,9 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#hasMaintenanceSolution"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#hasMaintenanceSolution"/>
                         <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#SurfaceClosure"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/BMO#SurfaceClosure"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -2460,9 +2628,9 @@
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#needMaterial"/>
+                                <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#needMaterial"/>
                                 <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#CrackSealGlue"/>
+                                <swrl:argument2 rdf:resource="https://w3id.org/BMO#CrackSealGlue"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -2481,9 +2649,10 @@
                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                 <rdf:first>
                     <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://w3id.org/2022/BMO#Crack"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#maxWidth"/>
                         <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -2491,10 +2660,9 @@
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#maxWidth"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/BMO#Crack"/>
                                 <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -2556,7 +2724,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#level"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#level"/>
                         <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
                         <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</swrl:argument2>
                     </rdf:Description>
@@ -2575,9 +2743,10 @@
                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                 <rdf:first>
                     <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://w3id.org/2022/BMO#Crack"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#maxWidth"/>
                         <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -2585,10 +2754,9 @@
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#maxWidth"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/BMO#Crack"/>
                                 <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -2626,12 +2794,382 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/2022/BMO#level"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#level"/>
                         <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
                         <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</swrl:argument2>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#maxWidth"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/BMO#Crack"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="https://w3id.org/2022/BMO#y"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#level"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#maxWidth"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/BMO#Crack"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="https://w3id.org/2022/BMO#y"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                                <swrl:arguments>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:resource="https://w3id.org/2022/BMO#y"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#level"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Potential Reason</rdfs:comment>
+        <rdfs:label>S5</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                        <swrl:arguments>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:resource="https://w3id.org/2022/BMO#y"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/BMO#Crack"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#level"/>
+                                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#hasPotentialReason"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/BMO#Temperature"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#hasPotentialReason"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                                <swrl:argument2 rdf:resource="https://w3id.org/BMO#Load"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#hasPotentialReason"/>
+                                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                                        <swrl:argument2 rdf:resource="https://w3id.org/BMO#Construction"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#hasPotentialReason"/>
+                                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                                                <swrl:argument2 rdf:resource="https://w3id.org/BMO#Design"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>related to bridge</rdfs:comment>
+        <rdfs:label>S8</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://w3id.org/BMO#Crack"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/BMO#Bridge"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#B"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#hasMaintenanceSolution"/>
+                                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#needMaterial"/>
+                                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#n"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#hasHazard"/>
+                                                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#B"/>
+                                                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#C"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#needMaterial"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#B"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#n"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://w3id.org/BMO#hasMaintenanceSolution"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/2022/BMO#B"/>
+                                <swrl:argument2 rdf:resource="https://w3id.org/2022/BMO#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
             </rdf:Description>
         </swrl:head>
     </rdf:Description>
