@@ -106,7 +106,7 @@
     "@id" : "https://w3id.org/BMO#hasExtentRating"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/BMO#ExtentRatingForMetal"
+    "@id" : "https://w3id.org/BMO#ExtentRatingForCorrosion"
   } ]
 }, {
   "@id" : "_:genid111",
@@ -115,13 +115,13 @@
     "@id" : "https://w3id.org/BMO#hasSeverityRating"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/BMO#SeverityRatingForMetal"
+    "@id" : "https://w3id.org/BMO#SeverityRatingForCorrosion"
   } ]
 }, {
   "@id" : "_:genid112",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/BMO#ExtentRatingForMetal"
+    "@id" : "https://w3id.org/BMO#ExtentRatingForCorrosion"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/BMO#hasExtentRating"
@@ -130,7 +130,7 @@
   "@id" : "_:genid113",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/BMO#SeverityRatingForMetal"
+    "@id" : "https://w3id.org/BMO#SeverityRatingForCorrosion"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/BMO#hasSeverityRating"
@@ -5125,7 +5125,7 @@
     "@id" : "_:genid133"
   } ]
 }, {
-  "@id" : "https://w3id.org/BMO#ExtentRatingForMetal",
+  "@id" : "https://w3id.org/BMO#ExtentRatingForCorrosion",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://schema.org/image" : [ {
     "@id" : "https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png"
@@ -7775,7 +7775,7 @@
     "@id" : "_:genid235"
   } ]
 }, {
-  "@id" : "https://w3id.org/BMO#SeverityRatingForMetal",
+  "@id" : "https://w3id.org/BMO#SeverityRatingForCorrosion",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://schema.org/image" : [ {
     "@id" : "https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png"
@@ -9168,37 +9168,37 @@
   "@id" : "https://w3id.org/BMO#extent1",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/BMO#ExtentRatingForMetal"
+    "@id" : "https://w3id.org/BMO#ExtentRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#extent2",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/BMO#ExtentRatingForMetal"
+    "@id" : "https://w3id.org/BMO#ExtentRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#extent3",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/BMO#ExtentRatingForMetal"
+    "@id" : "https://w3id.org/BMO#ExtentRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#extent4",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/BMO#ExtentRatingForMetal"
+    "@id" : "https://w3id.org/BMO#ExtentRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#extent5",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/BMO#ExtentRatingForMetal"
+    "@id" : "https://w3id.org/BMO#ExtentRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#extent6",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/BMO#ExtentRatingForMetal"
+    "@id" : "https://w3id.org/BMO#ExtentRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#extentRating",
@@ -10013,43 +10013,43 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://w3id.org/BMO#SeverityRatingForCoatingsToMetal"
   }, {
-    "@id" : "https://w3id.org/BMO#SeverityRatingForMetal"
+    "@id" : "https://w3id.org/BMO#SeverityRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#severityB",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/BMO#SeverityRatingForMetal"
+    "@id" : "https://w3id.org/BMO#SeverityRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#severityC",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/BMO#SeverityRatingForMetal"
+    "@id" : "https://w3id.org/BMO#SeverityRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#severityD",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/BMO#SeverityRatingForMetal"
+    "@id" : "https://w3id.org/BMO#SeverityRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#severityE",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/BMO#SeverityRatingForMetal"
+    "@id" : "https://w3id.org/BMO#SeverityRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#severityF",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/BMO#SeverityRatingForMetal"
+    "@id" : "https://w3id.org/BMO#SeverityRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#severityG",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/BMO#SeverityRatingForMetal"
+    "@id" : "https://w3id.org/BMO#SeverityRatingForCorrosion"
   } ]
 }, {
   "@id" : "https://w3id.org/BMO#severityI",

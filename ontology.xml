@@ -3886,25 +3886,25 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#hasExtentRating"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#ExtentRatingForMetal"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#ExtentRatingForCorrosion"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#hasSeverityRating"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#SeverityRatingForMetal"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#SeverityRatingForCorrosion"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#hasExtentRating"/>
-                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#ExtentRatingForMetal"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#ExtentRatingForCorrosion"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#hasSeverityRating"/>
-                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#SeverityRatingForMetal"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#SeverityRatingForCorrosion"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -4375,10 +4375,10 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     
 
 
-    <!-- https://w3id.org/BMO#ExtentRatingForMetal -->
+    <!-- https://w3id.org/BMO#ExtentRatingForCorrosion -->
 
 
-    <owl:Class rdf:about="https://w3id.org/BMO#ExtentRatingForMetal">
+    <owl:Class rdf:about="https://w3id.org/BMO#ExtentRatingForCorrosion">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
@@ -6409,10 +6409,10 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     
 
 
-    <!-- https://w3id.org/BMO#SeverityRatingForMetal -->
+    <!-- https://w3id.org/BMO#SeverityRatingForCorrosion -->
 
 
-    <owl:Class rdf:about="https://w3id.org/BMO#SeverityRatingForMetal">
+    <owl:Class rdf:about="https://w3id.org/BMO#SeverityRatingForCorrosion">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
@@ -9089,7 +9089,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#extent1">
-        <rdf:type rdf:resource="https://w3id.org/BMO#ExtentRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#ExtentRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 
@@ -9098,7 +9098,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#extent2">
-        <rdf:type rdf:resource="https://w3id.org/BMO#ExtentRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#ExtentRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 
@@ -9107,7 +9107,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#extent3">
-        <rdf:type rdf:resource="https://w3id.org/BMO#ExtentRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#ExtentRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 
@@ -9116,7 +9116,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#extent4">
-        <rdf:type rdf:resource="https://w3id.org/BMO#ExtentRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#ExtentRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 
@@ -9125,7 +9125,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#extent5">
-        <rdf:type rdf:resource="https://w3id.org/BMO#ExtentRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#ExtentRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 
@@ -9134,7 +9134,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#extent6">
-        <rdf:type rdf:resource="https://w3id.org/BMO#ExtentRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#ExtentRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 
@@ -9153,7 +9153,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#severityA">
         <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForCoatingsToMetal"/>
-        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 
@@ -9162,7 +9162,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#severityB">
-        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 
@@ -9171,7 +9171,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#severityC">
-        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 
@@ -9180,7 +9180,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#severityD">
-        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 
@@ -9189,7 +9189,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#severityE">
-        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 
@@ -9198,7 +9198,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#severityF">
-        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 
@@ -9207,7 +9207,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#severityG">
-        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForMetal"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#SeverityRatingForCorrosion"/>
     </owl:NamedIndividual>
     
 

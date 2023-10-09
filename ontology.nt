@@ -2020,19 +2020,19 @@ _:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/BMO#Corrosion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/BMO#Corrosion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/BMO#Hazard> .
 <https://w3id.org/BMO#Corrosion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid110 .
-_:genid110 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/BMO#ExtentRatingForMetal> .
+_:genid110 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/BMO#ExtentRatingForCorrosion> .
 _:genid110 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/BMO#hasExtentRating> .
 _:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/BMO#Corrosion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid111 .
-_:genid111 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/BMO#SeverityRatingForMetal> .
+_:genid111 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/BMO#SeverityRatingForCorrosion> .
 _:genid111 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/BMO#hasSeverityRating> .
 _:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/BMO#Corrosion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid112 .
-_:genid112 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/BMO#ExtentRatingForMetal> .
+_:genid112 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/BMO#ExtentRatingForCorrosion> .
 _:genid112 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/BMO#hasExtentRating> .
 _:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/BMO#Corrosion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid113 .
-_:genid113 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/BMO#SeverityRatingForMetal> .
+_:genid113 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/BMO#SeverityRatingForCorrosion> .
 _:genid113 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/BMO#hasSeverityRating> .
 _:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 # 
@@ -2295,9 +2295,9 @@ _:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 _:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/BMO#ExtentRatingForCoatingsToMetal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/BMO#ExtentRating> .
 # 
-# https://w3id.org/BMO#ExtentRatingForMetal
-<https://w3id.org/BMO#ExtentRatingForMetal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/BMO#ExtentRatingForMetal> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid140 .
+# https://w3id.org/BMO#ExtentRatingForCorrosion
+<https://w3id.org/BMO#ExtentRatingForCorrosion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/BMO#ExtentRatingForCorrosion> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid140 .
 _:genid140 <http://www.w3.org/2002/07/owl#oneOf> _:genid146 .
 _:genid146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid145 .
 _:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid144 .
@@ -2318,8 +2318,8 @@ _:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 _:genid146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/BMO#extent1> .
 _:genid146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid140 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/BMO#ExtentRatingForMetal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/BMO#ExtentRating> .
-<https://w3id.org/BMO#ExtentRatingForMetal> <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png> .
+<https://w3id.org/BMO#ExtentRatingForCorrosion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/BMO#ExtentRating> .
+<https://w3id.org/BMO#ExtentRatingForCorrosion> <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png> .
 # 
 # https://w3id.org/BMO#ExternalStakeholders
 <https://w3id.org/BMO#ExternalStakeholders> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -3414,9 +3414,9 @@ _:genid240 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 _:genid235 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/BMO#SeverityRatingForCoatingsToMetal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/BMO#SeverityRating> .
 # 
-# https://w3id.org/BMO#SeverityRatingForMetal
-<https://w3id.org/BMO#SeverityRatingForMetal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/BMO#SeverityRatingForMetal> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid241 .
+# https://w3id.org/BMO#SeverityRatingForCorrosion
+<https://w3id.org/BMO#SeverityRatingForCorrosion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/BMO#SeverityRatingForCorrosion> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid241 .
 _:genid241 <http://www.w3.org/2002/07/owl#oneOf> _:genid248 .
 _:genid248 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid247 .
 _:genid247 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid246 .
@@ -3440,8 +3440,8 @@ _:genid247 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 _:genid248 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/BMO#severityA> .
 _:genid248 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid241 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/BMO#SeverityRatingForMetal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/BMO#SeverityRating> .
-<https://w3id.org/BMO#SeverityRatingForMetal> <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png> .
+<https://w3id.org/BMO#SeverityRatingForCorrosion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/BMO#SeverityRating> .
+<https://w3id.org/BMO#SeverityRatingForCorrosion> <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png> .
 # 
 # https://w3id.org/BMO#SideBridges
 <https://w3id.org/BMO#SideBridges> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -4944,27 +4944,27 @@ _:genid362 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://w3id.org/BMO#extent1
 <https://w3id.org/BMO#extent1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/BMO#extent1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#ExtentRatingForMetal> .
+<https://w3id.org/BMO#extent1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#ExtentRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#extent2
 <https://w3id.org/BMO#extent2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/BMO#extent2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#ExtentRatingForMetal> .
+<https://w3id.org/BMO#extent2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#ExtentRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#extent3
 <https://w3id.org/BMO#extent3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/BMO#extent3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#ExtentRatingForMetal> .
+<https://w3id.org/BMO#extent3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#ExtentRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#extent4
 <https://w3id.org/BMO#extent4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/BMO#extent4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#ExtentRatingForMetal> .
+<https://w3id.org/BMO#extent4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#ExtentRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#extent5
 <https://w3id.org/BMO#extent5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/BMO#extent5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#ExtentRatingForMetal> .
+<https://w3id.org/BMO#extent5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#ExtentRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#extent6
 <https://w3id.org/BMO#extent6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/BMO#extent6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#ExtentRatingForMetal> .
+<https://w3id.org/BMO#extent6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#ExtentRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#metal
 <https://w3id.org/BMO#metal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -4973,31 +4973,31 @@ _:genid362 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # https://w3id.org/BMO#severityA
 <https://w3id.org/BMO#severityA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/BMO#severityA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForCoatingsToMetal> .
-<https://w3id.org/BMO#severityA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForMetal> .
+<https://w3id.org/BMO#severityA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#severityB
 <https://w3id.org/BMO#severityB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/BMO#severityB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForMetal> .
+<https://w3id.org/BMO#severityB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#severityC
 <https://w3id.org/BMO#severityC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/BMO#severityC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForMetal> .
+<https://w3id.org/BMO#severityC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#severityD
 <https://w3id.org/BMO#severityD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/BMO#severityD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForMetal> .
+<https://w3id.org/BMO#severityD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#severityE
 <https://w3id.org/BMO#severityE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/BMO#severityE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForMetal> .
+<https://w3id.org/BMO#severityE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#severityF
 <https://w3id.org/BMO#severityF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/BMO#severityF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForMetal> .
+<https://w3id.org/BMO#severityF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#severityG
 <https://w3id.org/BMO#severityG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/BMO#severityG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForMetal> .
+<https://w3id.org/BMO#severityG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/BMO#SeverityRatingForCorrosion> .
 # 
 # https://w3id.org/BMO#severityI
 <https://w3id.org/BMO#severityI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .

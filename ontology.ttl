@@ -2330,19 +2330,19 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
            rdfs:subClassOf :Hazard ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasExtentRating ;
-                             owl:someValuesFrom :ExtentRatingForMetal
+                             owl:someValuesFrom :ExtentRatingForCorrosion
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasSeverityRating ;
-                             owl:someValuesFrom :SeverityRatingForMetal
+                             owl:someValuesFrom :SeverityRatingForCorrosion
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasExtentRating ;
-                             owl:allValuesFrom :ExtentRatingForMetal
+                             owl:allValuesFrom :ExtentRatingForCorrosion
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasSeverityRating ;
-                             owl:allValuesFrom :SeverityRatingForMetal
+                             owl:allValuesFrom :SeverityRatingForCorrosion
                            ] .
 
 
@@ -2629,19 +2629,19 @@ The element labelling for BCMI should be carried out only once in the lifetime o
                                 rdfs:subClassOf :ExtentRating .
 
 
-###  https://w3id.org/BMO#ExtentRatingForMetal
-:ExtentRatingForMetal rdf:type owl:Class ;
-                      owl:equivalentClass [ rdf:type owl:Class ;
-                                            owl:oneOf ( :extent1
-                                                        :extent2
-                                                        :extent3
-                                                        :extent4
-                                                        :extent5
-                                                        :extent6
-                                                      )
-                                          ] ;
-                      rdfs:subClassOf :ExtentRating ;
-                      <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png> .
+###  https://w3id.org/BMO#ExtentRatingForCorrosion
+:ExtentRatingForCorrosion rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Class ;
+                                                owl:oneOf ( :extent1
+                                                            :extent2
+                                                            :extent3
+                                                            :extent4
+                                                            :extent5
+                                                            :extent6
+                                                          )
+                                              ] ;
+                          rdfs:subClassOf :ExtentRating ;
+                          <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png> .
 
 
 ###  https://w3id.org/BMO#ExternalStakeholders
@@ -3868,20 +3868,20 @@ The element labelling for BCMI should be carried out only once in the lifetime o
                                   rdfs:subClassOf :SeverityRating .
 
 
-###  https://w3id.org/BMO#SeverityRatingForMetal
-:SeverityRatingForMetal rdf:type owl:Class ;
-                        owl:equivalentClass [ rdf:type owl:Class ;
-                                              owl:oneOf ( :severityA
-                                                          :severityB
-                                                          :severityC
-                                                          :severityD
-                                                          :severityE
-                                                          :severityF
-                                                          :severityG
-                                                        )
-                                            ] ;
-                        rdfs:subClassOf :SeverityRating ;
-                        <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png> .
+###  https://w3id.org/BMO#SeverityRatingForCorrosion
+:SeverityRatingForCorrosion rdf:type owl:Class ;
+                            owl:equivalentClass [ rdf:type owl:Class ;
+                                                  owl:oneOf ( :severityA
+                                                              :severityB
+                                                              :severityC
+                                                              :severityD
+                                                              :severityE
+                                                              :severityF
+                                                              :severityG
+                                                            )
+                                                ] ;
+                            rdfs:subClassOf :SeverityRating ;
+                            <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png> .
 
 
 ###  https://w3id.org/BMO#SideBridges
@@ -5561,32 +5561,32 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 ###  https://w3id.org/BMO#extent1
 :extent1 rdf:type owl:NamedIndividual ,
-                  :ExtentRatingForMetal .
+                  :ExtentRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#extent2
 :extent2 rdf:type owl:NamedIndividual ,
-                  :ExtentRatingForMetal .
+                  :ExtentRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#extent3
 :extent3 rdf:type owl:NamedIndividual ,
-                  :ExtentRatingForMetal .
+                  :ExtentRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#extent4
 :extent4 rdf:type owl:NamedIndividual ,
-                  :ExtentRatingForMetal .
+                  :ExtentRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#extent5
 :extent5 rdf:type owl:NamedIndividual ,
-                  :ExtentRatingForMetal .
+                  :ExtentRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#extent6
 :extent6 rdf:type owl:NamedIndividual ,
-                  :ExtentRatingForMetal .
+                  :ExtentRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#metal
@@ -5597,37 +5597,37 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 ###  https://w3id.org/BMO#severityA
 :severityA rdf:type owl:NamedIndividual ,
                     :SeverityRatingForCoatingsToMetal ,
-                    :SeverityRatingForMetal .
+                    :SeverityRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#severityB
 :severityB rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForMetal .
+                    :SeverityRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#severityC
 :severityC rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForMetal .
+                    :SeverityRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#severityD
 :severityD rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForMetal .
+                    :SeverityRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#severityE
 :severityE rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForMetal .
+                    :SeverityRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#severityF
 :severityF rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForMetal .
+                    :SeverityRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#severityG
 :severityG rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForMetal .
+                    :SeverityRatingForCorrosion .
 
 
 ###  https://w3id.org/BMO#severityI
