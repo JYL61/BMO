@@ -1,7 +1,12 @@
 # Bridge Maintenance Ontology (BMO)
 
-Ontology  
-The application domain of the BMO is the bridge maintenance field. The BMO is designed to improve the management of maintenance knowledge of bridge lifecycle, and to provide more valuable information for bridge engineers to make holistic decisions.
+## Application Domain: 
+The ontology is specifically designed for the field of bridge maintenance, serving as a ontological knowledge base tailored to the intricacies of maintaining operational bridges.
+## Objective:
+The primary objective of BMO is to improve the management of maintenance knowledge of the bridge lifecycle and to provide more valuable information than that of older methods, thereby enabling bridge engineers to make holistic decisions. 
+## Terminology:
+BMO employs standard technical terms derived from both China and UK standards. This choice eliminates ambiguities and ensures the ontology's seamless expansion and effective utilization.
+
 
 Contacts
 # Contacts
