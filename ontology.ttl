@@ -7,6 +7,12 @@
 @base <https://w3id.org/BMO#> .
 
 <https://w3id.org/BMO> rdf:type owl:Ontology ;
+                        <http://purl.org/dc/elements/1.1/description> """--Application Domain: 
+The ontology is specifically designed for the field of bridge maintenance, serving as a ontological knowledge base tailored to the intricacies of maintaining operational bridges.
+--Objective:
+The primary objective of BMO is to improve the management of maintenance knowledge of the bridge lifecycle and to provide more valuable information than that of older methods, thereby enabling bridge engineers to make holistic decisions. 
+--Terminology:
+BMO employs standard technical terms derived from both China and UK standards. This choice eliminates ambiguities and ensures the ontology's seamless expansion and effective utilization.""" ;
                         rdfs:comment """--Application Domain: 
 The ontology is specifically designed for the field of bridge maintenance, serving as a ontological knowledge base tailored to the intricacies of maintaining operational bridges.
 --Objective:
@@ -20,6 +26,10 @@ BMO employs standard technical terms derived from both China and UK standards. T
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
 
 ###  http://schema.org/image
 <http://schema.org/image> rdf:type owl:AnnotationProperty .
@@ -35,6 +45,15 @@ owl:author rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/2002/07/owl#title
 owl:title rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/BMO#term_status
+:term_status rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/BMO#website
+:website rdf:type owl:AnnotationProperty ;
+         rdfs:range xsd:anyURI .
 
 
 ###  https://w3id.org/BMO#owl:author
@@ -476,7 +495,9 @@ owl:title rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/BMO#R
 :R rdf:type owl:DatatypeProperty ;
-   rdfs:subPropertyOf owl:topDataProperty .
+   owl:equivalentProperty :reboundNumber ;
+   rdfs:subPropertyOf owl:topDataProperty ;
+   rdfs:comment "rebound number" .
 
 
 ###  https://w3id.org/BMO#R1
@@ -792,6 +813,11 @@ owl:title rdf:type owl:AnnotationProperty .
                        rdfs:comment "桥下需要的过水面积与建桥后未经冲刷的过水面积之比值。" .
 
 
+###  https://w3id.org/BMO#completeLossCoating
+:completeLossCoating rdf:type owl:DatatypeProperty ;
+                     rdfs:range xsd:boolean .
+
+
 ###  https://w3id.org/BMO#complianceDate
 :complianceDate rdf:type owl:DatatypeProperty ;
                 rdfs:domain :Standard ;
@@ -803,6 +829,10 @@ owl:title rdf:type owl:AnnotationProperty .
                             rdfs:domain :Bridge ;
                             rdfs:range xsd:string ;
                             rdfs:comment "上部结构底缘至桥面顶面的竖直距离。" .
+
+
+###  https://w3id.org/BMO#crackType
+:crackType rdf:type owl:DatatypeProperty .
 
 
 ###  https://w3id.org/BMO#date
@@ -929,7 +959,9 @@ owl:title rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/BMO#fcu
 :fcu rdf:type owl:DatatypeProperty ;
-     rdfs:subPropertyOf owl:topDataProperty .
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:comment """测区混凝土强度换算值conversion value of concrete compressive strength of test area
+由测区的平均回弹值和碳化深度值通过测强曲线或测区强度换算表得到的测区现龄期泥凝土强度值。""" .
 
 
 ###  https://w3id.org/BMO#flaking
@@ -990,6 +1022,21 @@ owl:title rdf:type owl:AnnotationProperty .
 :h0 rdf:type owl:DatatypeProperty .
 
 
+###  https://w3id.org/BMO#hammerImpactEnergy
+:hammerImpactEnergy rdf:type owl:DatatypeProperty ;
+                    rdfs:comment """冲击动能
+弹击锤与弹击杆撞击时，弹击锤通过弹击杆传递给被测面的能量。""" .
+
+
+###  https://w3id.org/BMO#hasProtectiveCoatingSystem
+:hasProtectiveCoatingSystem rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/BMO#hasTears
+:hasTears rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:boolean .
+
+
 ###  https://w3id.org/BMO#hsp
 :hsp rdf:type owl:DatatypeProperty ;
      rdfs:comment "for Strengthening" .
@@ -1026,10 +1073,18 @@ owl:title rdf:type owl:AnnotationProperty .
               rdfs:range xsd:boolean .
 
 
+###  https://w3id.org/BMO#lengthpercentage
+:lengthpercentage rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/BMO#maintenanceDecision
+:maintenanceDecision rdf:type owl:DatatypeProperty ;
+                     rdfs:range xsd:string .
+
+
 ###  https://w3id.org/BMO#maintenancePlaning
 :maintenancePlaning rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf owl:topDataProperty ;
-                    rdfs:domain :BridgeElement ;
                     rdfs:range xsd:string .
 
 
@@ -1116,6 +1171,12 @@ owl:title rdf:type owl:AnnotationProperty .
              rdfs:range xsd:string .
 
 
+###  https://w3id.org/BMO#potentialEnergyOfSpring
+:potentialEnergyOfSpring rdf:type owl:DatatypeProperty ;
+                         rdfs:comment """标称能量 
+在不考虑弹击拉簽装配产生变形的条件下,弹击拉簧拉伸变形长度等于冲击长度时，弹击拉箦存贮的势能""" .
+
+
 ###  https://w3id.org/BMO#price
 :price rdf:type owl:DatatypeProperty ;
        rdfs:subPropertyOf owl:topDataProperty .
@@ -1152,6 +1213,12 @@ owl:title rdf:type owl:AnnotationProperty .
         rdfs:subPropertyOf owl:topDataProperty ;
         rdfs:domain :MaterialSupplier ;
         rdfs:range xsd:string .
+
+
+###  https://w3id.org/BMO#reboundNumber
+:reboundNumber rdf:type owl:DatatypeProperty ;
+               rdfs:comment """回弹值
+弹击锤弹回的距离与弹击拉簧冲击长度之比乘以刻度尺的满刻度值。""" .
 
 
 ###  https://w3id.org/BMO#representativeValueOfAnAction
@@ -1258,6 +1325,11 @@ owl:title rdf:type owl:AnnotationProperty .
                 rdfs:range xsd:boolean .
 
 
+###  https://w3id.org/BMO#typeCode
+:typeCode rdf:type owl:DatatypeProperty ;
+          rdfs:comment "类型代号" .
+
+
 ###  https://w3id.org/BMO#visibleDefect
 :visibleDefect rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf owl:topDataProperty ;
@@ -1289,8 +1361,7 @@ owl:title rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/BMO#website
 :website rdf:type owl:DatatypeProperty ;
-         rdfs:subPropertyOf owl:topDataProperty ;
-         rdfs:range xsd:anyURI .
+         rdfs:subPropertyOf owl:topDataProperty .
 
 
 ###  https://w3id.org/BMO#weight
@@ -1347,6 +1418,29 @@ owl:title rdf:type owl:AnnotationProperty .
 :ABT rdf:type owl:Class ;
      rdfs:subClassOf :ElementCode ;
      rdfs:comment "Abutment" .
+
+
+###  https://w3id.org/BMO#Abrasion
+:Abrasion rdf:type owl:Class ;
+          rdfs:subClassOf :Hazard .
+
+
+###  https://w3id.org/BMO#AbrasionOnAbutment
+:AbrasionOnAbutment rdf:type owl:Class ;
+                    rdfs:subClassOf :Abrasion ,
+                                    :HazardOnSubstructure .
+
+
+###  https://w3id.org/BMO#AbrasionOnDeck
+:AbrasionOnDeck rdf:type owl:Class ;
+                rdfs:subClassOf :Abrasion ,
+                                :HazardOnDeck .
+
+
+###  https://w3id.org/BMO#AbrasionOnPier
+:AbrasionOnPier rdf:type owl:Class ;
+                rdfs:subClassOf :Abrasion ,
+                                :HazardOnSubstructure .
 
 
 ###  https://w3id.org/BMO#Abutment
@@ -2008,6 +2102,42 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
                           rdfs:comment "桥梁结构各部件或构件的综合技术指标，反映桥梁结构的完好程度、安全程度及使用功能的完善程度。" .
 
 
+###  https://w3id.org/BMO#BridgeTechnicalConditionRating
+:BridgeTechnicalConditionRating rdf:type owl:Class ;
+                                owl:equivalentClass [ rdf:type owl:Class ;
+                                                      owl:oneOf ( :level1
+                                                                  :level2
+                                                                  :level3
+                                                                  :level4
+                                                                  :level5
+                                                                )
+                                                    ] ;
+                                rdfs:comment "桥梁技术状况评定等级应分为1类、2类、3类、4类、5类" .
+
+
+###  https://w3id.org/BMO#Bugholes
+:Bugholes rdf:type owl:Class ;
+          rdfs:subClassOf :Hazard .
+
+
+###  https://w3id.org/BMO#BugholesOnAbutment
+:BugholesOnAbutment rdf:type owl:Class ;
+                    rdfs:subClassOf :Bugholes ,
+                                    :HazardOnSubstructure .
+
+
+###  https://w3id.org/BMO#BugholesOnPier
+:BugholesOnPier rdf:type owl:Class ;
+                rdfs:subClassOf :Bugholes ,
+                                :HazardOnSubstructure .
+
+
+###  https://w3id.org/BMO#BugholesOnSuperstructure
+:BugholesOnSuperstructure rdf:type owl:Class ;
+                          rdfs:subClassOf :Bugholes ,
+                                          :HazardOnSuperstructure .
+
+
 ###  https://w3id.org/BMO#Bulging
 :Bulging rdf:type owl:Class ;
          rdfs:subClassOf :Hazard .
@@ -2105,6 +2235,13 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
 ###  https://w3id.org/BMO#ChinaStandardForHighwayBridge
 :ChinaStandardForHighwayBridge rdf:type owl:Class ;
                                rdfs:subClassOf :Standard .
+
+
+###  https://w3id.org/BMO#Cills
+:Cills rdf:type owl:Class ;
+       rdfs:subClassOf :MinorElement ;
+       rdfs:comment "Each line of padstone or cills at a support excluding decorative features." ;
+       :term_status <https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.7%20Abutment%2C%20wing%20wall%2C%20pier%2C%20padstone%2C%20cill%2C%20barrel%20arch%2C%20face%20rings%2C%20spandrel%20walls%2C%20parapet.png> .
 
 
 ###  https://w3id.org/BMO#Cladding
@@ -2357,6 +2494,64 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
        rdfs:subClassOf :Hazard .
 
 
+###  https://w3id.org/BMO#CrackOnAbutment
+:CrackOnAbutment rdf:type owl:Class ;
+                 rdfs:subClassOf :Crack .
+
+
+###  https://w3id.org/BMO#CrackOnBarrelArch
+:CrackOnBarrelArch rdf:type owl:Class ;
+                   rdfs:subClassOf :Crack .
+
+
+###  https://w3id.org/BMO#CrackOnDeck
+:CrackOnDeck rdf:type owl:Class ;
+             rdfs:subClassOf :Crack ,
+                             :HazardOnDeck .
+
+
+###  https://w3id.org/BMO#CrackOnFaceRings
+:CrackOnFaceRings rdf:type owl:Class ;
+                  rdfs:subClassOf :Crack .
+
+
+###  https://w3id.org/BMO#CrackOnMasonry
+:CrackOnMasonry rdf:type owl:Class ;
+                rdfs:subClassOf :Crack .
+
+
+###  https://w3id.org/BMO#CrackOnParapet
+:CrackOnParapet rdf:type owl:Class ;
+                rdfs:subClassOf :Crack .
+
+
+###  https://w3id.org/BMO#CrackOnPier
+:CrackOnPier rdf:type owl:Class ;
+             rdfs:subClassOf :Crack ,
+                             :HazardOnSubstructure .
+
+
+###  https://w3id.org/BMO#CrackOnReinforcedConcrete
+:CrackOnReinforcedConcrete rdf:type owl:Class ;
+                           rdfs:subClassOf :Crack .
+
+
+###  https://w3id.org/BMO#CrackOnSpandrelWall
+:CrackOnSpandrelWall rdf:type owl:Class ;
+                     rdfs:subClassOf :Crack .
+
+
+###  https://w3id.org/BMO#CrackOnSuperstructure
+:CrackOnSuperstructure rdf:type owl:Class ;
+                       rdfs:subClassOf :Crack ,
+                                       :HazardOnSuperstructure .
+
+
+###  https://w3id.org/BMO#CrackOnWingWall
+:CrackOnWingWall rdf:type owl:Class ;
+                 rdfs:subClassOf :Crack .
+
+
 ###  https://w3id.org/BMO#Crane
 :Crane rdf:type owl:Class ;
        rdfs:subClassOf :Equipment ;
@@ -2476,6 +2671,11 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
                     rdfs:comment "由桥面集水、泄水和排水结构组成的排水体系。" .
 
 
+###  https://w3id.org/BMO#DefectsOnExpansionJoint
+:DefectsOnExpansionJoint rdf:type owl:Class ;
+                         rdfs:subClassOf :HazardOnDeck .
+
+
 ###  https://w3id.org/BMO#Define_the_major_and_minor_elements
 :Define_the_major_and_minor_elements rdf:type owl:Class ;
                                      rdfs:subClassOf :BridgeConditionMarkingIndexActivity ,
@@ -2493,6 +2693,13 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
 ###  https://w3id.org/BMO#DesignStandard
 :DesignStandard rdf:type owl:Class ;
                 rdfs:subClassOf :ChinaStandardForHighwayBridge .
+
+
+###  https://w3id.org/BMO#DigitalReboundHammer
+:DigitalReboundHammer rdf:type owl:Class ;
+                      rdfs:subClassOf :ReboundHammer ;
+                      rdfs:comment """数字式回弹仪
+具有回弹值数字显示和存储功能的回弹仪，并可兼备数据处理、打印、数据传输和从仪器的刻度尺上直接读出回弹值等功能。""" .
 
 
 ###  https://w3id.org/BMO#Drainage
@@ -2533,11 +2740,11 @@ The element labelling for BCMI should be carried out only once in the lifetime o
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty :hasElement ;
-                              owl:someValuesFrom :WingWall
+                              owl:someValuesFrom :Padstone
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty :hasElement ;
-                              owl:someValuesFrom <https://w3id.org/BMO#Padstone/Cills(bedstone)>
+                              owl:someValuesFrom :WingWall
                             ] ;
             rdfs:comment "An end support supports the end of one or more decks. End supports typically comprise elements such as abutments, wing walls and padstones or cills." .
 
@@ -2612,14 +2819,14 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 ###  https://w3id.org/BMO#ExtentRating
 :ExtentRating rdf:type owl:Class ;
-              rdfs:subClassOf owl:Thing .
+              rdfs:subClassOf owl:Thing ;
+              rdfs:comment "The extent of a general defect is reported as a percentage of the visible area of an element or part of an element. The extent of cracking is reported as a percentage of a principal dimension of an element." .
 
 
 ###  https://w3id.org/BMO#ExtentRatingForCoatingsToMetal
 :ExtentRatingForCoatingsToMetal rdf:type owl:Class ;
                                 owl:equivalentClass [ rdf:type owl:Class ;
                                                       owl:oneOf ( :extent1
-                                                                  :extent2
                                                                   :extent3
                                                                   :extent4
                                                                   :extent5
@@ -2633,7 +2840,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 :ExtentRatingForCorrosion rdf:type owl:Class ;
                           owl:equivalentClass [ rdf:type owl:Class ;
                                                 owl:oneOf ( :extent1
-                                                            :extent2
                                                             :extent3
                                                             :extent4
                                                             :extent5
@@ -2642,6 +2848,34 @@ The element labelling for BCMI should be carried out only once in the lifetime o
                                               ] ;
                           rdfs:subClassOf :ExtentRating ;
                           <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png> .
+
+
+###  https://w3id.org/BMO#ExtentRatingForCrackOnMasonry
+:ExtentRatingForCrackOnMasonry rdf:type owl:Class ;
+                               owl:equivalentClass [ rdf:type owl:Class ;
+                                                     owl:oneOf ( :extent1
+                                                                 :extent10
+                                                                 :extent11
+                                                                 :extent7
+                                                                 :extent8
+                                                                 :extent9
+                                                               )
+                                                   ] ;
+                               rdfs:subClassOf :ExtentRating .
+
+
+###  https://w3id.org/BMO#ExtentRatingForCrackOnReinforcedConcrete
+:ExtentRatingForCrackOnReinforcedConcrete rdf:type owl:Class ;
+                                          owl:equivalentClass [ rdf:type owl:Class ;
+                                                                owl:oneOf ( :extent1
+                                                                            :extent2
+                                                                            :extent3
+                                                                            :extent4
+                                                                            :extent5
+                                                                            :extent6
+                                                                          )
+                                                              ] ;
+                                          rdfs:subClassOf :ExtentRating .
 
 
 ###  https://w3id.org/BMO#ExternalStakeholders
@@ -2675,6 +2909,24 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 :FabricatedSteelBridge rdf:type owl:Class ;
                        rdfs:subClassOf :FabricatedBridge ;
                        rdfs:comment "上部结构主要承重构件是以标准单元金属构件组装而成并可快速拼拆的桥梁。" .
+
+
+###  https://w3id.org/BMO#FaceRings
+:FaceRings rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasElementCode ;
+                                                        owl:someValuesFrom :FRV
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasElementCode ;
+                                                        owl:allValuesFrom :FRV
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :MinorElement ;
+           <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.7%20Abutment%2C%20wing%20wall%2C%20pier%2C%20padstone%2C%20cill%2C%20barrel%20arch%2C%20face%20rings%2C%20spandrel%20walls%2C%20parapet.png> ;
+           rdfs:comment "Each set of face rings or voússoirs (2 per arch) should be identified individually. Some arch Bridges, particularly severely skewed arch Bridges, may comprise several arches each with their own face rings which may be exposed to varying extents." .
 
 
 ###  https://w3id.org/BMO#FilledSpandrelArchBridge
@@ -2856,6 +3108,21 @@ The element labelling for BCMI should be carried out only once in the lifetime o
                         ] .
 
 
+###  https://w3id.org/BMO#HazardOnDeck
+:HazardOnDeck rdf:type owl:Class ;
+              rdfs:subClassOf :Hazard .
+
+
+###  https://w3id.org/BMO#HazardOnSubstructure
+:HazardOnSubstructure rdf:type owl:Class ;
+                      rdfs:subClassOf :Hazard .
+
+
+###  https://w3id.org/BMO#HazardOnSuperstructure
+:HazardOnSuperstructure rdf:type owl:Class ;
+                        rdfs:subClassOf :Hazard .
+
+
 ###  https://w3id.org/BMO#HeadWallAbutment
 :HeadWallAbutment rdf:type owl:Class ;
                   rdfs:subClassOf :Abutment ;
@@ -2895,6 +3162,23 @@ The element labelling for BCMI should be carried out only once in the lifetime o
             rdfs:subClassOf :Pier ;
             owl:disjointWith :SolidPier ;
             rdfs:comment "墩身为空腔体的桥墩。" .
+
+
+###  https://w3id.org/BMO#Honeycomb
+:Honeycomb rdf:type owl:Class ;
+           rdfs:subClassOf :Hazard .
+
+
+###  https://w3id.org/BMO#HoneycombOnPier
+:HoneycombOnPier rdf:type owl:Class ;
+                 rdfs:subClassOf :HazardOnSubstructure ,
+                                 :Honeycomb .
+
+
+###  https://w3id.org/BMO#HoneycombOnSuperstructure
+:HoneycombOnSuperstructure rdf:type owl:Class ;
+                           rdfs:subClassOf :HazardOnSuperstructure ,
+                                           :Honeycomb .
 
 
 ###  https://w3id.org/BMO#HybridBridge
@@ -2984,11 +3268,11 @@ The element labelling for BCMI should be carried out only once in the lifetime o
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty :hasElement ;
-                                        owl:someValuesFrom :Trestle
+                                        owl:someValuesFrom :Padstone
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty :hasElement ;
-                                        owl:someValuesFrom <https://w3id.org/BMO#Padstone/Cills(bedstone)>
+                                        owl:someValuesFrom :Trestle
                                       ] ;
                       rdfs:comment "The ends of at least two consecutive decks are supported by an intermediate support typically comprising piers, trestles or columns with their associated padstones or cills." .
 
@@ -3321,6 +3605,13 @@ The element labelling for BCMI should be carried out only once in the lifetime o
                                   ] .
 
 
+###  https://w3id.org/BMO#MechanicalReboundHammer
+:MechanicalReboundHammer rdf:type owl:Class ;
+                         rdfs:subClassOf :ReboundHammer ;
+                         rdfs:comment """机械式回弹仪
+通过指针滑块示值刻线从仪器的刻度尺上直接读出回弹值的回弹仪。""" .
+
+
 ###  https://w3id.org/BMO#Metal
 :Metal rdf:type owl:Class ;
        owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
@@ -3470,6 +3761,25 @@ The element labelling for BCMI should be carried out only once in the lifetime o
      rdfs:subClassOf :ElementCode .
 
 
+###  https://w3id.org/BMO#Padstone
+:Padstone rdf:type owl:Class ;
+          rdfs:subClassOf :MinorElement ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :categorizedInto ;
+                            owl:someValuesFrom <https://w3id.org/BMO#1_in_a_line_in_a_support_(ES_or_IS)>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasElementCode ;
+                            owl:someValuesFrom :PCL
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasElementCode ;
+                            owl:allValuesFrom :PCL
+                          ] ;
+          <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.7%20Abutment%2C%20wing%20wall%2C%20pier%2C%20padstone%2C%20cill%2C%20barrel%20arch%2C%20face%20rings%2C%20spandrel%20walls%2C%20parapet.png> ;
+          rdfs:comment "Each line of padstone or cills at a support excluding decorative features." .
+
+
 ###  https://w3id.org/BMO#PaintingQuality
 :PaintingQuality rdf:type owl:Class ;
                  rdfs:subClassOf :PotentialReason .
@@ -3504,7 +3814,7 @@ The element labelling for BCMI should be carried out only once in the lifetime o
                    rdfs:subClassOf :BridgeInspection ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :hasAssessment ;
-                                     owl:someValuesFrom :BridgeTechnicalCondition
+                                     owl:someValuesFrom :BridgeTechnicalConditionRating
                                    ] ;
                    rdfs:comment "对桥梁总体技术状况进行的周期性检查及技术状况评定。" .
 
@@ -3690,6 +4000,15 @@ The element labelling for BCMI should be carried out only once in the lifetime o
                  rdfs:comment "The Project Engineer is responsible for (a) the Building and Civil Engineering aspects of the Project, and (b) for following the requirements of this standard,including Acceptance of the Engineering Deliverables." .
 
 
+###  https://w3id.org/BMO#ProtectiveCoatingSystems
+:ProtectiveCoatingSystems rdf:type owl:Class ;
+                          rdfs:subClassOf owl:Thing ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :termsIn ;
+                                            owl:someValuesFrom :UKStandard
+                                          ] .
+
+
 ###  https://w3id.org/BMO#PublicRoadManager
 :PublicRoadManager rdf:type owl:Class ;
                    rdfs:subClassOf :ExternalStakeholders ;
@@ -3720,7 +4039,19 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 ###  https://w3id.org/BMO#ReboundHammer
 :ReboundHammer rdf:type owl:Class ;
-               rdfs:subClassOf :Equipment .
+               rdfs:subClassOf :Equipment ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hammerImpactEnergy ;
+                                 owl:someValuesFrom rdfs:Literal
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :potentialEnergyOfSpring ;
+                                 owl:someValuesFrom rdfs:Literal
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :typeCode ;
+                                 owl:someValuesFrom rdfs:Literal
+                               ] .
 
 
 ###  https://w3id.org/BMO#ReboundTest
@@ -3741,6 +4072,12 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 :RegulatingStructure rdf:type owl:Class ;
                      rdfs:subClassOf :BridgeComponent ;
                      rdfs:comment "为引导和改变水流方向，使水流平顺通过桥孔并减缓水流对桥位附近河床、河岸的冲刷而修建的水工构造物。" .
+
+
+###  https://w3id.org/BMO#ReinforcedConcrete
+:ReinforcedConcrete rdf:type owl:Class ;
+                    rdfs:subClassOf :Concrete ;
+                    rdfs:comment "Reinforcement is defined as standard reinforcement bars, stressing cables/bars and embedded metal beams (i.e. girders fully buried in concrete decks)." .
 
 
 ###  https://w3id.org/BMO#ReinforcedConcreteBridge
@@ -3877,11 +4214,41 @@ The element labelling for BCMI should be carried out only once in the lifetime o
                                                               :severityD
                                                               :severityE
                                                               :severityF
-                                                              :severityG
                                                             )
                                                 ] ;
                             rdfs:subClassOf :SeverityRating ;
                             <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png> .
+
+
+###  https://w3id.org/BMO#SeverityRatingForCrackOnMasonry
+:SeverityRatingForCrackOnMasonry rdf:type owl:Class ;
+                                 owl:equivalentClass [ rdf:type owl:Class ;
+                                                       owl:oneOf ( :severityA
+                                                                   :severityG
+                                                                   :severityH
+                                                                   :severityI
+                                                                   :severityJ
+                                                                   :severityK
+                                                                   :severityL
+                                                                   :severityM
+                                                                   :severityN
+                                                                   :severityO
+                                                                   :severityP
+                                                                 )
+                                                     ] ;
+                                 rdfs:subClassOf :SeverityRating .
+
+
+###  https://w3id.org/BMO#SeverityRatingForCrackOnReinforcedConcrete
+:SeverityRatingForCrackOnReinforcedConcrete rdf:type owl:Class ;
+                                            owl:equivalentClass [ rdf:type owl:Class ;
+                                                                  owl:oneOf ( :severityA
+                                                                              :severityB
+                                                                              :severityC
+                                                                              :severityD
+                                                                            )
+                                                                ] ;
+                                            rdfs:subClassOf :SeverityRating .
 
 
 ###  https://w3id.org/BMO#SideBridges
@@ -3965,7 +4332,32 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 ###  https://w3id.org/BMO#Spalling
 :Spalling rdf:type owl:Class ;
-          rdfs:subClassOf :Hazard .
+          rdfs:subClassOf :Hazard ;
+          rdfs:comment "The term spalling includes delamination, where the surface cover is in the process of being burst off but has not fully separated." .
+
+
+###  https://w3id.org/BMO#SpallingOnAbutment
+:SpallingOnAbutment rdf:type owl:Class ;
+                    rdfs:subClassOf :HazardOnSubstructure ,
+                                    :Spalling .
+
+
+###  https://w3id.org/BMO#SpallingOnDeck
+:SpallingOnDeck rdf:type owl:Class ;
+                rdfs:subClassOf :HazardOnDeck ,
+                                :Spalling .
+
+
+###  https://w3id.org/BMO#SpallingOnPier
+:SpallingOnPier rdf:type owl:Class ;
+                rdfs:subClassOf :HazardOnSubstructure ,
+                                :Spalling .
+
+
+###  https://w3id.org/BMO#SpallingOnSuperstructure
+:SpallingOnSuperstructure rdf:type owl:Class ;
+                          rdfs:subClassOf :HazardOnSuperstructure ,
+                                          :Spalling .
 
 
 ###  https://w3id.org/BMO#SpanBySpanMethodWithSteppingFormwork
@@ -4020,6 +4412,11 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 :SpreadFoundation rdf:type owl:Class ;
                   rdfs:subClassOf :Foundation ;
                   rdfs:comment "扩大承载面积以适应地基容许力承载力的基础。一般为明挖浅基础。" .
+
+
+###  https://w3id.org/BMO#Staining
+:Staining rdf:type owl:Class ;
+          rdfs:subClassOf :Hazard .
 
 
 ###  https://w3id.org/BMO#StakeholderManagementPlan
@@ -4494,9 +4891,25 @@ The element labelling for BCMI should be carried out only once in the lifetime o
                   rdfs:subClassOf owl:Thing .
 
 
+###  https://w3id.org/BMO#Voússoirs
+:Voússoirs rdf:type owl:Class ;
+           rdfs:subClassOf :BridgeElement .
+
+
 ###  https://w3id.org/BMO#WWL
 :WWL rdf:type owl:Class ;
      rdfs:subClassOf :ElementCode .
+
+
+###  https://w3id.org/BMO#WaterStain
+:WaterStain rdf:type owl:Class ;
+            rdfs:subClassOf :Hazard .
+
+
+###  https://w3id.org/BMO#WaterStainOnSuperstructure
+:WaterStainOnSuperstructure rdf:type owl:Class ;
+                            rdfs:subClassOf :HazardOnSuperstructure ,
+                                            :WaterStain .
 
 
 ###  https://w3id.org/BMO#Waterproofing
@@ -4593,6 +5006,11 @@ Masonry steps, paths and walls;""" .
                                                        rdfs:comment "The role of the CRE extends to both the design and construction phases of a Project. The CRE is accountable for the day-to-day management and coordination of the technical and engineering activities within a specific engineering discipline for a specific contract. The CRE is appointed in accordance with NR/L2//IN1/02009 and is(a)authorised to sign the Forms associated with this standard on behalf of the design and/or contracting organization, and (b) responsible for confirming that the Engineering Deliverables satisfy the requirements of the Contract and also meet the requirements of this standard." .
 
 
+###  https://w3id.org/BMO#CrackOnPadstone/Cills
+<https://w3id.org/BMO#CrackOnPadstone/Cills> rdf:type owl:Class ;
+                                             rdfs:subClassOf :Crack .
+
+
 ###  https://w3id.org/BMO#Decking/Plate/Slab/JackArches
 <https://w3id.org/BMO#Decking/Plate/Slab/JackArches> rdf:type owl:Class ;
                                                      owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
@@ -4612,24 +5030,6 @@ Masonry steps, paths and walls;""" .
                                                                        owl:someValuesFrom <https://w3id.org/BMO#3_in_a_sub_deck_and_numbered_with_the_sub_deck>
                                                                      ] ;
                                                      rdfs:comment "All decking located within a sub deck. This includes all decking types supported by beams." .
-
-
-###  https://w3id.org/BMO#FaceRings/Voússoirs
-<https://w3id.org/BMO#FaceRings/Voússoirs> rdf:type owl:Class ;
-                                           owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                        owl:onProperty :hasElementCode ;
-                                                                                        owl:someValuesFrom :FRV
-                                                                                      ]
-                                                                                      [ rdf:type owl:Restriction ;
-                                                                                        owl:onProperty :hasElementCode ;
-                                                                                        owl:allValuesFrom :FRV
-                                                                                      ]
-                                                                                    ) ;
-                                                                 rdf:type owl:Class
-                                                               ] ;
-                                           rdfs:subClassOf :MinorElement ;
-                                           <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.7%20Abutment%2C%20wing%20wall%2C%20pier%2C%20padstone%2C%20cill%2C%20barrel%20arch%2C%20face%20rings%2C%20spandrel%20walls%2C%20parapet.png> ;
-                                           rdfs:comment "Each set of face rings or voússoirs (2 per arch) should be identified individually. Some arch Bridges, particularly severely skewed arch Bridges, may comprise several arches each with their own face rings which may be exposed to varying extents." .
 
 
 ###  https://w3id.org/BMO#LongitudinalMainBeam/Girder(exposed)
@@ -4757,28 +5157,6 @@ Masonry steps, paths and walls;""" .
                                                                                                            rdfs:subClassOf :ElementLabellingProcess .
 
 
-###  https://w3id.org/BMO#Padstone/Cills(bedstone)
-<https://w3id.org/BMO#Padstone/Cills(bedstone)> rdf:type owl:Class ;
-                                                owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                             owl:onProperty :hasElementCode ;
-                                                                                             owl:someValuesFrom :PCL
-                                                                                           ]
-                                                                                           [ rdf:type owl:Restriction ;
-                                                                                             owl:onProperty :hasElementCode ;
-                                                                                             owl:allValuesFrom :PCL
-                                                                                           ]
-                                                                                         ) ;
-                                                                      rdf:type owl:Class
-                                                                    ] ;
-                                                rdfs:subClassOf :MinorElement ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty :categorizedInto ;
-                                                                  owl:someValuesFrom <https://w3id.org/BMO#1_in_a_line_in_a_support_(ES_or_IS)>
-                                                                ] ;
-                                                <http://schema.org/image> <https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.7%20Abutment%2C%20wing%20wall%2C%20pier%2C%20padstone%2C%20cill%2C%20barrel%20arch%2C%20face%20rings%2C%20spandrel%20walls%2C%20parapet.png> ;
-                                                rdfs:comment "Each line of padstone or cills at a support excluding decorative features." .
-
-
 ###  https://w3id.org/BMO#Simple–supportedBeam
 <https://w3id.org/BMO#Simple–supportedBeam> rdf:type owl:Class ;
                                             rdfs:subClassOf :Beam ;
@@ -4898,6 +5276,11 @@ Masonry steps, paths and walls;""" .
                                                                                         :ArrangementsForRiskOfExtremeWeather .
 
 
+###  https://w3id.org/BMO#Beijing_New_Bridge_Technology_Devlopment_Limited_Company
+:Beijing_New_Bridge_Technology_Devlopment_Limited_Company rdf:type owl:NamedIndividual ,
+                                                                   :Organization .
+
+
 ###  https://w3id.org/BMO#C30
 :C30 rdf:type owl:NamedIndividual ,
               :Concrete ;
@@ -4985,7 +5368,6 @@ Masonry steps, paths and walls;""" .
                           :Bridge ,
                           :StrengtheningMeasure ,
                           :VisibleCondition ;
-                 :managedBy :zuzhi ;
                  :A-s1 "0.051446"^^xsd:float ;
                  :A-s2 "0.064307"^^xsd:float ;
                  :As1 "0.051446"^^xsd:float ;
@@ -5012,6 +5394,13 @@ Masonry steps, paths and walls;""" .
                  rdfs:comment "This bridge is a cable-stayed bridge with 540m (140m+260m+140m) long located in Dalian, Liaoning Province. Its main beam is connected with the pier and tower in the form of consolidation." .
 
 
+###  https://w3id.org/BMO#China_Engineering_Construction_Standardization_Association
+:China_Engineering_Construction_Standardization_Association rdf:type owl:NamedIndividual ,
+                                                                     :Organization ;
+                                                            rdfs:comment "中国工程建设标准化协会" ;
+                                                            :website <http://www.cecs.org.cn/> .
+
+
 ###  https://w3id.org/BMO#CrackSealGlue
 :CrackSealGlue rdf:type owl:NamedIndividual ,
                         :Material .
@@ -5021,11 +5410,6 @@ Masonry steps, paths and walls;""" .
 :DK1 rdf:type owl:NamedIndividual ,
               :Deck ;
      :hasElement :MGI1 .
-
-
-###  https://w3id.org/BMO#DMU
-:DMU rdf:type owl:NamedIndividual ,
-              :Organization .
 
 
 ###  https://w3id.org/BMO#DailyMaintenance
@@ -5041,6 +5425,14 @@ Masonry steps, paths and walls;""" .
 ###  https://w3id.org/BMO#Daily_pre_works_start_inspections
 :Daily_pre_works_start_inspections rdf:type owl:NamedIndividual ,
                                             :ArrangementsForRiskOfDrowning .
+
+
+###  https://w3id.org/BMO#Dalian_Maritime_University
+:Dalian_Maritime_University rdf:type owl:NamedIndividual ,
+                                     :Organization ;
+                            rdfs:comment "大连海事大学" ;
+                            :website <https://www.dlmu.edu.cn/> ,
+                                     "https://www.dlmu.edu.cn/"^^xsd:anyURI .
 
 
 ###  https://w3id.org/BMO#Design
@@ -5125,8 +5517,9 @@ The design strength of concrete is 40.""" .
 ###  https://w3id.org/BMO#Highway_Bureau_of_the_Ministry_of_Transport
 :Highway_Bureau_of_the_Ministry_of_Transport rdf:type owl:NamedIndividual ,
                                                       :Organization ;
-                                             :website "https://zizhan.mot.gov.cn/sj2019/gongluj/"^^xsd:anyURI ;
-                                             rdfs:comment "交通运输部公路局" .
+                                             rdfs:comment "交通运输部公路局" ;
+                                             :website <https://zizhan.mot.gov.cn/sj2019/gongluj/> ,
+                                                      "https://zizhan.mot.gov.cn/sj2019/gongluj/"^^xsd:anyURI .
 
 
 ###  https://w3id.org/BMO#Imetal
@@ -5147,7 +5540,7 @@ The design strength of concrete is 40.""" .
 ###  https://w3id.org/BMO#JTG_2120-2020
 :JTG_2120-2020 rdf:type owl:NamedIndividual ,
                         :HighwayEngineering ;
-               :approvalDepartment <https://w3id.org/BMO#Ministry_of_Transport_of_the_People's_Republic_of_China> ;
+               :approvalDepartment :Ministry_of_Transport_of_the_Peoples_Republic_of_China ;
                :editor-in-ChiefOrganization <https://w3id.org/BMO#CCCC_Highway_Consultants_Co.,Ltd.> ;
                :implementationDate "2020-08-01T00:00:00+08:00"^^xsd:dateTime ;
                :publicationDate "2020-05-07T00:00:00+08:00"^^xsd:dateTime ;
@@ -5170,14 +5563,14 @@ Unified standard for reliability design of highway engineering structures""" .
 :JTG_5120-2021 rdf:type owl:NamedIndividual ,
                         :MaintenanceStandard ,
                         :UnderwaterInspectionStandard ;
-               :approvalDepartment <https://w3id.org/BMO#Ministry_of_Transport_of_the_People's_Republic_of_China> ;
+               :approvalDepartment :Ministry_of_Transport_of_the_Peoples_Republic_of_China ;
                :editor-in-ChiefOrganization <https://w3id.org/BMO#CCCC_First_Highway_Consultants_Co.,Ltd.> ;
                :guideTo :UnderwaterReboundTest ,
                         :UniaxialCompressiveStrengthTest ;
                :implementationDate "2021-11-01T00:00:00+08:00"^^xsd:dateTime ;
                :publicationDate "2021-08-09T00:00:00+08:00"^^xsd:dateTime ;
-               :scope "Highway Bridges and Culverts" ,
-                      "本规范适用于各等级公路桥涵的养护工作。有特殊养护需求的桥梁，应制定专项养护技术规程。" ;
+               :scope """Highway Bridges and Culverts
+本规范适用于各等级公路桥涵的养护工作。有特殊养护需求的桥梁，应制定专项养护技术规程。""" ;
                rdfs:comment """公路桥涵养护规范
 Specifications for Maintenance of Highway Bridges and Culverts""" .
 
@@ -5185,7 +5578,7 @@ Specifications for Maintenance of Highway Bridges and Culverts""" .
 ###  https://w3id.org/BMO#JTG_B01-2014
 :JTG_B01-2014 rdf:type owl:NamedIndividual ,
                        :HighwayEngineering ;
-              :approvalDepartment <https://w3id.org/BMO#Ministry_of_Transport_of_the_People's_Republic_of_China> ;
+              :approvalDepartment :Ministry_of_Transport_of_the_Peoples_Republic_of_China ;
               :editor-in-ChiefOrganization :Highway_Bureau_of_the_Ministry_of_Transport ,
                                            <https://w3id.org/BMO#CCCC_First_Highway_Consultants_Co.,Ltd.> ;
               :implementationDate "2015-01-01T00:00:00+08:00"^^xsd:dateTime ;
@@ -5198,7 +5591,7 @@ Technical Standard of Highway Engineering""" .
 ###  https://w3id.org/BMO#JTG_D60-2015
 :JTG_D60-2015 rdf:type owl:NamedIndividual ,
                        :DesignStandard ;
-              :approvalDepartment <https://w3id.org/BMO#Ministry_of_Transport_of_the_People's_Republic_of_China> ;
+              :approvalDepartment :Ministry_of_Transport_of_the_Peoples_Republic_of_China ;
               :editor-in-ChiefOrganization <https://w3id.org/BMO#CCCC_Highway_Consultants_Co.,Ltd.> ;
               :implementationDate "2015-12-01T00:00:00+08:00"^^xsd:dateTime ;
               :scope "本规范适用于新建和改建各等级公路桥涵的设计。" ;
@@ -5214,7 +5607,7 @@ General Specifications for Design of Highway Bridges and Culverts""" .
 ###  https://w3id.org/BMO#JTJ_002-87
 :JTJ_002-87 rdf:type owl:NamedIndividual ,
                      :HighwayEngineering ;
-            :approvalDepartment <https://w3id.org/BMO#Ministry_of_Transport_of_the_People's_Republic_of_China> ;
+            :approvalDepartment :Ministry_of_Transport_of_the_Peoples_Republic_of_China ;
             :editor-in-ChiefOrganization <https://w3id.org/BMO#CCCC_Highway_Consultants_Co.,Ltd.> ;
             :implementationDate "1988-01-01T00:00:00+08:00"^^xsd:dateTime ;
             :publicationDate "1987-02-09T00:00:00+08:00"^^xsd:dateTime ;
@@ -5230,17 +5623,13 @@ Standard of Technical Terms for Highway Engineering""" .
 
 ###  https://w3id.org/BMO#MGI1
 :MGI1 rdf:type owl:NamedIndividual ;
-      :hasHazard :corrosion ;
       :hasMaterialType :metal .
 
 
 ###  https://w3id.org/BMO#MGI2
 :MGI2 rdf:type owl:NamedIndividual ,
                :MinorElement ;
-      :hasHazard :coatingDefect ,
-                 :crack ;
-      :hasMaterialType :coating ,
-                       :metal .
+      :hasMaterialType :metal .
 
 
 ###  https://w3id.org/BMO#MadImprovement
@@ -5258,9 +5647,25 @@ Standard of Technical Terms for Highway Engineering""" .
                                                                       :CompressiveStrengthTestingMachine .
 
 
+###  https://w3id.org/BMO#Ministry_of_Housing_and_Urban-Rural_Development
+:Ministry_of_Housing_and_Urban-Rural_Development rdf:type owl:NamedIndividual ,
+                                                          :Organization ;
+                                                 rdfs:comment "中华人民共和国住房和城乡建设部" ;
+                                                 :website <https://www.mohurd.gov.cn/> .
+
+
+###  https://w3id.org/BMO#Ministry_of_Transport_of_the_Peoples_Republic_of_China
+:Ministry_of_Transport_of_the_Peoples_Republic_of_China rdf:type owl:NamedIndividual ,
+                                                                 :Organization ;
+                                                        rdfs:comment "中华人民共和国交通运输部" ;
+                                                        :website <https://www.mot.gov.cn/> ,
+                                                                 "https://www.mot.gov.cn/"^^xsd:anyURI .
+
+
 ###  https://w3id.org/BMO#NetworkRail
 :NetworkRail rdf:type owl:NamedIndividual ,
-                      :Organization .
+                      :Organization ;
+             :website <https://www.networkrail.co.uk/> .
 
 
 ###  https://w3id.org/BMO#NormalMaintenance
@@ -5301,10 +5706,6 @@ Standard of Technical Terms for Highway Engineering""" .
 ###  https://w3id.org/BMO#ProjectEngineer1
 :ProjectEngineer1 rdf:type owl:NamedIndividual ,
                            :Stakeholders .
-
-
-###  https://w3id.org/BMO#ProtectiveCoatingSystems
-:ProtectiveCoatingSystems rdf:type owl:NamedIndividual .
 
 
 ###  https://w3id.org/BMO#Q235
@@ -5357,7 +5758,9 @@ Standard of Technical Terms for Highway Engineering""" .
 ###  https://w3id.org/BMO#Research_Institute_of_Highway_Ministry_of_Transport
 :Research_Institute_of_Highway_Ministry_of_Transport rdf:type owl:NamedIndividual ,
                                                               :Organization ;
-                                                     :website "https://www.rioh.cn/"^^xsd:anyURI .
+                                                     rdfs:comment "交通运输部公路科学研究院" ;
+                                                     :website <https://www.rioh.cn/> ,
+                                                              "https://www.rioh.cn/"^^xsd:anyURI .
 
 
 ###  https://w3id.org/BMO#RiskOfDrowning
@@ -5467,6 +5870,11 @@ Standard of Technical Terms for Highway Engineering""" .
                       :EnvironmentCondition .
 
 
+###  https://w3id.org/BMO#ThermallySprayedMetalOrEpoxyProtectiveSystem
+:ThermallySprayedMetalOrEpoxyProtectiveSystem rdf:type owl:NamedIndividual ,
+                                                       :ProtectiveCoatingSystems .
+
+
 ###  https://w3id.org/BMO#TrainPassing
 :TrainPassing rdf:type owl:NamedIndividual ,
                        :BridgeStructuralRisk ;
@@ -5480,7 +5888,7 @@ Standard of Technical Terms for Highway Engineering""" .
 :UnderwaterReboundTest rdf:type owl:NamedIndividual ,
                                 :Experimentation ,
                                 :ReboundTest ;
-                       :conductedBy :DMU ;
+                       :conductedBy :Dalian_Maritime_University ;
                        :needEquipment :SBART_Wetsuit ,
                                       :ZJYY_Ladder ,
                                       :ZJYY_ReboundHammer ;
@@ -5497,7 +5905,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 :UniaxialCompressiveStrengthTest rdf:type owl:NamedIndividual ,
                                           :CompressiveStrengthTest ,
                                           :Experimentation ;
-                                 :conductedBy :DMU ;
+                                 :conductedBy :Dalian_Maritime_University ;
                                  :needEquipment :MicrocomputerControlledElectro-hydraulicServoTestingMachine ;
                                  :date "2022-06" ;
                                  rdfs:comment "Establish the relationship between the actual strength value and the rebound value of concretes serving under ambient water environment." .
@@ -5529,64 +5937,100 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 ###  https://w3id.org/BMO#ZJYY_ReboundHammer
 :ZJYY_ReboundHammer rdf:type owl:NamedIndividual ,
-                             :ReboundHammer .
-
-
-###  https://w3id.org/BMO#coating
-:coating rdf:type owl:NamedIndividual ,
-                  :CoatingsToMetal .
-
-
-###  https://w3id.org/BMO#coatingDefect
-:coatingDefect rdf:type owl:NamedIndividual ,
-                        :CoatingDefect ;
-               :percentage 50 ;
-               :showingCorrosionSpots "true"^^xsd:boolean .
-
-
-###  https://w3id.org/BMO#corrosion
-:corrosion rdf:type owl:NamedIndividual ,
-                    :Corrosion ;
-           :maxDepth "0.5"^^xsd:float ;
-           :percentage 55 ;
-           :throughSection "false"^^xsd:boolean .
-
-
-###  https://w3id.org/BMO#crack
-:crack rdf:type owl:NamedIndividual ,
-                :Crack ;
-       :maxWidth "2.0"^^xsd:float ;
-       :percentage 30 .
+                             :MechanicalReboundHammer ;
+                    :potentialEnergyOfSpring "2.207J" ;
+                    :typeCode "M225" .
 
 
 ###  https://w3id.org/BMO#extent1
 :extent1 rdf:type owl:NamedIndividual ,
-                  :ExtentRatingForCorrosion .
+                  :ExtentRatingForCoatingsToMetal ,
+                  :ExtentRatingForCorrosion ,
+                  :ExtentRatingForCrackOnMasonry ,
+                  :ExtentRatingForCrackOnReinforcedConcrete .
+
+
+###  https://w3id.org/BMO#extent10
+:extent10 rdf:type owl:NamedIndividual ,
+                   :ExtentRatingForCrackOnMasonry .
+
+
+###  https://w3id.org/BMO#extent11
+:extent11 rdf:type owl:NamedIndividual ,
+                   :ExtentRatingForCrackOnMasonry .
 
 
 ###  https://w3id.org/BMO#extent2
 :extent2 rdf:type owl:NamedIndividual ,
-                  :ExtentRatingForCorrosion .
+                  :ExtentRatingForCrackOnReinforcedConcrete .
 
 
 ###  https://w3id.org/BMO#extent3
 :extent3 rdf:type owl:NamedIndividual ,
-                  :ExtentRatingForCorrosion .
+                  :ExtentRatingForCoatingsToMetal ,
+                  :ExtentRatingForCorrosion ,
+                  :ExtentRatingForCrackOnReinforcedConcrete .
 
 
 ###  https://w3id.org/BMO#extent4
 :extent4 rdf:type owl:NamedIndividual ,
-                  :ExtentRatingForCorrosion .
+                  :ExtentRatingForCoatingsToMetal ,
+                  :ExtentRatingForCorrosion ,
+                  :ExtentRatingForCrackOnReinforcedConcrete .
 
 
 ###  https://w3id.org/BMO#extent5
 :extent5 rdf:type owl:NamedIndividual ,
-                  :ExtentRatingForCorrosion .
+                  :ExtentRatingForCoatingsToMetal ,
+                  :ExtentRatingForCorrosion ,
+                  :ExtentRatingForCrackOnReinforcedConcrete .
 
 
 ###  https://w3id.org/BMO#extent6
 :extent6 rdf:type owl:NamedIndividual ,
-                  :ExtentRatingForCorrosion .
+                  :ExtentRatingForCoatingsToMetal ,
+                  :ExtentRatingForCorrosion ,
+                  :ExtentRatingForCrackOnReinforcedConcrete .
+
+
+###  https://w3id.org/BMO#extent7
+:extent7 rdf:type owl:NamedIndividual ,
+                  :ExtentRatingForCrackOnMasonry .
+
+
+###  https://w3id.org/BMO#extent8
+:extent8 rdf:type owl:NamedIndividual ,
+                  :ExtentRatingForCrackOnMasonry .
+
+
+###  https://w3id.org/BMO#extent9
+:extent9 rdf:type owl:NamedIndividual ,
+                  :ExtentRatingForCrackOnMasonry .
+
+
+###  https://w3id.org/BMO#level1
+:level1 rdf:type owl:NamedIndividual ,
+                 :BridgeTechnicalConditionRating .
+
+
+###  https://w3id.org/BMO#level2
+:level2 rdf:type owl:NamedIndividual ,
+                 :BridgeTechnicalConditionRating .
+
+
+###  https://w3id.org/BMO#level3
+:level3 rdf:type owl:NamedIndividual ,
+                 :BridgeTechnicalConditionRating .
+
+
+###  https://w3id.org/BMO#level4
+:level4 rdf:type owl:NamedIndividual ,
+                 :BridgeTechnicalConditionRating .
+
+
+###  https://w3id.org/BMO#level5
+:level5 rdf:type owl:NamedIndividual ,
+                 :BridgeTechnicalConditionRating .
 
 
 ###  https://w3id.org/BMO#metal
@@ -5597,22 +6041,27 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 ###  https://w3id.org/BMO#severityA
 :severityA rdf:type owl:NamedIndividual ,
                     :SeverityRatingForCoatingsToMetal ,
-                    :SeverityRatingForCorrosion .
+                    :SeverityRatingForCorrosion ,
+                    :SeverityRatingForCrackOnMasonry ,
+                    :SeverityRatingForCrackOnReinforcedConcrete .
 
 
 ###  https://w3id.org/BMO#severityB
 :severityB rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForCorrosion .
+                    :SeverityRatingForCorrosion ,
+                    :SeverityRatingForCrackOnReinforcedConcrete .
 
 
 ###  https://w3id.org/BMO#severityC
 :severityC rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForCorrosion .
+                    :SeverityRatingForCorrosion ,
+                    :SeverityRatingForCrackOnReinforcedConcrete .
 
 
 ###  https://w3id.org/BMO#severityD
 :severityD rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForCorrosion .
+                    :SeverityRatingForCorrosion ,
+                    :SeverityRatingForCrackOnReinforcedConcrete .
 
 
 ###  https://w3id.org/BMO#severityE
@@ -5627,32 +6076,56 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 ###  https://w3id.org/BMO#severityG
 :severityG rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForCorrosion .
+                    :SeverityRatingForCrackOnMasonry .
+
+
+###  https://w3id.org/BMO#severityH
+:severityH rdf:type owl:NamedIndividual ,
+                    :SeverityRatingForCrackOnMasonry .
 
 
 ###  https://w3id.org/BMO#severityI
 :severityI rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForCoatingsToMetal .
+                    :SeverityRatingForCoatingsToMetal ,
+                    :SeverityRatingForCrackOnMasonry .
 
 
 ###  https://w3id.org/BMO#severityJ
 :severityJ rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForCoatingsToMetal .
+                    :SeverityRatingForCoatingsToMetal ,
+                    :SeverityRatingForCrackOnMasonry .
 
 
 ###  https://w3id.org/BMO#severityK
 :severityK rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForCoatingsToMetal .
+                    :SeverityRatingForCoatingsToMetal ,
+                    :SeverityRatingForCrackOnMasonry .
 
 
 ###  https://w3id.org/BMO#severityL
 :severityL rdf:type owl:NamedIndividual ,
-                    :SeverityRatingForCoatingsToMetal .
+                    :SeverityRatingForCoatingsToMetal ,
+                    :SeverityRatingForCrackOnMasonry .
 
 
-###  https://w3id.org/BMO#zuzhi
-:zuzhi rdf:type owl:NamedIndividual ,
-                :Organization .
+###  https://w3id.org/BMO#severityM
+:severityM rdf:type owl:NamedIndividual ,
+                    :SeverityRatingForCrackOnMasonry .
+
+
+###  https://w3id.org/BMO#severityN
+:severityN rdf:type owl:NamedIndividual ,
+                    :SeverityRatingForCrackOnMasonry .
+
+
+###  https://w3id.org/BMO#severityO
+:severityO rdf:type owl:NamedIndividual ,
+                    :SeverityRatingForCrackOnMasonry .
+
+
+###  https://w3id.org/BMO#severityP
+:severityP rdf:type owl:NamedIndividual ,
+                    :SeverityRatingForCrackOnMasonry .
 
 
 ###  https://w3id.org/BMO#13-BoxGirder
@@ -5698,15 +6171,36 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 ###  https://w3id.org/BMO#CCCC_First_Highway_Consultants_Co.,Ltd.
 <https://w3id.org/BMO#CCCC_First_Highway_Consultants_Co.,Ltd.> rdf:type owl:NamedIndividual ,
                                                                         :Organization ;
-                                                               :website "https://www.ccroad.com.cn/"^^xsd:anyURI ;
-                                                               rdfs:comment "中交第一公路勘察设计研究院有限公司" .
+                                                               rdfs:comment "中交第一公路勘察设计研究院有限公司" ;
+                                                               :website <https://www.ccroad.com.cn/> ,
+                                                                        "https://www.ccroad.com.cn/"^^xsd:anyURI .
 
 
 ###  https://w3id.org/BMO#CCCC_Highway_Consultants_Co.,Ltd.
 <https://w3id.org/BMO#CCCC_Highway_Consultants_Co.,Ltd.> rdf:type owl:NamedIndividual ,
                                                                   :Organization ;
-                                                         :website "http://www.hpdi.com.cn/"^^xsd:anyURI ;
-                                                         rdfs:comment "中交公路规划设计院有限公司" .
+                                                         rdfs:comment "中交公路规划设计院有限公司" ;
+                                                         :website <http://www.hpdi.com.cn/> ,
+                                                                  "http://www.hpdi.com.cn/"^^xsd:anyURI .
+
+
+###  https://w3id.org/BMO#GB/T_9138-2015
+<https://w3id.org/BMO#GB/T_9138-2015> rdf:type owl:NamedIndividual ,
+                                               :UnderwaterInspectionStandard ;
+                                      :implementationDate "2015-12-01T00:00:00+08:00"^^xsd:dateTime ;
+                                      :publicationDate "2015-05-15T00:00:00+08:00"^^xsd:dateTime ;
+                                      rdfs:comment """回弹仪
+Rebound test hammer""" .
+
+
+###  https://w3id.org/BMO#JGJ/T_23-2011
+<https://w3id.org/BMO#JGJ/T_23-2011> rdf:type owl:NamedIndividual ,
+                                              :UnderwaterInspectionStandard ;
+                                     :approvalDepartment :Ministry_of_Housing_and_Urban-Rural_Development ;
+                                     :implementationDate "2011-12-01T00:00:00+08:00"^^xsd:dateTime ;
+                                     :publicationDate "2011-05-03T00:00:00+08:00"^^xsd:dateTime ;
+                                     rdfs:comment """回弹法检测混凝土抗压强度技术规程 
+Technical specifications for inspecting concrete compressive strength by rebound method""" .
 
 
 ###  https://w3id.org/BMO#JTG/T_2231-01-2020
@@ -5787,7 +6281,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 ###  https://w3id.org/BMO#JTG/T_H21-2021
 <https://w3id.org/BMO#JTG/T_H21-2021> rdf:type owl:NamedIndividual ,
                                                :MaintenanceStandard ;
-                                      :approvalDepartment <https://w3id.org/BMO#Ministry_of_Transport_of_the_People's_Republic_of_China> ;
+                                      :approvalDepartment :Ministry_of_Transport_of_the_Peoples_Republic_of_China ;
                                       :editor-in-ChiefOrganization :Research_Institute_of_Highway_Ministry_of_Transport ;
                                       :implementationDate "2011-09-01T00:00:00+08:00"^^xsd:dateTime ;
                                       :scope "本规范适用于各级公路的桥梁桥梁技术状况评定。" ;
@@ -5813,12 +6307,6 @@ Standards for Technical Condition Evaluation of Highway Bridges""" .
 ###  https://w3id.org/BMO#JTG/T_J23-2008
 <https://w3id.org/BMO#JTG/T_J23-2008> rdf:type owl:NamedIndividual ,
                                                :MaintenanceStandard .
-
-
-###  https://w3id.org/BMO#Ministry_of_Transport_of_the_People's_Republic_of_China
-<https://w3id.org/BMO#Ministry_of_Transport_of_the_People's_Republic_of_China> rdf:type owl:NamedIndividual ,
-                                                                                        :Organization ;
-                                                                               :website "https://www.mot.gov.cn/"^^xsd:anyURI .
 
 
 ###  https://w3id.org/BMO#NR/GN/CIV/025
@@ -5867,14 +6355,15 @@ There are a small number of unique and complex Bridges that cannot be labelled i
 
 ###  https://w3id.org/BMO#T/CECSG:J56-2019
 <https://w3id.org/BMO#T/CECSG:J56-2019> rdf:type owl:NamedIndividual ,
-                                                 :Standard ,
                                                  :UnderwaterInspectionStandard ;
-                                        :guideTo :UnderwaterReboundTest ,
-                                                 :UniaxialCompressiveStrengthTest ;
-                                        :name """Chinese:公路桥梁水下构件检测技术规程;
-English:Technical Regulations for Inspection of Underwater Components of Highway Bridges;""" ;
-                                        :publicationDate "2019-08-26T00:00:00"^^xsd:dateTime ;
-                                        :scope "Highway Bridges" .
+                                        :approvalDepartment :China_Engineering_Construction_Standardization_Association ;
+                                        :editor-in-ChiefOrganization :Beijing_New_Bridge_Technology_Devlopment_Limited_Company ;
+                                        :guideTo :UnderwaterReboundTest ;
+                                        :implementationDate "2020-01-01T00:00:00+08:00"^^xsd:dateTime ;
+                                        :publicationDate "2019-08-26T00:00:00+08:00"^^xsd:dateTime ;
+                                        :scope "Highway Bridges" ;
+                                        rdfs:comment """公路桥梁水下构件检测技术规程
+Technical Regulations for Inspection of Underwater Components of Highway Bridges""" .
 
 
 #################################################################
@@ -5933,18 +6422,18 @@ English:Technical Regulations for Inspection of Underwater Components of Highway
                 :Bearings
                 :Bracing
                 :Cylinders
+                :FaceRings
                 :IntroducedStrengthening
+                :Padstone
                 :Parapet
                 :SpandrelWall
                 :Trestle
                 :WingWall
                 <https://w3id.org/BMO#Decking/Plate/Slab/JackArches>
-                <https://w3id.org/BMO#FaceRings/Voússoirs>
                 <https://w3id.org/BMO#LongitudinalMainBeam/Girder(exposed)>
                 <https://w3id.org/BMO#LongitudinalMainBeam/Girder(inner)>
                 <https://w3id.org/BMO#LongitudinalSecondaryBeam/Girder(exposed)>
                 <https://w3id.org/BMO#LongitudinalSecondaryBeam/Girder(inner)>
-                <https://w3id.org/BMO#Padstone/Cills(bedstone)>
                 <https://w3id.org/BMO#TransverseBeam/Girder(end)>
                 <https://w3id.org/BMO#TransverseBeam/Girder(inner)>
               )
