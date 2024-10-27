@@ -12,21 +12,22 @@
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:schema="http://schema.org/">
     <owl:Ontology rdf:about="https://w3id.org/BMO">
+        <dc:creator>Yali Jiang, Haijiang Li, Gang Yang</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">2023.11.06</dc:date>
         <dc:description>--Application Domain: 
 The ontology is specifically designed for the field of bridge maintenance, serving as a ontological knowledge base tailored to the intricacies of maintaining operational bridges.
 --Objective:
 The primary objective of BMO is to improve the management of maintenance knowledge of the bridge lifecycle and to provide more valuable information than that of older methods, thereby enabling bridge engineers to make holistic decisions. 
 --Terminology:
 BMO employs standard technical terms derived from both China and UK standards. This choice eliminates ambiguities and ensures the ontology&apos;s seamless expansion and effective utilization.</dc:description>
+        <dc:title>Bridge Maintenance Ontology (BMO)</dc:title>
         <rdfs:comment>--Application Domain: 
 The ontology is specifically designed for the field of bridge maintenance, serving as a ontological knowledge base tailored to the intricacies of maintaining operational bridges.
 --Objective:
 The primary objective of BMO is to improve the management of maintenance knowledge of the bridge lifecycle and to provide more valuable information than that of older methods, thereby enabling bridge engineers to make holistic decisions. 
 --Terminology:
 BMO employs standard technical terms derived from both China and UK standards. This choice eliminates ambiguities and ensures the ontology&apos;s seamless expansion and effective utilization.</rdfs:comment>
-        <owl:title>Bridge Maintenance Ontology (BMO)</owl:title>
         <owl:versionInfo>v3.0</owl:versionInfo>
-        <owl1:author>Yali Jiang, Haijiang Li, Gang Yang</owl1:author>
     </owl:Ontology>
     
 
@@ -43,10 +44,31 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/description -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
     
 
 
@@ -110,6 +132,24 @@ BMO employs standard technical terms derived from both China and UK standards. T
      -->
 
 
+    
+
+
+    <!-- http://qudt.org/2.1/schema/qudt/quantityKind -->
+
+
+    <owl:ObjectProperty rdf:about="http://qudt.org/2.1/schema/qudt/quantityKind">
+        <rdfs:comment>将qudt:QuantityValue实例和一个qudt:QuantityKind实例关联起来，表示这个数值是属于哪种物理量的</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://qudt.org/2.1/schema/qudt/unit -->
+
+
+    <owl:ObjectProperty rdf:about="http://qudt.org/2.1/schema/qudt/unit">
+        <rdfs:comment>将qudt:QuantityValue实例和一个qudt:Unit实例关联起来，表示该数值的测量单位</rdfs:comment>
+    </owl:ObjectProperty>
     
 
 
@@ -338,11 +378,22 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
+    <!-- https://w3id.org/BMO#hasFactor -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasFactor">
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-01T00:23:11Z</dc:date>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/BMO#hasHazard -->
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasHazard">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/BMO#hazardOn"/>
         <rdfs:range rdf:resource="https://w3id.org/BMO#Hazard"/>
     </owl:ObjectProperty>
     
@@ -381,7 +432,6 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
     <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasMaterialCode">
         <rdfs:domain rdf:resource="https://w3id.org/BMO#Material"/>
-        <rdfs:range rdf:resource="https://w3id.org/BMO#MaterialCode"/>
     </owl:ObjectProperty>
     
 
@@ -510,7 +560,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
     <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hasVisibleCondition">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:range rdf:resource="https://w3id.org/BMO#VisibleCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#hazardOn -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/BMO#hazardOn">
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-07-16T08:33:46Z</dc:date>
     </owl:ObjectProperty>
     
 
@@ -648,20 +707,29 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
-    <!-- https://w3id.org/BMO#A-s1 -->
+    <!-- http://qudt.org/2.1/schema/qudt/numericValue -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#A-s1">
+    <owl:DatatypeProperty rdf:about="http://qudt.org/2.1/schema/qudt/numericValue">
+        <rdfs:comment>用来存储具体的数值（数字）</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#A_s1 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#A_s1">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:comment>Section Properties</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/BMO#A-s2 -->
+    <!-- https://w3id.org/BMO#A_s2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#A-s2"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#A_s2"/>
     
 
 
@@ -716,12 +784,62 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
+    <!-- https://w3id.org/BMO#Cl -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Cl">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T09:43:05Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#D -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#D">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T07:37:31Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#Dc -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Dc">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T09:19:19Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#Dcn -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Dcn">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T09:19:24Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/BMO#Dj -->
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Dj">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:comment>for Visible Condition</rdfs:comment>
+        <rdfs:comment>桥梁缺损状况的评定等级，也称为桥梁总体技术状况评定等级</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#Dnd -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Dnd">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T09:28:12Z</dc:date>
     </owl:DatatypeProperty>
     
 
@@ -731,7 +849,67 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Dr">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:comment>for Visible Condition</rdfs:comment>
+        <rdfs:comment>桥梁总体技术状况评分</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#E -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#E">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T08:07:54Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#E2 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#E2">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T08:50:57Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#E3 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#E3">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T08:51:01Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#E4 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#E4">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T08:51:04Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#E5 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#E5">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T08:51:08Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#E6 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#E6">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T08:51:11Z</dc:date>
     </owl:DatatypeProperty>
     
 
@@ -774,6 +952,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Fcd"/>
+    
+
+
+    <!-- https://w3id.org/BMO#Fj -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Fj">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T08:44:11Z</dc:date>
+    </owl:DatatypeProperty>
     
 
 
@@ -897,6 +1085,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#R3-3"/>
+    
+
+
+    <!-- https://w3id.org/BMO#Ra -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Ra">
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-01T00:24:54Z</dc:date>
+    </owl:DatatypeProperty>
     
 
 
@@ -1155,6 +1353,36 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
+    <!-- https://w3id.org/BMO#Xe -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Xe">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-31T07:10:07Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#Z -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Z">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-31T08:00:24Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#Z1 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#Z1">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-31T07:09:59Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/BMO#Zj -->
 
 
@@ -1164,26 +1392,26 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
-    <!-- https://w3id.org/BMO#a-s -->
+    <!-- https://w3id.org/BMO#a_s -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#a-s"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#a_s"/>
     
 
 
-    <!-- https://w3id.org/BMO#a-s1 -->
+    <!-- https://w3id.org/BMO#a_s1 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#a-s1">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#a_s1">
         <rdfs:comment>Section Properties</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/BMO#a-s2 -->
+    <!-- https://w3id.org/BMO#a_s2 -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#a-s2"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#a_s2"/>
     
 
 
@@ -1437,6 +1665,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
+    <!-- https://w3id.org/BMO#deflectionCriterion -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#deflectionCriterion">
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-27T14:00:44Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/BMO#deformation -->
 
 
@@ -1644,6 +1882,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
+    <!-- https://w3id.org/BMO#fdi -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#fdi">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T08:44:03Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/BMO#flaking -->
 
 
@@ -1659,6 +1907,26 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#floodFrequency">
         <rdfs:comment>某一洪水发生的可能性大小或出现的频繁程度。以分数表示，其倒数为重现期，叫几年一遇。</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#fmi -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#fmi">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T08:43:56Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#forceType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#forceType">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-02T07:37:41Z</dc:date>
     </owl:DatatypeProperty>
     
 
@@ -1756,10 +2024,80 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
+    <!-- https://w3id.org/BMO#hasConcreteStrengthCondition -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#hasConcreteStrengthCondition">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T09:06:29Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#hasCorrosionRate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#hasCorrosionRate">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T09:04:46Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#hasDeficiencyCondition -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#hasDeficiencyCondition">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-30T13:48:04Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/BMO#hasProtectiveCoatingSystem -->
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#hasProtectiveCoatingSystem"/>
+    
+
+
+    <!-- https://w3id.org/BMO#hasReinforcementCondition -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#hasReinforcementCondition">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T09:06:12Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#hasReinforcementCorrosionLikelihood -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#hasReinforcementCorrosionLikelihood">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T09:52:09Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#hasReinforcementDurability -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#hasReinforcementDurability">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T09:36:45Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#hasSafetyPerformanceCondition -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#hasSafetyPerformanceCondition">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-31T07:09:29Z</dc:date>
+    </owl:DatatypeProperty>
     
 
 
@@ -1832,6 +2170,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
+    <!-- https://w3id.org/BMO#length -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#length">
+        <dc:creator>DMU &amp; CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-12-28T01:36:47Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/BMO#lengthpercentage -->
 
 
@@ -1880,6 +2228,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
+    <!-- https://w3id.org/BMO#maxDeflection -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#maxDeflection">
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-27T07:49:09Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/BMO#maxDepth -->
 
 
@@ -1893,6 +2251,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
     <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#maxSpanLength">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/BMO#Bridge"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#maxStress -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#maxStress">
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-27T07:49:29Z</dc:date>
     </owl:DatatypeProperty>
     
 
@@ -1971,6 +2339,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
+    <!-- https://w3id.org/BMO#pc -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#pc">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T09:06:47Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/BMO#percentage -->
 
 
@@ -1996,6 +2374,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
     <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#phoneNumber">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#pl -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#pl">
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-01T08:50:38Z</dc:date>
     </owl:DatatypeProperty>
     
 
@@ -2204,6 +2592,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
+    <!-- https://w3id.org/BMO#spanLength -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#spanLength">
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-27T06:46:44Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/BMO#spanNumder -->
 
 
@@ -2237,6 +2635,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#strength">
         <rdfs:comment>材料或构件受力式抵抗破坏的能力。其值为在一定的自重状态或工作状态条件下，材料所能承受的最大应力或构件所能承受的最大内力，后者亦称承载能力。</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/BMO#strengthCriterion -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#strengthCriterion">
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-27T14:00:57Z</dc:date>
     </owl:DatatypeProperty>
     
 
@@ -2355,6 +2763,16 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
+    <!-- https://w3id.org/BMO#yieldStrength -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/BMO#yieldStrength">
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-27T06:48:14Z</dc:date>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/BMO#z -->
 
 
@@ -2409,6 +2827,325 @@ BMO employs standard technical terms derived from both China and UK standards. T
      -->
 
 
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcAlignment -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcAlignment">
+        <rdfs:comment>用于定义线性基础设施（如桥梁）的几何定位。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcBeam -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcBeam">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcBuildingElement"/>
+        <rdfs:comment>表示桥梁的梁构件。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcBearing -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcBearing">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcBuildingElement"/>
+        <rdfs:comment>表示桥梁的支座，用于将荷载从上部结构传递到下部结构。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcBridge -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcBridge">
+        <rdfs:comment>表示桥梁结构的顶层类</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcBuildingElement -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcBuildingElement">
+        <rdfs:comment>包括桥梁在内的所有建筑设施的物理组成部分</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcBuildingSystem -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcBuildingSystem">
+        <rdfs:comment>具体表示建筑系统，如加固系统、预应力系统。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcColumn -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcColumn">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcBuildingElement"/>
+        <rdfs:comment>表示桥梁的柱构件。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcCondition -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcCondition">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcProcess"/>
+        <rdfs:comment>表示桥梁及其构件的当前状态，如损坏情况、健康状况等。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcDistributionElement -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcDistributionElement">
+        <rdfs:comment>表示物理分布系统的组成部分，如管道、线缆等。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcElementAssembly -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcElementAssembly">
+        <rdfs:comment>表示由多个元素组成的复杂产品或结构部分，如桥台、墩、桥塔等。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcFastener -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcFastener">
+        <rdfs:comment>表示桥梁中的紧固件，如螺栓、铆钉等。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcFooting -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcFooting">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcBuildingElement"/>
+        <rdfs:comment>表示桥梁的基础部分，如独立基础、条形基础等。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcMaterial -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcMaterial">
+        <rdfs:comment>表示桥梁构件使用的材料。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcMechanicalFastener -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcMechanicalFastener">
+        <rdfs:comment>具体表示机械紧固件。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcPile -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcPile">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcBuildingElement"/>
+        <rdfs:comment>表示桥梁的桩基础。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcPlate -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcPlate">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcBuildingElement"/>
+        <rdfs:comment>表示桥梁的板材，如法兰板、腹板等。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcProcess -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcProcess">
+        <rdfs:comment>表示桥梁的相关过程，如维护任务、检查任务等。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcProject -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcProject">
+        <rdfs:comment>表示整个项目的根实例和上下文。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcReinforcingBar -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcReinforcingBar">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcReinforcingElement"/>
+        <rdfs:comment>表示桥梁中的钢筋。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcReinforcingElement -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcReinforcingElement">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcMaterial"/>
+        <rdfs:comment>表示加固构件，如钢筋、预应力束等。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcReinforcingMesh -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcReinforcingMesh">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcReinforcingElement"/>
+        <rdfs:comment>表示桥梁中的钢筋网。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcSite -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcSite">
+        <rdfs:comment>表示项目所在的地理位置。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcSlab -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcSlab">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcBuildingElement"/>
+        <rdfs:comment>表示桥梁的板构件。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcSpatialElement -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcSpatialElement">
+        <rdfs:comment>通用的空间元素类，用于表示项目中的空间结构</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcSpatialStructureElement -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcSpatialStructureElement">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcSpatialElement"/>
+        <rdfs:comment>细化的空间结构类，支持项目的空间层次结构。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcSystem -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcSystem">
+        <rdfs:comment>用于描述桥梁中的功能性系统，如结构系统、排水系统等。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ifcowl.openbimstandards.org/IFC4#IfcTask -->
+
+
+    <owl:Class rdf:about="http://ifcowl.openbimstandards.org/IFC4#IfcTask">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcProcess"/>
+        <rdfs:comment>表示具体的维护任务</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://qudt.org/2.1/schema/qudt/Force -->
+
+
+    <owl:Class rdf:about="http://qudt.org/2.1/schema/qudt/Force">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/2.1/schema/qudt/QuantityKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://qudt.org/2.1/schema/qudt/Length -->
+
+
+    <owl:Class rdf:about="http://qudt.org/2.1/schema/qudt/Length">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/2.1/schema/qudt/QuantityKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://qudt.org/2.1/schema/qudt/Meter -->
+
+
+    <owl:Class rdf:about="http://qudt.org/2.1/schema/qudt/Meter">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/2.1/schema/qudt/Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://qudt.org/2.1/schema/qudt/Newton -->
+
+
+    <owl:Class rdf:about="http://qudt.org/2.1/schema/qudt/Newton">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/2.1/schema/qudt/Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://qudt.org/2.1/schema/qudt/QuantityKind -->
+
+
+    <owl:Class rdf:about="http://qudt.org/2.1/schema/qudt/QuantityKind">
+        <rdfs:comment>表示物理量的种类，比如长度（Length）、力（Force）、应力（Stress）等。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://qudt.org/2.1/schema/qudt/QuantityValue -->
+
+
+    <owl:Class rdf:about="http://qudt.org/2.1/schema/qudt/QuantityValue">
+        <rdfs:comment>表示物理量的具体数值（即一个物理量的实例）。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://qudt.org/2.1/schema/qudt/Unit -->
+
+
+    <owl:Class rdf:about="http://qudt.org/2.1/schema/qudt/Unit">
+        <rdfs:comment>表示测量单位，比如米（Meter）、牛顿（Newton）、帕斯卡（Pascal）等。</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -2474,22 +3211,14 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#Abutment">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#ABT"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#ABT"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#ABT"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMember"/>
@@ -2500,6 +3229,12 @@ BMO employs standard technical terms derived from both China and UK standards. T
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMember"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#AbutmentCap"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#ABT"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.7%20Abutment%2C%20wing%20wall%2C%20pier%2C%20padstone%2C%20cill%2C%20barrel%20arch%2C%20face%20rings%2C%20spandrel%20walls%2C%20parapet.png"/>
@@ -2622,7 +3357,6 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#ApproachBridge">
-        <owl:equivalentClass rdf:resource="https://w3id.org/BMO#SideBridges"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Bridge"/>
         <owl:disjointWith rdf:resource="https://w3id.org/BMO#MainBridge"/>
         <rdfs:comment>连接路堤和主桥的桥梁。在引桥段中也可包括跨越次一级的河道或公路的辅桥。</rdfs:comment>
@@ -2752,15 +3486,6 @@ BMO employs standard technical terms derived from both China and UK standards. T
     
 
 
-    <!-- https://w3id.org/BMO#B -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#B">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaterialCode"/>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/BMO#B1._A_definitive_list_of_major_and_minor_elements_and_their_materials -->
 
 
@@ -2819,21 +3544,19 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#BarrelArch">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#BAR"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#BAR"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#BAR"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#BAR"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.4%20%20Barrel%20arches%20BAR.png"/>
         <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.7%20Abutment%2C%20wing%20wall%2C%20pier%2C%20padstone%2C%20cill%2C%20barrel%20arch%2C%20face%20rings%2C%20spandrel%20walls%2C%20parapet.png"/>
         <rdfs:comment>Heavily skewed arches and some other arch Bridges may comprise several arch barrels. Each barrel arch should be individually labelled.</rdfs:comment>
@@ -2885,26 +3608,25 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#Bearings">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#BGL"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#BGL"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcBearing"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#categorizedInto"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#2_in_a_line_in_a_deck_(DK)"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#BGL"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#BGL"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>A line of bearings at one end of a deck. One line of bearings supporting the ends of two decks should be labelled with the deck with lowest major element number.
@@ -2936,20 +3658,6 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#Bracing">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#BRG"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#BRG"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -2963,6 +3671,18 @@ BMO employs standard technical terms derived from both China and UK standards. T
                 <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#4_in_a_support_(ES,_IS)"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#BRG"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#BRG"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>All bracing including diaphragms, within a sub-deck or a support. Bracing spanning between sub-decks should be labelled with the lowest sub-deck number.</rdfs:comment>
     </owl:Class>
     
@@ -2972,25 +3692,7 @@ BMO employs standard technical terms derived from both China and UK standards. T
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#Bridge">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#bridgeSite"/>
-                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#bridgeSite"/>
-                        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#bridgeSite"/>
-                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcBridge"/>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -3039,6 +3741,18 @@ BMO employs standard technical terms derived from both China and UK standards. T
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#managedBy"/>
                 <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#bridgeSite"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#bridgeSite"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3097,6 +3811,13 @@ BMO employs standard technical terms derived from both China and UK standards. T
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#bridgeSite"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#overallLengthOfBridge"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -3126,6 +3847,17 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
                 <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#ChinaStandardForHighwayBridge"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#BridgeCondition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#BridgeCondition">
+        <rdfs:subClassOf rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcCondition"/>
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-30T13:21:11Z</dc:date>
     </owl:Class>
     
 
@@ -3178,7 +3910,6 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#BridgeDeckPavement">
-        <owl:equivalentClass rdf:resource="https://w3id.org/BMO#RoadSurface"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
         <rdfs:comment>为保护桥面板和分布车轮的集中荷载，用沥青混凝土、水泥混凝土、高分子聚合物等材料铺筑在桥面板上的保护层。</rdfs:comment>
     </owl:Class>
@@ -3220,30 +3951,26 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
     
 
 
+    <!-- https://w3id.org/BMO#BridgeDeficiencyConditionRating -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#BridgeDeficiencyConditionRating">
+        <rdfs:comment>桥梁技术状况评定等级应分为1类、2类、3类、4类、5类</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/BMO#BridgeElement -->
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#BridgeElement">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#ElementCode"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#ElementCode"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onClass rdf:resource="https://w3id.org/BMO#ElementCode"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#ElementCode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMaterialType"/>
@@ -3254,6 +3981,12 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#termsIn"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#UKStandard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#ElementCode"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3272,6 +4005,13 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMaterialType"/>
                 <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/BMO#ElementCode"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -3501,35 +4241,6 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
     
 
 
-    <!-- https://w3id.org/BMO#BridgeTechnicalCondition -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#BridgeTechnicalCondition">
-        <rdfs:comment>桥梁结构各部件或构件的综合技术指标，反映桥梁结构的完好程度、安全程度及使用功能的完善程度。</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/BMO#BridgeTechnicalConditionRating -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#BridgeTechnicalConditionRating">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/BMO#level1"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#level2"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#level3"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#level4"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#level5"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment>桥梁技术状况评定等级应分为1类、2类、3类、4类、5类</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/BMO#Bugholes -->
 
 
@@ -3594,15 +4305,6 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
     <owl:Class rdf:about="https://w3id.org/BMO#ButtWelder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Equipment"/>
         <rdfs:comment>焊接钢筋、钢板的机具。</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/BMO#C -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#C">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaterialCode"/>
     </owl:Class>
     
 
@@ -3734,6 +4436,17 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
 
     <owl:Class rdf:about="https://w3id.org/BMO#ChinaStandardForHighwayBridge">
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Standard"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#ChlorideIonContentCondition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#ChlorideIonContentCondition">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeCondition"/>
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-30T13:27:33Z</dc:date>
     </owl:Class>
     
 
@@ -3944,20 +4657,6 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#Concrete">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMaterialCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#C"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMaterialCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#C"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Material"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -3967,6 +4666,28 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://w3id.org/BMO#Steel"/>
         <rdfs:comment>Reinforced concrete and prestressed/posttensioned concrete, excluding reinforced concrete used to strengthen a masonry arch.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#ConcreteCarbonationCondition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#ConcreteCarbonationCondition">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeCondition"/>
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-30T13:27:33Z</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#ConcreteCoverThicknessCondition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#ConcreteCoverThicknessCondition">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeCondition"/>
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-30T13:27:33Z</dc:date>
     </owl:Class>
     
 
@@ -3981,11 +4702,22 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
     
 
 
-    <!-- https://w3id.org/BMO#ConcreteStrength -->
+    <!-- https://w3id.org/BMO#ConcreteResistivityCondition -->
 
 
-    <owl:Class rdf:about="https://w3id.org/BMO#ConcreteStrength">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
+    <owl:Class rdf:about="https://w3id.org/BMO#ConcreteResistivityCondition">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeCondition"/>
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-30T13:27:33Z</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#ConcreteStrengthCondition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#ConcreteStrengthCondition">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeCondition"/>
     </owl:Class>
     
 
@@ -4348,15 +5080,6 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
     
 
 
-    <!-- https://w3id.org/BMO#DailyMaintenance -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#DailyMaintenance">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaintenanceDecision"/>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/BMO#Deck -->
 
 
@@ -4444,7 +5167,6 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#DeckDrainageSystem">
-        <owl:equivalentClass rdf:resource="https://w3id.org/BMO#Drainage"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
         <rdfs:comment>由桥面集水、泄水和排水结构组成的排水体系。</rdfs:comment>
     </owl:Class>
@@ -4456,6 +5178,16 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
 
     <owl:Class rdf:about="https://w3id.org/BMO#DefectsOnExpansionJoint">
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#HazardOnDeck"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#DeficiencyCondition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#DeficiencyCondition">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeCondition"/>
+        <rdfs:comment>桥梁结构各部件或构件的综合技术指标，反映桥梁结构的完好程度、安全程度及使用功能的完善程度。</rdfs:comment>
     </owl:Class>
     
 
@@ -4540,15 +5272,6 @@ A structure of one or more spans greater than or equal to 1.8 metres whose prime
         <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.18%20%20Element%20labelling%20process.png"/>
         <rdfs:comment>It is necessary to prepare sketches of the Bridge to clearly identify the spans, the major elements, the minor elements which are marked individually, and the minor elements which are marked collectively. Sketching and labelling of structures should be carried out by people deemed to be competent in this aspect of BCMI.
 The element labelling for BCMI should be carried out only once in the lifetime of a bridge, prior to the first BCMI detailed examination. Exceptions to this rule are wholly or partially reconstructed Bridges, or where strengthening or other elements have been introduced since the previous Detailed Examination.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/BMO#EmergencyMaintenance -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#EmergencyMaintenance">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaintenanceDecision"/>
     </owl:Class>
     
 
@@ -4674,6 +5397,16 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     
 
 
+    <!-- https://w3id.org/BMO#ExperimentalFactor -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#ExperimentalFactor">
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-01T00:22:05Z</dc:date>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/BMO#Experimentation -->
 
 
@@ -4709,17 +5442,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#ExtentRatingForCoatingsToMetal">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent1"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent3"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent4"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent5"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent6"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#ExtentRating"/>
     </owl:Class>
     
@@ -4729,17 +5451,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#ExtentRatingForCorrosion">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent1"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent3"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent4"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent5"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent6"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#ExtentRating"/>
         <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png"/>
     </owl:Class>
@@ -4750,18 +5461,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#ExtentRatingForCrackOnMasonry">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent1"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent10"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent11"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent7"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent8"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent9"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#ExtentRating"/>
     </owl:Class>
     
@@ -4771,18 +5470,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#ExtentRatingForCrackOnReinforcedConcrete">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent1"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent2"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent3"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent4"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent5"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#extent6"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#ExtentRating"/>
     </owl:Class>
     
@@ -4847,21 +5534,19 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#FaceRings">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#FRV"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#FRV"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#FRV"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#FRV"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.7%20Abutment%2C%20wing%20wall%2C%20pier%2C%20padstone%2C%20cill%2C%20barrel%20arch%2C%20face%20rings%2C%20spandrel%20walls%2C%20parapet.png"/>
         <rdfs:comment>Each set of face rings or voússoirs (2 per arch) should be identified individually. Some arch Bridges, particularly severely skewed arch Bridges, may comprise several arches each with their own face rings which may be exposed to varying extents.</rdfs:comment>
     </owl:Class>
@@ -5467,25 +6152,23 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#IntroducedStrengthening">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#INS"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#INS"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#categorizedInto"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#5_by_type_in_a_deck_(DK)_or_support_(ES,IS)"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#INS"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#INS"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>All introduced strengthening of one type, within a deck or support e.g. pattress plates with ties, anchors, banding, strapping, lagging, propping, shoring and buttresses not included in the original construction. The type, number and location of all introduced strengthening should be recorded. .</rdfs:comment>
@@ -5642,7 +6325,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#LongitudinalBeam">
-        <owl:equivalentClass rdf:resource="https://w3id.org/BMO#Stringer"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
         <rdfs:comment>在上部结构中，沿桥梁轴向设置的梁。</rdfs:comment>
     </owl:Class>
@@ -5655,15 +6337,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     <owl:Class rdf:about="https://w3id.org/BMO#LongitudinalTimbers">
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MiscellaneousItem"/>
         <rdfs:comment>Including fixings</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/BMO#M -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#M">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaterialCode"/>
     </owl:Class>
     
 
@@ -5838,20 +6511,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#Masonry">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMaterialCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#B"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMaterialCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#B"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Material"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -5878,20 +6537,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#Material">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMaterialCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#MaterialCode"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMaterialCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#MaterialCode"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -5915,20 +6560,11 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     
 
 
-    <!-- https://w3id.org/BMO#MaterialCode -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#MaterialCode">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/BMO#MaterialCondition -->
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#MaterialCondition">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeCondition"/>
     </owl:Class>
     
 
@@ -5992,20 +6628,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#Metal">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMaterialCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#M"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMaterialCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#M"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Material"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -6125,6 +6747,15 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     <owl:Class rdf:about="https://w3id.org/BMO#MudPump">
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Equipment"/>
         <rdfs:comment>输送泥浆的机具。常用的泥浆泵按工作原理不同，分为活塞式和离心式两种。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#NaturalFrequencyCondition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#NaturalFrequencyCondition">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeCondition"/>
     </owl:Class>
     
 
@@ -6274,21 +6905,19 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#Parapet">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#PPT"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#PPT"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#PPT"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#PPT"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.7%20Abutment%2C%20wing%20wall%2C%20pier%2C%20padstone%2C%20cill%2C%20barrel%20arch%2C%20face%20rings%2C%20spandrel%20walls%2C%20parapet.png"/>
         <rdfs:comment>Pilasters are not BCMI marked unless they are continuous with a masonry parapet on either a deck or a box wing wall, but their condition should be reported under miscellaneous items.</rdfs:comment>
     </owl:Class>
@@ -6313,7 +6942,7 @@ The element labelling for BCMI should be carried out only once in the lifetime o
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#hasAssessment"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#BridgeTechnicalConditionRating"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#BridgeDeficiencyConditionRating"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>对桥梁总体技术状况进行的周期性检查及技术状况评定。</rdfs:comment>
@@ -6420,6 +7049,17 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     
 
 
+    <!-- https://w3id.org/BMO#Pile -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Pile">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeMember"/>
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-13T13:15:44Z</dc:date>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/BMO#PileCasing -->
 
 
@@ -6456,6 +7096,17 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     <owl:Class rdf:about="https://w3id.org/BMO#PileFoundation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Foundation"/>
         <rdfs:comment>由桩以及连接桩顶的承台或系梁所组成的基础。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#Plate -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#Plate">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeMember"/>
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-13T13:17:12Z</dc:date>
     </owl:Class>
     
 
@@ -6599,15 +7250,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     <owl:Class rdf:about="https://w3id.org/BMO#PretensioningMethod">
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#ConstructionMeasure"/>
         <rdfs:comment>先在台座上张拉预应力钢材，在浇注构件混凝土并到达设计要求的强度后再释放张拉锚具，以形成预应力混凝土构件的施工方法。</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/BMO#PreventiveMaintenance -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#PreventiveMaintenance">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaintenanceDecision"/>
     </owl:Class>
     
 
@@ -6766,21 +7408,23 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     
 
 
+    <!-- https://w3id.org/BMO#ReinforcementCorrosionPotentialCondition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#ReinforcementCorrosionPotentialCondition">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeCondition"/>
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-30T13:27:33Z</dc:date>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/BMO#ReinforcingSteelBarCuttingMachine -->
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#ReinforcingSteelBarCuttingMachine">
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Equipment"/>
         <rdfs:comment>把钢筋原材料或已校正的钢筋切成所需长度的专用机械。</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/BMO#RepairMaintenance -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#RepairMaintenance">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaintenanceDecision"/>
     </owl:Class>
     
 
@@ -6885,6 +7529,17 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     
 
 
+    <!-- https://w3id.org/BMO#SafetyPerformanceCondition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#SafetyPerformanceCondition">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeCondition"/>
+        <dc:creator>19638</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-31T06:41:59Z</dc:date>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/BMO#SandCylinder -->
 
 
@@ -6948,17 +7603,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#SeverityRatingForCoatingsToMetal">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityA"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityI"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityJ"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityK"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityL"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#SeverityRating"/>
     </owl:Class>
     
@@ -6968,18 +7612,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#SeverityRatingForCorrosion">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityA"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityB"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityC"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityD"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityE"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityF"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#SeverityRating"/>
         <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/Table%202C.14%20%20Severity%20and%20extent%20ratings%20for%20metal.png"/>
     </owl:Class>
@@ -6990,23 +7622,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#SeverityRatingForCrackOnMasonry">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityA"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityG"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityH"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityI"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityJ"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityK"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityL"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityM"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityN"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityO"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityP"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#SeverityRating"/>
     </owl:Class>
     
@@ -7016,16 +7631,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#SeverityRatingForCrackOnReinforcedConcrete">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityA"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityB"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityC"/>
-                    <rdf:Description rdf:about="https://w3id.org/BMO#severityD"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#SeverityRating"/>
     </owl:Class>
     
@@ -7244,22 +7849,20 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#SpandrelWall">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#SPW"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#SPW"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeComponent"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#SPW"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#SPW"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.7%20Abutment%2C%20wing%20wall%2C%20pier%2C%20padstone%2C%20cill%2C%20barrel%20arch%2C%20face%20rings%2C%20spandrel%20walls%2C%20parapet.png"/>
         <rdfs:comment>在实腹式拱桥拱圈以上沿桥纵向两侧设置的挡土墙。</rdfs:comment>
     </owl:Class>
@@ -7272,15 +7875,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     <owl:Class rdf:about="https://w3id.org/BMO#SpecialDetection">
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#BridgeInspection"/>
         <rdfs:comment>对桥梁承载能力、抗灾能力、耐久性能、水中基础技术状况进行的一项或多项检查与评定，以及对定期检查中难以判明病害成因及程度的桥梁进行的检查。</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/BMO#SpecialMaintenance -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#SpecialMaintenance">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaintenanceDecision"/>
     </owl:Class>
     
 
@@ -7745,15 +8339,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     
 
 
-    <!-- https://w3id.org/BMO#T -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#T">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaterialCode"/>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/BMO#T-shapedRigidBridge -->
 
 
@@ -7782,6 +8367,39 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     
 
 
+    <!-- https://w3id.org/BMO#TestingAngle -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#TestingAngle">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#ExperimentalFactor"/>
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-01T00:22:05Z</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#TestingPouringSurface -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#TestingPouringSurface">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#ExperimentalFactor"/>
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-01T00:22:05Z</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/BMO#TestingWaterDepth -->
+
+
+    <owl:Class rdf:about="https://w3id.org/BMO#TestingWaterDepth">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#ExperimentalFactor"/>
+        <dc:creator>DMU&amp;CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-01T00:22:05Z</dc:date>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/BMO#ThroughBridge -->
 
 
@@ -7806,20 +8424,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#Timber">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMaterialCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#T"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasMaterialCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#T"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#Material"/>
     </owl:Class>
     
@@ -7903,15 +8507,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
     <owl:Class rdf:about="https://w3id.org/BMO#Two-wayCurvedArchBridge">
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#ArchBridge"/>
         <rdfs:comment>拱圈由纵向拱肋和横向一个或多个拱波组成，其外形在纵、横两个方面均呈曲线形的拱桥。</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/BMO#U -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#U">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MaterialCode"/>
     </owl:Class>
     
 
@@ -8060,15 +8655,6 @@ The element labelling for BCMI should be carried out only once in the lifetime o
 
     <owl:Class rdf:about="https://w3id.org/BMO#ViewedUnderLoad">
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MiscellaneousItem"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/BMO#VisibleCondition -->
-
-
-    <owl:Class rdf:about="https://w3id.org/BMO#VisibleCondition">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </owl:Class>
     
 
@@ -8281,25 +8867,23 @@ Masonry steps, paths and walls;</rdfs:comment>
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#Decking/Plate/Slab/JackArches">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#DCK"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#DCK"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#categorizedInto"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#3_in_a_sub_deck_and_numbered_with_the_sub_deck"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#DCK"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#DCK"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>All decking located within a sub deck. This includes all decking types supported by beams.</rdfs:comment>
@@ -8311,21 +8895,19 @@ Masonry steps, paths and walls;</rdfs:comment>
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#LongitudinalMainBeam/Girder(exposed)">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#MGE"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#MGE"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#MGE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#MGE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.3%20Longitudinal%20main%20beam-girder%20exposed%20and%20inner%20MGE%20MGI.png"/>
         <rdfs:comment>A longitudinal main girder or beam spanning between the abutments, piers or columns. The outer two beams on any deck are classified as MGE.</rdfs:comment>
     </owl:Class>
@@ -8336,21 +8918,19 @@ Masonry steps, paths and walls;</rdfs:comment>
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#LongitudinalMainBeam/Girder(inner)">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#MGI"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#MGI"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#MGI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#MGI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/Figure%202C.3%20Longitudinal%20main%20beam-girder%20exposed%20and%20inner%20MGE%20MGI.png"/>
         <rdfs:comment>Any longitudinal main girder/beam spanning between the supports excluding the two edge beams should be individually identified as MGI. Longitudinal troughing or a concrete slab, spanning between supports should be labelled as an MGI.</rdfs:comment>
     </owl:Class>
@@ -8361,21 +8941,19 @@ Masonry steps, paths and walls;</rdfs:comment>
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#LongitudinalSecondaryBeam/Girder(exposed)">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#LSE"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#LSE"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#LSE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#LSE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>A longitudinal secondary girder, for example a beam supporting a parapet at the exposed edge of a deck. Only exposed longitudinal secondary girders should be identified as LSE. Any girder that carries or may carry live load should be identified as a main beam or girder.</rdfs:comment>
     </owl:Class>
     
@@ -8385,25 +8963,23 @@ Masonry steps, paths and walls;</rdfs:comment>
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#LongitudinalSecondaryBeam/Girder(inner)">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#LSI"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#LSI"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#categorizedInto"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#3_in_a_sub_deck_and_numbered_with_the_sub_deck"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#LSI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#LSI"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>All longitudinal secondary girders inner within a sub deck, e.g. all bearers or girders supporting platforms, but excluding any LSE elements.</rdfs:comment>
@@ -8525,25 +9101,23 @@ Masonry steps, paths and walls;</rdfs:comment>
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#TransverseBeam/Girder(end)">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#XGE"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#XGE"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#categorizedInto"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#3_in_a_sub_deck_and_numbered_with_the_sub_deck"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#XGE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#XGE"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>All transverse beams or girders located partly or fully over the support end of a deck within a sub deck, e.g. the trimmer beam including all those transverse beams/girders associated with abutments.</rdfs:comment>
@@ -8555,25 +9129,23 @@ Masonry steps, paths and walls;</rdfs:comment>
 
 
     <owl:Class rdf:about="https://w3id.org/BMO#TransverseBeam/Girder(inner)">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#XGI"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#XGI"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/BMO#MinorElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/BMO#categorizedInto"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#3_in_a_sub_deck_and_numbered_with_the_sub_deck"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/BMO#XGI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/BMO#hasElementCode"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/BMO#XGI"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>All transverse beams/girders located within a sub deck, but excluding XGE elements.</rdfs:comment>
@@ -8818,15 +9390,12 @@ Masonry steps, paths and walls;</rdfs:comment>
     
 
 
-    <!-- https://w3id.org/BMO#ChangshanBridge -->
+    <!-- https://w3id.org/BMO#ChangshanBridge0 -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#ChangshanBridge">
-        <rdf:type rdf:resource="https://w3id.org/BMO#Bridge"/>
-        <rdf:type rdf:resource="https://w3id.org/BMO#StrengtheningMeasure"/>
-        <rdf:type rdf:resource="https://w3id.org/BMO#VisibleCondition"/>
-        <A-s1 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.051446</A-s1>
-        <A-s2 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.064307</A-s2>
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#ChangshanBridge0">
+        <A_s1 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.051446</A_s1>
+        <A_s2 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.064307</A_s2>
         <As1 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.051446</As1>
         <As2 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.081389</As2>
         <BDCI rdf:datatype="http://www.w3.org/2001/XMLSchema#float">83.52</BDCI>
@@ -8835,8 +9404,8 @@ Masonry steps, paths and walls;</rdfs:comment>
         <S3 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">118000.0</S3>
         <SBCI rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</SBCI>
         <SPCI rdf:datatype="http://www.w3.org/2001/XMLSchema#float">86.59</SPCI>
-        <a-s1 rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.45</a-s1>
-        <a-s2 rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.095</a-s2>
+        <a_s1 rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.45</a_s1>
+        <a_s2 rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.095</a_s2>
         <as1 rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.45</as1>
         <as2 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.095</as2>
         <b rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</b>
@@ -8859,7 +9428,7 @@ Masonry steps, paths and walls;</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#China_Engineering_Construction_Standardization_Association">
         <rdf:type rdf:resource="https://w3id.org/BMO#Organization"/>
         <rdfs:comment>中国工程建设标准化协会</rdfs:comment>
-        <website rdf:resource="http://www.cecs.org.cn/"/>
+        <website rdf:resource="http://www.cecs.org.cn"/>
     </owl:NamedIndividual>
     
 
@@ -8887,7 +9456,7 @@ Masonry steps, paths and walls;</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#DailyMaintenance">
-        <rdf:type rdf:resource="https://w3id.org/BMO#DailyMaintenance"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaintenanceDecision"/>
     </owl:NamedIndividual>
     
 
@@ -8916,7 +9485,7 @@ Masonry steps, paths and walls;</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Dalian_Maritime_University">
         <rdf:type rdf:resource="https://w3id.org/BMO#Organization"/>
         <rdfs:comment>大连海事大学</rdfs:comment>
-        <website rdf:resource="https://www.dlmu.edu.cn/"/>
+        <website rdf:resource="https://www.dlmu.edu.cn"/>
         <website rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dlmu.edu.cn/</website>
     </owl:NamedIndividual>
     
@@ -8935,7 +9504,7 @@ Masonry steps, paths and walls;</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#EmergencyMaintenance">
-        <rdf:type rdf:resource="https://w3id.org/BMO#EmergencyMaintenance"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaintenanceDecision"/>
     </owl:NamedIndividual>
     
 
@@ -8954,24 +9523,6 @@ Masonry steps, paths and walls;</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#EpoxyResin">
         <rdf:type rdf:resource="https://w3id.org/BMO#Material"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/BMO#ExperimentationCase -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#ExperimentationCase">
-        <rdf:type rdf:resource="https://w3id.org/BMO#Material"/>
-        <rdf:type rdf:resource="https://w3id.org/BMO#ReboundTest"/>
-        <R rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</R>
-        <designStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</designStrength>
-        <isHorizontal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isHorizontal>
-        <isTopSurface rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isTopSurface>
-        <waterDepth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.6</waterDepth>
-        <rdfs:comment>In this case, test angle is horizontal, test surface is top, and water depth is 5.6 m. 
-The original rebound value is 42.
-The design strength of concrete is 40.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -9055,7 +9606,7 @@ The design strength of concrete is 40.</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Highway_Bureau_of_the_Ministry_of_Transport">
         <rdf:type rdf:resource="https://w3id.org/BMO#Organization"/>
         <rdfs:comment>交通运输部公路局</rdfs:comment>
-        <website rdf:resource="https://zizhan.mot.gov.cn/sj2019/gongluj/"/>
+        <website rdf:resource="https://zizhan.mot.gov.cn/sj2019/gongluj"/>
         <website rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://zizhan.mot.gov.cn/sj2019/gongluj/</website>
     </owl:NamedIndividual>
     
@@ -9260,7 +9811,7 @@ Standard of Technical Terms for Highway Engineering</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Ministry_of_Housing_and_Urban-Rural_Development">
         <rdf:type rdf:resource="https://w3id.org/BMO#Organization"/>
         <rdfs:comment>中华人民共和国住房和城乡建设部</rdfs:comment>
-        <website rdf:resource="https://www.mohurd.gov.cn/"/>
+        <website rdf:resource="https://www.mohurd.gov.cn"/>
     </owl:NamedIndividual>
     
 
@@ -9271,8 +9822,30 @@ Standard of Technical Terms for Highway Engineering</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Ministry_of_Transport_of_the_Peoples_Republic_of_China">
         <rdf:type rdf:resource="https://w3id.org/BMO#Organization"/>
         <rdfs:comment>中华人民共和国交通运输部</rdfs:comment>
-        <website rdf:resource="https://www.mot.gov.cn/"/>
+        <website rdf:resource="https://www.mot.gov.cn"/>
         <website rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.mot.gov.cn/</website>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/BMO#NeathRiverSwingBridge -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#NeathRiverSwingBridge">
+        <rdf:type rdf:resource="https://w3id.org/BMO#Bridge"/>
+        <hasElement rdf:resource="https://w3id.org/BMO#DK1"/>
+        <hasSpan rdf:resource="https://w3id.org/BMO#Span1_NeathRiverSwingBridg"/>
+        <hasSpan rdf:resource="https://w3id.org/BMO#Span2_NeathRiverSwingBridg"/>
+        <hasSpan rdf:resource="https://w3id.org/BMO#Span3_NeathRiverSwingBridg"/>
+        <hasSpan rdf:resource="https://w3id.org/BMO#Span4_NeathRiverSwingBridg"/>
+        <hasSpan rdf:resource="https://w3id.org/BMO#Span5_NeathRiverSwingBridg"/>
+        <hasSpan rdf:resource="https://w3id.org/BMO#Span6_NeathRiverSwingBridg"/>
+        <hasStakeholders rdf:resource="https://w3id.org/BMO#ProjectEngineer1"/>
+        <length>118m</length>
+        <spanNumder rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</spanNumder>
+        <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/RiverNeathSwing%20bridge.JPG"/>
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Swing_Bridge,_River_Neath"/>
+        <rdfs:comment>The River Neath Swing Bridge was originally constructed as a centrally-pivoted swing bridge in 1892. It is a Grade II listed six-deck underbridge carrying the two non-electrified lines of the Swansea District Line (SDI1) railway over River Neath at 207m 63ch. It has undergone substantial maintenance including repairs to steel superstructure and cylindrical caissons in 1914 as well as a partial reconstruction in 1973. Five of the six decks are simply supported. Each of the five simply supported spans comprises two longitudinal, half through, steel plate girders, cross girders, rail bearers, and a steel deck. Four of these simply supported spans are welded steel and the last high mileage span is riveted. The deck construction is riveted steel and is supported by rows of intermediate wrought iron cylindrical piers and masonry abutments. At each intermediate support row, there are three concrete infilled cast iron piers with steel transverse bracing that was added at a later date. The piers are part of the original 1892 structure and are listed. The former balanced cantilever swing span deck was originally designed to pivot open on the central support. The swing span comprises a rivetted steel bowstring through truss, cross girders, and a steel deck with overhead lateral restraints at midspan. The swing span is centrally supported on a circular cluster of nine wrought iron caissons / piers with concrete infill, masonry abutments and wingwalls. After declining use of the swing facility, the central span was permanently welded shut in 1985.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -9282,7 +9855,7 @@ Standard of Technical Terms for Highway Engineering</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#NetworkRail">
         <rdf:type rdf:resource="https://w3id.org/BMO#Organization"/>
-        <website rdf:resource="https://www.networkrail.co.uk/"/>
+        <website rdf:resource="https://www.networkrail.co.uk"/>
     </owl:NamedIndividual>
     
 
@@ -9341,7 +9914,7 @@ Standard of Technical Terms for Highway Engineering</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#PreventiveMaintenance">
-        <rdf:type rdf:resource="https://w3id.org/BMO#PreventiveMaintenance"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaintenanceDecision"/>
     </owl:NamedIndividual>
     
 
@@ -9416,7 +9989,7 @@ Standard of Technical Terms for Highway Engineering</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#RepairMaintenance">
-        <rdf:type rdf:resource="https://w3id.org/BMO#RepairMaintenance"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaintenanceDecision"/>
     </owl:NamedIndividual>
     
 
@@ -9436,7 +10009,7 @@ Standard of Technical Terms for Highway Engineering</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Research_Institute_of_Highway_Ministry_of_Transport">
         <rdf:type rdf:resource="https://w3id.org/BMO#Organization"/>
         <rdfs:comment>交通运输部公路科学研究院</rdfs:comment>
-        <website rdf:resource="https://www.rioh.cn/"/>
+        <website rdf:resource="https://www.rioh.cn"/>
         <website rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.rioh.cn/</website>
     </owl:NamedIndividual>
     
@@ -9454,27 +10027,6 @@ Standard of Technical Terms for Highway Engineering</rdfs:comment>
         <hasContingencyArrangement rdf:resource="https://w3id.org/BMO#Mandatory_weekly_scaffold_inspections"/>
         <hasContingencyArrangement rdf:resource="https://w3id.org/BMO#Rescue_boat_in_attendance"/>
         <hasContingencyArrangement rdf:resource="https://w3id.org/BMO#Water_levels_to_be_visually_monitored"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/BMO#RiverNeathSwingBridge -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#RiverNeathSwingBridge">
-        <rdf:type rdf:resource="https://w3id.org/BMO#Bridge"/>
-        <hasElement rdf:resource="https://w3id.org/BMO#DK1"/>
-        <hasSpan rdf:resource="https://w3id.org/BMO#Span1_RiverNeathSwingBridg"/>
-        <hasSpan rdf:resource="https://w3id.org/BMO#Span2_RiverNeathSwingBridg"/>
-        <hasSpan rdf:resource="https://w3id.org/BMO#Span3_RiverNeathSwingBridg"/>
-        <hasSpan rdf:resource="https://w3id.org/BMO#Span4_RiverNeathSwingBridg"/>
-        <hasSpan rdf:resource="https://w3id.org/BMO#Span5_RiverNeathSwingBridg"/>
-        <hasSpan rdf:resource="https://w3id.org/BMO#Span6_RiverNeathSwingBridg"/>
-        <hasStakeholders rdf:resource="https://w3id.org/BMO#ProjectEngineer1"/>
-        <spanNumder rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</spanNumder>
-        <schema:image rdf:resource="https://raw.githubusercontent.com/JYL61/image-database/main/RiverNeathSwing%20bridge.JPG"/>
-        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Swing_Bridge,_River_Neath"/>
-        <rdfs:comment>The River Neath Swing Bridge was originally constructed as a centrally-pivoted swing bridge in 1892. It is a Grade II listed six-deck underbridge carrying the two non-electrified lines of the Swansea District Line (SDI1) railway over River Neath at 207m 63ch. It has undergone substantial maintenance including repairs to steel superstructure and cylindrical caissons in 1914 as well as a partial reconstruction in 1973. Five of the six decks are simply supported. Each of the five simply supported spans comprises two longitudinal, half through, steel plate girders, cross girders, rail bearers, and a steel deck. Four of these simply supported spans are welded steel and the last high mileage span is riveted. The deck construction is riveted steel and is supported by rows of intermediate wrought iron cylindrical piers and masonry abutments. At each intermediate support row, there are three concrete infilled cast iron piers with steel transverse bracing that was added at a later date. The piers are part of the original 1892 structure and are listed. The former balanced cantilever swing span deck was originally designed to pivot open on the central support. The swing span comprises a rivetted steel bowstring through truss, cross girders, and a steel deck with overhead lateral restraints at midspan. The swing span is centrally supported on a circular cluster of nine wrought iron caissons / piers with concrete infill, masonry abutments and wingwalls. After declining use of the swing facility, the central span was permanently welded shut in 1985.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -9532,55 +10084,55 @@ Standard of Technical Terms for Highway Engineering</rdfs:comment>
     
 
 
-    <!-- https://w3id.org/BMO#Span1_RiverNeathSwingBridg -->
+    <!-- https://w3id.org/BMO#Span1_NeathRiverSwingBridg -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Span1_RiverNeathSwingBridg">
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Span1_NeathRiverSwingBridg">
         <rdf:type rdf:resource="https://w3id.org/BMO#Bridge"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/BMO#Span2_RiverNeathSwingBridg -->
+    <!-- https://w3id.org/BMO#Span2_NeathRiverSwingBridg -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Span2_RiverNeathSwingBridg">
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Span2_NeathRiverSwingBridg">
         <rdf:type rdf:resource="https://w3id.org/BMO#Bridge"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/BMO#Span3_RiverNeathSwingBridg -->
+    <!-- https://w3id.org/BMO#Span3_NeathRiverSwingBridg -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Span3_RiverNeathSwingBridg">
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Span3_NeathRiverSwingBridg">
         <rdf:type rdf:resource="https://w3id.org/BMO#Bridge"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/BMO#Span4_RiverNeathSwingBridg -->
+    <!-- https://w3id.org/BMO#Span4_NeathRiverSwingBridg -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Span4_RiverNeathSwingBridg">
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Span4_NeathRiverSwingBridg">
         <rdf:type rdf:resource="https://w3id.org/BMO#Bridge"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/BMO#Span5_RiverNeathSwingBridg -->
+    <!-- https://w3id.org/BMO#Span5_NeathRiverSwingBridg -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Span5_RiverNeathSwingBridg">
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Span5_NeathRiverSwingBridg">
         <rdf:type rdf:resource="https://w3id.org/BMO#Bridge"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/BMO#Span6_RiverNeathSwingBridg -->
+    <!-- https://w3id.org/BMO#Span6_NeathRiverSwingBridg -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Span6_RiverNeathSwingBridg">
+    <owl:NamedIndividual rdf:about="https://w3id.org/BMO#Span6_NeathRiverSwingBridg">
         <rdf:type rdf:resource="https://w3id.org/BMO#Bridge"/>
     </owl:NamedIndividual>
     
@@ -9590,7 +10142,7 @@ Standard of Technical Terms for Highway Engineering</rdfs:comment>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#SpecialMaintenance">
-        <rdf:type rdf:resource="https://w3id.org/BMO#SpecialMaintenance"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#MaintenanceDecision"/>
     </owl:NamedIndividual>
     
 
@@ -9640,7 +10192,6 @@ Standard of Technical Terms for Highway Engineering</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#UnderwaterReboundTest">
         <rdf:type rdf:resource="https://w3id.org/BMO#Experimentation"/>
-        <rdf:type rdf:resource="https://w3id.org/BMO#ReboundTest"/>
         <conductedBy rdf:resource="https://w3id.org/BMO#Dalian_Maritime_University"/>
         <needEquipment rdf:resource="https://w3id.org/BMO#SBART_Wetsuit"/>
         <needEquipment rdf:resource="https://w3id.org/BMO#ZJYY_Ladder"/>
@@ -9835,7 +10386,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#level1">
-        <rdf:type rdf:resource="https://w3id.org/BMO#BridgeTechnicalConditionRating"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#BridgeDeficiencyConditionRating"/>
     </owl:NamedIndividual>
     
 
@@ -9844,7 +10395,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#level2">
-        <rdf:type rdf:resource="https://w3id.org/BMO#BridgeTechnicalConditionRating"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#BridgeDeficiencyConditionRating"/>
     </owl:NamedIndividual>
     
 
@@ -9853,7 +10404,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#level3">
-        <rdf:type rdf:resource="https://w3id.org/BMO#BridgeTechnicalConditionRating"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#BridgeDeficiencyConditionRating"/>
     </owl:NamedIndividual>
     
 
@@ -9862,7 +10413,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#level4">
-        <rdf:type rdf:resource="https://w3id.org/BMO#BridgeTechnicalConditionRating"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#BridgeDeficiencyConditionRating"/>
     </owl:NamedIndividual>
     
 
@@ -9871,7 +10422,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#level5">
-        <rdf:type rdf:resource="https://w3id.org/BMO#BridgeTechnicalConditionRating"/>
+        <rdf:type rdf:resource="https://w3id.org/BMO#BridgeDeficiencyConditionRating"/>
     </owl:NamedIndividual>
     
 
@@ -10044,7 +10595,6 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#13-BoxGirder">
         <rdf:type rdf:resource="https://w3id.org/BMO#BoxGirder"/>
-        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <hasMaterialType rdf:resource="https://w3id.org/BMO#C55"/>
         <Rit rdf:datatype="http://www.w3.org/2001/XMLSchema#float">59700.0</Rit>
     </owl:NamedIndividual>
@@ -10055,7 +10605,6 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#13-1-Pylon">
-        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <rdf:type rdf:resource="https://w3id.org/BMO#Pylon"/>
         <hasMaterialType rdf:resource="https://w3id.org/BMO#C50"/>
         <Rit rdf:datatype="http://www.w3.org/2001/XMLSchema#float">39500.0</Rit>
@@ -10068,7 +10617,6 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#14-BoxGirder">
         <rdf:type rdf:resource="https://w3id.org/BMO#BoxGirder"/>
-        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <hasMaterialType rdf:resource="https://w3id.org/BMO#C55"/>
         <Rit rdf:datatype="http://www.w3.org/2001/XMLSchema#float">57600.0</Rit>
     </owl:NamedIndividual>
@@ -10079,7 +10627,6 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#14-1-Pylon">
-        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <rdf:type rdf:resource="https://w3id.org/BMO#Pylon"/>
         <hasMaterialType rdf:resource="https://w3id.org/BMO#C50"/>
         <Rit rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53100.0</Rit>
@@ -10092,7 +10639,6 @@ The larger the measured rebound value is, the smaller the absolute value of the 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#15-BoxGirder">
         <rdf:type rdf:resource="https://w3id.org/BMO#BoxGirder"/>
-        <rdf:type rdf:resource="https://w3id.org/BMO#MaterialCondition"/>
         <hasMaterialType rdf:resource="https://w3id.org/BMO#C55"/>
         <Rit rdf:datatype="http://www.w3.org/2001/XMLSchema#float">59700.0</Rit>
     </owl:NamedIndividual>
@@ -10105,7 +10651,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#CCCC_First_Highway_Consultants_Co.,Ltd.">
         <rdf:type rdf:resource="https://w3id.org/BMO#Organization"/>
         <rdfs:comment>中交第一公路勘察设计研究院有限公司</rdfs:comment>
-        <website rdf:resource="https://www.ccroad.com.cn/"/>
+        <website rdf:resource="https://www.ccroad.com.cn"/>
         <website rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.ccroad.com.cn/</website>
     </owl:NamedIndividual>
     
@@ -10117,7 +10663,7 @@ The larger the measured rebound value is, the smaller the absolute value of the 
     <owl:NamedIndividual rdf:about="https://w3id.org/BMO#CCCC_Highway_Consultants_Co.,Ltd.">
         <rdf:type rdf:resource="https://w3id.org/BMO#Organization"/>
         <rdfs:comment>中交公路规划设计院有限公司</rdfs:comment>
-        <website rdf:resource="http://www.hpdi.com.cn/"/>
+        <website rdf:resource="http://www.hpdi.com.cn"/>
         <website rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.hpdi.com.cn/</website>
     </owl:NamedIndividual>
     
@@ -10414,33 +10960,6 @@ There are a small number of unique and complex Bridges that cannot be labelled i
         <rdfs:comment>公路桥梁水下构件检测技术规程
 Technical Regulations for Inspection of Underwater Components of Highway Bridges</rdfs:comment>
     </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    <rdf:Description rdf:about="https://w3id.org/BMO#DailyMaintenance">
-        <rdfs:comment>对桥梁及其附属设施进行的维护保养和修补轻微缺损的工作。</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/BMO#EmergencyMaintenance">
-        <rdfs:comment>突发情况造成公路桥梁损毁、交通中断、产生安全隐患时，实施的应急抢修、保通等工程措施。</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/BMO#PreventiveMaintenance">
-        <rdfs:comment>桥梁有轻微病害但整体性能良好，为延缓其性能衰减、延长使用寿命而采取的防护工程。</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/BMO#RepairMaintenance">
-        <rdfs:comment>为恢复桥梁技术状况而实施的功能性、结构性修复或更换的工程措施。</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/BMO#SpecialMaintenance">
-        <rdfs:comment>为恢复、完善或提升桥涵使用功能而集中实施的增设、加固、改造、拆除重建等工程措施。</rdfs:comment>
-    </rdf:Description>
     
 
 
